@@ -68,7 +68,7 @@ class _PlanetPuzzleCompletionDialogSmall extends StatelessWidget {
   Widget build(BuildContext context) {
     final secondsElapsed = context.read<TimerBloc>().state.secondsElapsed;
     final totalMoves = context.read<PuzzleBloc>().state.numberOfMoves;
-    final planet = context.read<PuzzleSelectionCubit>().planet;
+    final planet = context.read<GameSelectionCubit>().planet;
     final autoSolverSteps = context.read<PuzzleHelperCubit>().autoSolverSteps;
     final level = context.read<LevelSelectionCubit>().puzzleSize;
     final isAutoSolverUsed = autoSolverSteps != 0;
@@ -344,7 +344,7 @@ class _PlanetPuzzleCompletionDialogLarge extends StatelessWidget {
   Widget build(BuildContext context) {
     final secondsElapsed = context.read<TimerBloc>().state.secondsElapsed;
     final totalMoves = context.read<PuzzleBloc>().state.numberOfMoves;
-    final planet = context.read<PuzzleSelectionCubit>().planet;
+    final planet = context.read<GameSelectionCubit>().planet;
     final autoSolverSteps = context.read<PuzzleHelperCubit>().autoSolverSteps;
     final level = context.read<LevelSelectionCubit>().puzzleSize;
     final isAutoSolverUsed = autoSolverSteps != 0;

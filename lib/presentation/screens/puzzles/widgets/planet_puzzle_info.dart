@@ -18,7 +18,7 @@ class PlanetPuzzleInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final planet = context.read<PuzzleSelectionCubit>().planet;
+    final planet = context.read<GameSelectionCubit>().planet;
 
     return ResponsiveLayoutBuilder(
       small: (_, Widget? child) => Padding(

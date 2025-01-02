@@ -1,14 +1,14 @@
 part of 'game_selection_helper_cubit.dart';
 
-class PuzzleSelectionHelperState extends Equatable {
+class GameSelectionHelperState extends Equatable {
   final bool isPaused;
 
-  const PuzzleSelectionHelperState({this.isPaused = false});
+  const GameSelectionHelperState({this.isPaused = false});
 
-  PuzzleSelectionHelperState copyWith({
+  GameSelectionHelperState copyWith({
     bool? isPaused,
   }) {
-    return PuzzleSelectionHelperState(
+    return GameSelectionHelperState(
       isPaused: isPaused ?? this.isPaused,
     );
   }

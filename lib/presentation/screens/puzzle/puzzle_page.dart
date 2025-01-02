@@ -54,7 +54,7 @@ class PuzzlePage extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ThemeBloc(
-            planet: context.read<PuzzleSelectionCubit>().planet,
+            planet: context.read<GameSelectionCubit>().planet,
           ),
         ),
         BlocProvider(
@@ -64,7 +64,7 @@ class PuzzlePage extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => PlanetFactCubit(
-            planetType: context.read<PuzzleSelectionCubit>().planet.type,
+            planetType: context.read<GameSelectionCubit>().planet.type,
             context: context,
           ),
         ),

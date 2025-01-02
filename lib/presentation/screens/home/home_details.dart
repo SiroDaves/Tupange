@@ -70,13 +70,13 @@ class AnimationToggleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state =
-        context.select((PuzzleSelectionHelperCubit cubit) => cubit.state);
+        context.select((GameSelectionHelperCubit cubit) => cubit.state);
 
     final bool isPaused = state.isPaused;
 
     return StylizedButton(
       onPressed: () {
-        context.read<PuzzleSelectionHelperCubit>().onPlanetMovementToggle();
+        context.read<GameSelectionHelperCubit>().onPlanetMovementToggle();
       },
       child: StylizedContainer(
         color: isPaused ? Colors.grey : Colors.blueAccent,

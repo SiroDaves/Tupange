@@ -78,7 +78,7 @@ class _CorePlanet extends StatelessWidget {
         }
       },
       onTap: () {
-        context.read<PuzzleSelectionCubit>().onPlanetSelected(planet);
+        context.read<GameSelectionCubit>().onPlanetSelected(planet);
       },
       child: Transform.rotate(
         angle: planet.type == PlanetType.saturn ? 0 : math.pi / 10,

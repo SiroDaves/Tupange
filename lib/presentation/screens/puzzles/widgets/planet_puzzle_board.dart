@@ -49,7 +49,7 @@ class _PlanetPuzzleBoardState extends State<PlanetPuzzleBoard> {
       child: MultiBlocProvider(
         providers: [
           BlocProvider.value(value: context.read<LevelSelectionCubit>()),
-          BlocProvider.value(value: context.read<PuzzleSelectionCubit>()),
+          BlocProvider.value(value: context.read<GameSelectionCubit>()),
           BlocProvider.value(value: context.read<PuzzleHelperCubit>()),
           BlocProvider.value(value: context.read<TimerBloc>()),
           BlocProvider.value(value: context.read<PuzzleBloc>()),
