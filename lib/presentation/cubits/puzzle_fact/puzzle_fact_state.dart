@@ -1,4 +1,4 @@
-part of 'planet_fact_cubit.dart';
+part of 'puzzle_fact_cubit.dart';
 
 class PlanetFactState extends Equatable {
   final String fact;

@@ -12,7 +12,7 @@ import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
-import '../../cubits/puzzle_fact/planet_fact_cubit.dart';
+import '../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
 import '../../theme/bloc/theme_bloc.dart';
 import '../../widgets/background/background.dart';
 import 'widgets/puzzle_header.dart';

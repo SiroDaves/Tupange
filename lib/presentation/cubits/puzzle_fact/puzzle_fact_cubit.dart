@@ -5,11 +5,11 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/utils/constants/app_constants.dart';
 import '../../../core/utils/puzzle_utils.dart';
 import '../../../data/models/planet.dart';
-import '../../../core/utils/constants/app_constants.dart';
 
-part 'planet_fact_state.dart';
+part 'puzzle_fact_state.dart';
 
 class PlanetFactCubit extends Cubit<PlanetFactState> {
   late Timer _timer;
