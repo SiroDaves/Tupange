@@ -1,9 +1,9 @@
 part of 'puzzle_fact_cubit.dart';
 
-class PlanetFactState extends Equatable {
+class PuzzleFactState extends Equatable {
   final String fact;
 
-  const PlanetFactState({this.fact = ''});
+  const PuzzleFactState({this.fact = ''});
 
   @override
   List<Object> get props => [fact];

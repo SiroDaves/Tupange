@@ -118,12 +118,12 @@ class _FactWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.select((PlanetFactCubit cubit) => cubit.state);
+    final state = context.select((PuzzleFactCubit cubit) => cubit.state);
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-          context.read<PlanetFactCubit>().newFact();
+          context.read<PuzzleFactCubit>().newFact();
         },
         child: AppAnimatedWidget(
           showOnComplete: true,

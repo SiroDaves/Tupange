@@ -11,7 +11,7 @@ import '../../../data/models/planet.dart';
 
 part 'puzzle_fact_state.dart';
 
-class PlanetFactCubit extends Cubit<PlanetFactState> {
+class PuzzleFactCubit extends Cubit<PuzzleFactState> {
   late Timer _timer;
   Timer? _userInteractionTimer;
   late List<String> facts;
@@ -47,13 +47,13 @@ class PlanetFactCubit extends Cubit<PlanetFactState> {
     currentFactIdx = idx;
 
     final fact = facts[currentFactIdx];
-    emit(PlanetFactState(fact: fact));
+    emit(PuzzleFactState(fact: fact));
   }
 
-  PlanetFactCubit({
+  PuzzleFactCubit({
     required PlanetType planetType,
     required BuildContext context,
-  }) : super(const PlanetFactState()) {
+  }) : super(const PuzzleFactState()) {
     facts = PuzzleUtils.planetFacts(planetType, context);
 
     facts.shuffle();
