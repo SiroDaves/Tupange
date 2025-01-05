@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
         ),
         BlocProvider(
           create: (ctx) => PuzzleSelectionHelperCubit(
-            planetAnimationCubit: ctx.read<PlanetOrbitalAnimationCubit>(),
+            animationCubit: ctx.read<PlanetOrbitalAnimationCubit>(),
           ),
         ),
       ],
