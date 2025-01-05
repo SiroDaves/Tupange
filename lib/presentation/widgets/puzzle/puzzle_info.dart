@@ -4,13 +4,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
-import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../cubits/game_selection/game_selection_cubit.dart';
-import '../../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
-import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
-import '../../../widgets/animated_text.dart';
-import '../../../widgets/stylized_icon.dart';
-import '../../../widgets/stylized_text.dart';
+import '../../../core/layout/utils/responsive_layout_builder.dart';
+import '../../cubits/game_selection/game_selection_cubit.dart';
+import '../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
+import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
+import '../animated_text.dart';
+import '../stylized_icon.dart';
+import '../stylized_text.dart';
 
 class PuzzleInfo extends StatelessWidget {
   const PuzzleInfo({super.key});

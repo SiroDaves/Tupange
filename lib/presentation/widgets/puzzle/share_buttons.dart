@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../core/utils/app_utils.dart';
-import '../../../../data/models/game.dart';
-import '../../../widgets/stylized_button.dart';
-import '../../../widgets/stylized_container.dart';
-import '../../../widgets/stylized_icon.dart';
+import '../../../core/utils/app_utils.dart';
+import '../../../data/models/game.dart';
+import '../stylized_button.dart';
+import '../stylized_container.dart';
+import '../stylized_icon.dart';
 
 class ShareButtons extends StatelessWidget {
   final Game game;

@@ -12,7 +12,6 @@ import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
-import '../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
 import '../../theme/bloc/theme_bloc.dart';
 import '../../widgets/background/background.dart';
 import 'widgets/puzzle_header.dart';
@@ -54,7 +53,7 @@ class PuzzlePage extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ThemeBloc(
-            planet: context.read<GameSelectionCubit>().planet,
+            game: context.read<GameSelectionCubit>().game,
           ),
         ),
         BlocProvider(
@@ -62,12 +61,12 @@ class PuzzlePage extends StatelessWidget {
             ticker: const Ticker(),
           ),
         ),
-        BlocProvider(
-          create: (_) => PuzzleFactCubit(
-            planetType: context.read<GameSelectionCubit>().planet.type,
-            context: context,
-          ),
-        ),
+        // BlocProvider(
+        //   create: (_) => PuzzleFactCubit(
+        //     planetType: context.read<GameSelectionCubit>().game.type,
+        //     context: context,
+        //   ),
+        // ),
       ],
       child: const _PuzzleView(),
     );

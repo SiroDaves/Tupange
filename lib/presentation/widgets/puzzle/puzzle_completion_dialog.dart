@@ -4,15 +4,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
-import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../../core/utils/app_utils.dart';
-import '../../../../core/utils/puzzle_utils.dart';
-import '../../../blocs/timer/timer_bloc.dart';
-import '../../../blocs/puzzle/puzzle_bloc.dart';
-import '../../../cubits/game_selection/game_selection_cubit.dart';
-import '../../../cubits/level_selection/level_selection_cubit.dart';
-import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
-import '../../../widgets/stylized_text.dart';
+import '../../../core/layout/utils/responsive_layout_builder.dart';
+import '../../../core/utils/app_utils.dart';
+import '../../../core/utils/puzzle_utils.dart';
+import '../../blocs/timer/timer_bloc.dart';
+import '../../blocs/puzzle/puzzle_bloc.dart';
+import '../../cubits/game_selection/game_selection_cubit.dart';
+import '../../cubits/level_selection/level_selection_cubit.dart';
+import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
+import '../stylized_text.dart';
 import 'puzzle_completion_dialog_large.dart';
 import 'share_buttons.dart';
 

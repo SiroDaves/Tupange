@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rive/rive.dart' as rive;
 
-import '../../../../core/layout/utils/app_breakpoints.dart';
-import '../../../../core/utils/app_utils.dart';
-import '../../../../core/utils/constants/app_constants.dart';
-import '../../../../core/utils/puzzle_utils.dart';
-import '../../../../data/models/tile.dart';
-import '../../../blocs/puzzle/puzzle_bloc.dart';
-import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
-import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
-import '../../../cubits/puzzle_init/puzzle_init_cubit.dart';
-import '../../../theme/bloc/theme_bloc.dart';
-import '../../../widgets/shake_animator.dart';
-import '../../../widgets/stylized_text.dart';
-import '../layout/game_layout_delegate.dart';
+import '../../../core/layout/utils/app_breakpoints.dart';
+import '../../../core/utils/app_utils.dart';
+import '../../../core/utils/constants/app_constants.dart';
+import '../../../core/utils/puzzle_utils.dart';
+import '../../../data/models/tile.dart';
+import '../../blocs/puzzle/puzzle_bloc.dart';
+import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
+import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
+import '../../theme/bloc/theme_bloc.dart';
+import '../shake_animator.dart';
+import '../stylized_text.dart';
+import '../../screens/puzzles/game_layout_delegate.dart';
 
 class PlanetPuzzleTile extends StatefulWidget {
   final Tile tile;

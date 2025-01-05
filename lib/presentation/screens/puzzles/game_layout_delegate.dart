@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/layout/delegates/puzzle_layout_delegate.dart';
-import '../../../../core/layout/utils/responsive_gap.dart';
-import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../../core/utils/app_utils.dart';
-import '../../../../core/utils/constants/app_constants.dart';
-import '../../../../data/models/tile.dart';
-import '../../../blocs/puzzle/puzzle_bloc.dart';
-import '../../../theme/themes/puzzle_theme.dart';
-import '../../../widgets/controls/puzzle_control.dart';
-import '../widgets/puzzle_board.dart';
-import '../widgets/puzzle_info.dart';
-import '../widgets/puzzle_stats.dart';
-import '../widgets/planet_puzzle_tile.dart';
-import '../widgets/planet_whitespace_tile.dart';
+import '../../../core/layout/delegates/puzzle_layout_delegate.dart';
+import '../../../core/layout/utils/responsive_gap.dart';
+import '../../../core/layout/utils/responsive_layout_builder.dart';
+import '../../../core/utils/app_utils.dart';
+import '../../../core/utils/constants/app_constants.dart';
+import '../../../data/models/tile.dart';
+import '../../blocs/puzzle/puzzle_bloc.dart';
+import '../../theme/themes/puzzle_theme.dart';
+import '../../widgets/controls/puzzle_control.dart';
+import '../../widgets/puzzle/puzzle_board.dart';
+import '../../widgets/puzzle/puzzle_info.dart';
+import '../../widgets/puzzle/puzzle_stats.dart';
+import '../../widgets/puzzle/planet_puzzle_tile.dart';
+import '../../widgets/puzzle/planet_whitespace_tile.dart';
 
 abstract class BoardSize {
   static double small = 312;

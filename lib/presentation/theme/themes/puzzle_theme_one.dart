@@ -1,8 +1,8 @@
 import '../../../core/utils/constants/app_assets.dart';
-import 'planet_puzzle_theme.dart';
+import 'game_puzzle_theme.dart';
 
-class EarthPuzzleTheme extends PlanetPuzzleTheme {
-  const EarthPuzzleTheme();
+class PuzzleThemeOne extends GamePuzzleTheme {
+  const PuzzleThemeOne();
 
   @override
   String get backgroundAsset => AppAssets.earthLandscape;
