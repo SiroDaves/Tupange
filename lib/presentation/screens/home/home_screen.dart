@@ -13,7 +13,7 @@ import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/planet_orbital/planet_orbital_animation_cubit.dart';
 import '../../cubits/puzzle_selection/puzzle_selection_cubit.dart';
-import '../../cubits/puzzle_selection/puzzle_selection_helper_cubit.dart';
+import '../../cubits/puzzle_selection_helper/puzzle_selection_helper_cubit.dart';
 import '../../widgets/controls/audio_control.dart';
 import '../../widgets/progress/custom_snackbar.dart';
 import '../../widgets/progress/general_progress.dart';

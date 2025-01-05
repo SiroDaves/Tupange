@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/models/orbit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/puzzle_selection/puzzle_selection_cubit.dart';
-import '../../cubits/puzzle_selection/puzzle_selection_helper_cubit.dart';
+import '../../cubits/puzzle_selection_helper/puzzle_selection_helper_cubit.dart';
 import '../info_card/info_card.dart';
 
 class HomeKeyboardHandler extends StatefulWidget {
