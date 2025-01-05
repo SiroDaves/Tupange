@@ -12,8 +12,8 @@ import '../../widgets/controls/puzzle_control.dart';
 import '../../widgets/puzzle/puzzle_board.dart';
 import '../../widgets/puzzle/puzzle_info.dart';
 import '../../widgets/puzzle/puzzle_stats.dart';
-import '../../widgets/puzzle/planet_puzzle_tile.dart';
-import '../../widgets/puzzle/planet_whitespace_tile.dart';
+import '../../widgets/puzzle/game_puzzle_tile.dart';
+import '../../widgets/puzzle/game_whitespace_tile.dart';
 
 abstract class BoardSize {
   static double small = 312;
@@ -103,12 +103,12 @@ class GameLayoutDelegate extends PuzzleLayoutDelegate {
 
   @override
   Widget tileBuilder(Tile tile) {
-    return PlanetPuzzleTile(key: ValueKey(tile.value), tile: tile);
+    return GamePuzzleTile(key: ValueKey(tile.value), tile: tile);
   }
 
   @override
   Widget whitespaceTileBuilder(Tile tile) {
-    return WhitespaceTile(tile: tile);
+    return GameWhitespaceTile(tile: tile);
   }
 
   @override

@@ -106,13 +106,13 @@ class PuzzleKeyboardHandlerState extends State<PuzzleKeyboardHandler> {
       } else if (physicalKey == PhysicalKeyboardKey.keyV) {
         context.read<PuzzleHelperCubit>().onHelpToggle();
       } else if (physicalKey == PhysicalKeyboardKey.arrowUp) {
-        tile = puzzle.getTileRelativeToWhitespaceTile(const Offset(0, -1));
+        tile = puzzle.getTileRelativeToGameWhitespaceTile(const Offset(0, -1));
       } else if (physicalKey == PhysicalKeyboardKey.arrowDown) {
-        tile = puzzle.getTileRelativeToWhitespaceTile(const Offset(0, 1));
+        tile = puzzle.getTileRelativeToGameWhitespaceTile(const Offset(0, 1));
       } else if (physicalKey == PhysicalKeyboardKey.arrowRight) {
-        tile = puzzle.getTileRelativeToWhitespaceTile(const Offset(1, 0));
+        tile = puzzle.getTileRelativeToGameWhitespaceTile(const Offset(1, 0));
       } else if (physicalKey == PhysicalKeyboardKey.arrowLeft) {
-        tile = puzzle.getTileRelativeToWhitespaceTile(const Offset(-1, 0));
+        tile = puzzle.getTileRelativeToGameWhitespaceTile(const Offset(-1, 0));
       } else if (physicalKey == PhysicalKeyboardKey.escape) {
         Navigator.pop(context);
       }

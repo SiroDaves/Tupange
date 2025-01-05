@@ -18,16 +18,16 @@ import '../shake_animator.dart';
 import '../stylized_text.dart';
 import '../../screens/puzzles/game_layout_delegate.dart';
 
-class PlanetPuzzleTile extends StatefulWidget {
+class GamePuzzleTile extends StatefulWidget {
   final Tile tile;
 
-  const PlanetPuzzleTile({super.key, required this.tile});
+  const GamePuzzleTile({super.key, required this.tile});
 
   @override
-  State<PlanetPuzzleTile> createState() => _PlanetPuzzleTileState();
+  State<GamePuzzleTile> createState() => _GamePuzzleTileState();
 }
 
-class _PlanetPuzzleTileState extends State<PlanetPuzzleTile> {
+class _GamePuzzleTileState extends State<GamePuzzleTile> {
   final childVn = ValueNotifier<Widget?>(null);
   late ThemeBloc themeBloc;
   late PuzzleInitCubit puzzleInitCubit;

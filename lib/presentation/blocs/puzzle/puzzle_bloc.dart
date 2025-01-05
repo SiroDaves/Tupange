@@ -50,7 +50,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
   }
 
   void _notifyShakeAnimation(Tile tile) {
-    final whitespacePos = state.puzzle.getWhitespaceTile().currentPosition;
+    final whitespacePos = state.puzzle.getGameWhitespaceTile().currentPosition;
     final tilePos = tile.currentPosition;
 
     final diff = tilePos - whitespacePos;
