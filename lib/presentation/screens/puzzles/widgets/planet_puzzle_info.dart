@@ -14,7 +14,7 @@ import '../../../widgets/stylized_text.dart';
 import '../../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
 
 class PlanetPuzzleInfo extends StatelessWidget {
-  const PlanetPuzzleInfo({Key? key}) : super(key: key);
+  const PlanetPuzzleInfo({super.key});
 
   @override
   Widget build(BuildContext context) {

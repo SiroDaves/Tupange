@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../blocs/timer/timer_bloc.dart';
-import '../../../cubits/audio/audio_player_cubit.dart';
 import '../../../../core/helpers/modal_helpers.dart';
 import '../../../../core/layout/layout.dart';
 import '../../../../core/utils/app_utils.dart';
 import '../../../../core/utils/constants/app_constants.dart';
+import '../../../blocs/timer/timer_bloc.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../../cubits/audio/audio_player_cubit.dart';
 import '../../../cubits/level_selection/level_selection_cubit.dart';
 import '../../../cubits/game_selection/game_selection_cubit.dart';
 import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
