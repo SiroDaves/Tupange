@@ -13,7 +13,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../data/models/planet.dart';
 import 'constants/app_constants.dart';
 
 bool isDesktop = Platform.isWindows || Platform.isLinux || Platform.isMacOS;
@@ -40,37 +39,6 @@ $message
     }
 
     return false;
-  }
-
-  static String planetName(PlanetType type, BuildContext context) {
-    switch (type) {
-      case PlanetType.mercury:
-        return context.l10n.mercury;
-
-      case PlanetType.venus:
-        return context.l10n.venus;
-
-      case PlanetType.earth:
-        return context.l10n.earth;
-
-      case PlanetType.mars:
-        return context.l10n.mars;
-
-      case PlanetType.jupiter:
-        return context.l10n.jupiter;
-
-      case PlanetType.saturn:
-        return context.l10n.saturn;
-
-      case PlanetType.uranus:
-        return context.l10n.uranus;
-
-      case PlanetType.neptune:
-        return context.l10n.neptune;
-
-      case PlanetType.pluto:
-        return context.l10n.pluto;
-    }
   }
 
   static Future<Widget> buildPageAsync(Widget page) {

@@ -7,13 +7,13 @@ abstract class GameSelectionState extends Equatable {
   List<Object> get props => [];
 }
 
-class NoPlanetSelected extends GameSelectionState {}
+class NoGameSelected extends GameSelectionState {}
 
-class PlanetSelected extends GameSelectionState {
-  final Planet planet;
+class GameSelected extends GameSelectionState {
+  final Game game;
 
-  const PlanetSelected({required this.planet});
+  const GameSelected({required this.game});
 
   @override
-  List<Object> get props => [planet];
+  List<Object> get props => [game];
 }

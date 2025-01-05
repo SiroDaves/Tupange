@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/utils/constants/app_constants.dart';
 import '../../../core/utils/puzzle_utils.dart';
-import '../../../data/models/planet.dart';
+import '../../../data/models/game.dart';
 
 part 'puzzle_fact_state.dart';
 
@@ -51,10 +51,10 @@ class PuzzleFactCubit extends Cubit<PuzzleFactState> {
   }
 
   PuzzleFactCubit({
-    required PlanetType planetType,
+    required Game game,
     required BuildContext context,
   }) : super(const PuzzleFactState()) {
-    facts = PuzzleUtils.planetFacts(planetType, context);
+    facts = PuzzleUtils.getFactsFor(game, context);
 
     facts.shuffle();
 

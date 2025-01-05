@@ -15,7 +15,7 @@ class GameSelectionCubit extends Cubit<GameSelectionState> {
   final BuildContext _context;
 
   GameSelectionCubit(this._levelSelectionCubit, this._context)
-      : super(NoPlanetSelected());
+      : super(NoGameSelected());
 
   late Game _game;
 

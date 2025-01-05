@@ -5,7 +5,6 @@ import 'package:gap/gap.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../core/utils/app_utils.dart';
-import '../../../core/utils/puzzle_utils.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
@@ -48,9 +47,7 @@ class PuzzleCompletionDialogLarge extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(12.0),
-                      child: Image.asset(
-                        PuzzleUtils.getPlanetImageFor(game.image),
-                      ),
+                      child: Image.asset(game.image!),
                     ),
                     Positioned.fill(
                       child: Container(

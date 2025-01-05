@@ -2,24 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/models/orbit.dart';
+import '../../../data/models/game.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
 import '../info_card/info_card.dart';
 
 class HomeKeyboardHandler extends StatefulWidget {
   final Widget child;
-  final List<Orbit> orbits;
 
-  const HomeKeyboardHandler({
-    super.key,
-    required this.child,
-    required this.orbits,
-  });
+  const HomeKeyboardHandler({super.key, required this.child});
 
   @override
-  HomeKeyboardHandlerState createState() =>
-      HomeKeyboardHandlerState();
+  HomeKeyboardHandlerState createState() => HomeKeyboardHandlerState();
 }
 
 class HomeKeyboardHandlerState extends State<HomeKeyboardHandler> {
@@ -31,10 +25,8 @@ class HomeKeyboardHandlerState extends State<HomeKeyboardHandler> {
     super.dispose();
   }
 
-  void openPlanetAt(int digit) =>
-      context.read<GameSelectionCubit>().onPlanetSelected(
-            widget.orbits[digit - 1].planet,
-          );
+  void openGameAt(Game game) =>
+      context.read<GameSelectionCubit>().onPlanetSelected(game);
 
   /// For the dashboard, the following keyboard events are important
   /// [Space] key -> play/pause planet orbital animation
@@ -55,7 +47,7 @@ class HomeKeyboardHandlerState extends State<HomeKeyboardHandler> {
         context.read<LevelSelectionCubit>().onLevelIncrease();
       } else if (physicalKey == PhysicalKeyboardKey.keyI) {
         InfoCard.show(context: context);
-      } else if (physicalKey == PhysicalKeyboardKey.digit1) {
+      } /*else if (physicalKey == PhysicalKeyboardKey.digit1) {
         openPlanetAt(1);
       } else if (physicalKey == PhysicalKeyboardKey.digit2) {
         openPlanetAt(2);
@@ -73,7 +65,7 @@ class HomeKeyboardHandlerState extends State<HomeKeyboardHandler> {
         openPlanetAt(8);
       } else if (physicalKey == PhysicalKeyboardKey.digit9) {
         openPlanetAt(9);
-      } else if (physicalKey == PhysicalKeyboardKey.escape) {
+      } */else if (physicalKey == PhysicalKeyboardKey.escape) {
         final navigatorState = Navigator.of(context);
         if (navigatorState.canPop()) navigatorState.pop();
       }
