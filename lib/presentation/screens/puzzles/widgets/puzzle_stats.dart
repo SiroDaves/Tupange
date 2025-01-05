@@ -11,8 +11,8 @@ import '../../../cubits/audio/audio_player_cubit.dart';
 import '../../../widgets/animated_text.dart';
 import '../../../widgets/stylized_text.dart';
 
-class PlanetPuzzleStats extends StatelessWidget {
-  const PlanetPuzzleStats({super.key});
+class PuzzleStats extends StatelessWidget {
+  const PuzzleStats({super.key});
 
   @override
   Widget build(BuildContext context) {

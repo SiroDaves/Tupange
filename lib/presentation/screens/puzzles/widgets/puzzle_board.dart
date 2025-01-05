@@ -14,23 +14,23 @@ import '../../../cubits/audio/audio_player_cubit.dart';
 import '../../../cubits/level_selection/level_selection_cubit.dart';
 import '../../../cubits/game_selection/game_selection_cubit.dart';
 import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
-import '../layout/planet_puzzle_layout_delegate.dart';
-import 'planet_puzzle_completion_dialog.dart';
+import '../layout/game_layout_delegate.dart';
+import 'puzzle_completion_dialog.dart';
 
-class PlanetPuzzleBoard extends StatefulWidget {
+class PuzzleBoard extends StatefulWidget {
   final List<Widget> tiles;
 
-  const PlanetPuzzleBoard({super.key, required this.tiles});
+  const PuzzleBoard({super.key, required this.tiles});
 
   @override
-  State<PlanetPuzzleBoard> createState() => _PlanetPuzzleBoardState();
+  State<PuzzleBoard> createState() => _PuzzleBoardState();
 }
 
-class _PlanetPuzzleBoardState extends State<PlanetPuzzleBoard> {
+class _PuzzleBoardState extends State<PuzzleBoard> {
   Timer? _completePuzzleTimer;
 
   void _onPuzzleCompletionDialog(BuildContext context) async {
-    AppUtils.logger('PlanetPuzzleBoard: _onPuzzleCompletionDialog');
+    AppUtils.logger('PuzzleBoard: _onPuzzleCompletionDialog');
 
     // play completion audio
     context.read<AudioPlayerCubit>().completion();
@@ -54,7 +54,7 @@ class _PlanetPuzzleBoardState extends State<PlanetPuzzleBoard> {
           BlocProvider.value(value: context.read<TimerBloc>()),
           BlocProvider.value(value: context.read<PuzzleBloc>()),
         ],
-        child: PlanetPuzzleCompletionDialog(),
+        child: PuzzleCompletionDialog(),
       ),
     );
   }

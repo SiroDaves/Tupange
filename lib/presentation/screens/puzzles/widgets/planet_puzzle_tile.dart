@@ -16,7 +16,7 @@ import '../../../cubits/puzzle_init/puzzle_init_cubit.dart';
 import '../../../theme/bloc/theme_bloc.dart';
 import '../../../widgets/shake_animator.dart';
 import '../../../widgets/stylized_text.dart';
-import '../layout/planet_puzzle_layout_delegate.dart';
+import '../layout/game_layout_delegate.dart';
 
 class PlanetPuzzleTile extends StatefulWidget {
   final Tile tile;

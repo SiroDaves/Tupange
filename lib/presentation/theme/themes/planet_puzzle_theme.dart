@@ -1,5 +1,5 @@
 import '../../../core/layout/layout.dart';
-import '../../screens/puzzles/layout/planet_puzzle_layout_delegate.dart';
+import '../../screens/puzzles/layout/game_layout_delegate.dart';
 import 'puzzle_theme.dart';
 
 abstract class PlanetPuzzleTheme extends PuzzleTheme {
@@ -9,5 +9,5 @@ abstract class PlanetPuzzleTheme extends PuzzleTheme {
   String get name => 'Planet';
 
   @override
-  PuzzleLayoutDelegate get puzzleLayoutDelegate => PlanetPuzzleLayoutDelegate();
+  PuzzleLayoutDelegate get puzzleLayoutDelegate => PuzzleLayoutDelegate();
 }

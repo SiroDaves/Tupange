@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/models/planet.dart';
+import '../../../data/models/game.dart';
 import '../../../core/utils/constants/app_constants.dart';
 import '../../../core/utils/app_utils.dart';
 import '../../screens/puzzle/puzzle_page.dart';
@@ -17,15 +17,15 @@ class GameSelectionCubit extends Cubit<GameSelectionState> {
   GameSelectionCubit(this._levelSelectionCubit, this._context)
       : super(NoPlanetSelected());
 
-  late Planet _planet;
+  late Game _game;
 
-  Planet get planet => _planet;
+  Game get game => _game;
 
-  void onPlanetSelected(Planet planet) async {
-    _planet = planet;
+  void onPlanetSelected(Game game) async {
+    _game = game;
 
     AppUtils.logger(
-      'GameSelectionCubit tapped: $planet: level: ${_levelSelectionCubit.state.level}',
+      'GameSelectionCubit tapped: $game: level: ${_levelSelectionCubit.state.level}',
     );
 
     final page = await AppUtils.buildPageAsync(

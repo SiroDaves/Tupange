@@ -5,7 +5,6 @@ import 'package:gap/gap.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../../core/utils/app_utils.dart';
 import '../../../cubits/game_selection/game_selection_cubit.dart';
 import '../../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
 import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
@@ -13,12 +12,12 @@ import '../../../widgets/animated_text.dart';
 import '../../../widgets/stylized_icon.dart';
 import '../../../widgets/stylized_text.dart';
 
-class PlanetPuzzleInfo extends StatelessWidget {
-  const PlanetPuzzleInfo({super.key});
+class PuzzleInfo extends StatelessWidget {
+  const PuzzleInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final planet = context.read<GameSelectionCubit>().planet;
+    final game = context.read<GameSelectionCubit>().game;
 
     return ResponsiveLayoutBuilder(
       small: (_, Widget? child) => Padding(
@@ -44,7 +43,7 @@ class PlanetPuzzleInfo extends StatelessWidget {
             children: [
               // title
               Text(
-                AppUtils.planetName(planet.type, context),
+                game.title!,
                 style: TextStyle(
                   fontSize: isLarge ? 48.0 : 32.0,
                   color: Colors.white,
@@ -57,7 +56,7 @@ class PlanetPuzzleInfo extends StatelessWidget {
 
               // description
               _FactWidget(
-                key: const Key('planet-fact-widget'),
+                key: const Key('game-fact-widget'),
                 isLarge: isLarge,
                 isSmall: isSmall,
               ),
