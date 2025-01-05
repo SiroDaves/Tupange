@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../widgets/stylized_button.dart';
 import '../../../widgets/stylized_container.dart';
 import '../../../widgets/stylized_icon.dart';
-import '../../../../core/layout/utils/responsive_layout_builder.dart';
 
 class ScrollButtons extends StatelessWidget {
   final VoidCallback? onNext;
   final VoidCallback? onPrevious;
 
   const ScrollButtons({
-    Key? key,
+    super.key,
     this.onNext,
     this.onPrevious,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

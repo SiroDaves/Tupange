@@ -6,9 +6,9 @@ class OrbitWidget extends StatelessWidget {
   final Orbit orbit;
 
   const OrbitWidget({
-    Key? key,
+    super.key,
     required this.orbit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
