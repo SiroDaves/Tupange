@@ -4,7 +4,7 @@ import 'dart:math' as math;
 import '../../data/models/position.dart';
 import '../../data/models/tile.dart';
 import '../../presentation/blocs/puzzle/puzzle_bloc.dart';
-import '../../presentation/cubits/helper/puzzle_helper_cubit.dart';
+import '../../presentation/cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../utils/app_utils.dart';
 import '../utils/constants/app_constants.dart';
 import 'solver_tile.dart';

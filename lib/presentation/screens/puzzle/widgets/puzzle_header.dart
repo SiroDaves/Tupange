@@ -11,7 +11,7 @@ import '../../../widgets/stylized_icon.dart';
 import '../../../widgets/stylized_text.dart';
 import '../../../../core/l10n/l10n.dart';
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../cubits/helper/puzzle_helper_cubit.dart';
+import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 
 class PuzzleHeader extends StatelessWidget {
   const PuzzleHeader({Key? key}) : super(key: key);
