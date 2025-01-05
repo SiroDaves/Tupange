@@ -3,9 +3,9 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
-import '../../../../core/utils/constants/app_constants.dart';
-import '../../../../core/utils/app_utils.dart';
-import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../../core/utils/constants/app_constants.dart';
+import '../../../core/utils/app_utils.dart';
+import '../../blocs/puzzles/planet_puzzle_bloc.dart';
 
 part 'puzzle_init_state.dart';
 

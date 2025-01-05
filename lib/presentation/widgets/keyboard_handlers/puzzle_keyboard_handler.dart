@@ -6,8 +6,8 @@ import '../../../data/models/tile.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/puzzles/planet_puzzle_bloc.dart';
 import '../../blocs/timer/timer_bloc.dart';
-import '../../cubits/puzzle/helper/puzzle_helper_cubit.dart';
-import '../../cubits/puzzle/init/puzzle_init_cubit.dart';
+import '../../cubits/helper/puzzle_helper_cubit.dart';
+import '../../cubits/init/puzzle_init_cubit.dart';
 
 class PuzzleKeyboardHandler extends StatefulWidget {
   final Widget child;
