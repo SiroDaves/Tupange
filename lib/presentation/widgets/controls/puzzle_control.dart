@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import '../../../core/l10n/l10n.dart';
 import '../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
-import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../blocs/game/game_puzzle_bloc.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
@@ -18,7 +18,7 @@ class PuzzleControl extends StatelessWidget {
 
   void _onStart(BuildContext context, bool hasStarted) {
     context.read<TimerBloc>().add(const TimerReset());
-    context.read<PlanetPuzzleBloc>().add(PlanetCountdownReset(
+    context.read<GamePuzzleBloc>().add(PlanetCountdownReset(
           secondsToBegin: hasStarted ? 5 : 3,
         ));
   }
@@ -44,9 +44,9 @@ class PuzzleControl extends StatelessWidget {
         context.select((PuzzleInitCubit cubit) => cubit.state);
     final isReady = puzzleInitState is PuzzleInitReady;
 
-    final status = context.select((PlanetPuzzleBloc bloc) => bloc.state.status);
-    final hasStarted = status == PlanetPuzzleStatus.started;
-    final isLoading = status == PlanetPuzzleStatus.loading;
+    final status = context.select((GamePuzzleBloc bloc) => bloc.state.status);
+    final hasStarted = status == GamePuzzleStatus.started;
+    final isLoading = status == GamePuzzleStatus.loading;
 
     final puzzleHelperState =
         context.select((PuzzleHelperCubit cubit) => cubit.state);

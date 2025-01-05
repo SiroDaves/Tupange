@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/models/tile.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
-import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../blocs/game/game_puzzle_bloc.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
@@ -32,7 +32,7 @@ class PuzzleKeyboardHandlerState extends State<PuzzleKeyboardHandler> {
 
   void _onStart(bool hasStarted) {
     context.read<TimerBloc>().add(const TimerReset());
-    context.read<PlanetPuzzleBloc>().add(PlanetCountdownReset(
+    context.read<GamePuzzleBloc>().add(PlanetCountdownReset(
           secondsToBegin: hasStarted ? 5 : 3,
         ));
   }
@@ -66,14 +66,14 @@ class PuzzleKeyboardHandlerState extends State<PuzzleKeyboardHandler> {
       final physicalKey = event.data.physicalKey;
 
       final puzzleInitState = context.read<PuzzleInitCubit>().state;
-      final planetPuzzleState = context.read<PlanetPuzzleBloc>().state;
+      final planetPuzzleState = context.read<GamePuzzleBloc>().state;
 
       final isAutoSolving =
           context.read<PuzzleHelperCubit>().state.isAutoSolving;
 
       final isReady = puzzleInitState is PuzzleInitReady;
-      final hasStarted = planetPuzzleState.status == PlanetPuzzleStatus.started;
-      final isLoading = planetPuzzleState.status == PlanetPuzzleStatus.loading;
+      final hasStarted = planetPuzzleState.status == GamePuzzleStatus.started;
+      final isLoading = planetPuzzleState.status == GamePuzzleStatus.loading;
 
       final puzzleBloc = context.read<PuzzleBloc>();
 

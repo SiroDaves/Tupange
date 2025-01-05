@@ -98,9 +98,9 @@ class _$AppDatabase extends AppDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `categories` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `rid` INTEGER, `title` TEXT, `description` TEXT, `image` TEXT, `isAsset` INTEGER, `createdAt` TEXT NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `categories` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `rid` INTEGER, `title` TEXT, `description` TEXT, `image` TEXT, `createdAt` TEXT NOT NULL)');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `games` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `rid` INTEGER, `category` INTEGER, `title` TEXT, `image` TEXT, `isAsset` INTEGER, `createdAt` TEXT)');
+            'CREATE TABLE IF NOT EXISTS `games` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `rid` INTEGER, `category` INTEGER, `title` TEXT, `image` TEXT, `createdAt` TEXT)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -133,8 +133,6 @@ class _$CategoriesDao extends CategoriesDao {
                   'title': item.title,
                   'description': item.description,
                   'image': item.image,
-                  'isAsset':
-                      item.isAsset == null ? null : (item.isAsset! ? 1 : 0),
                   'createdAt': item.createdAt
                 }),
         _categoryDeletionAdapter = DeletionAdapter(
@@ -147,8 +145,6 @@ class _$CategoriesDao extends CategoriesDao {
                   'title': item.title,
                   'description': item.description,
                   'image': item.image,
-                  'isAsset':
-                      item.isAsset == null ? null : (item.isAsset! ? 1 : 0),
                   'createdAt': item.createdAt
                 });
 
@@ -171,8 +167,6 @@ class _$CategoriesDao extends CategoriesDao {
             title: row['title'] as String?,
             description: row['description'] as String?,
             image: row['image'] as String?,
-            isAsset:
-                row['isAsset'] == null ? null : (row['isAsset'] as int) != 0,
             createdAt: row['createdAt'] as String?),
         arguments: [id]);
   }
@@ -186,8 +180,6 @@ class _$CategoriesDao extends CategoriesDao {
             title: row['title'] as String?,
             description: row['description'] as String?,
             image: row['image'] as String?,
-            isAsset:
-                row['isAsset'] == null ? null : (row['isAsset'] as int) != 0,
             createdAt: row['createdAt'] as String?));
   }
 
@@ -222,8 +214,6 @@ class _$GamesDao extends GamesDao {
                   'category': item.category,
                   'title': item.title,
                   'image': item.image,
-                  'isAsset':
-                      item.isAsset == null ? null : (item.isAsset! ? 1 : 0),
                   'createdAt': item.createdAt
                 }),
         _gameDeletionAdapter = DeletionAdapter(
@@ -236,8 +226,6 @@ class _$GamesDao extends GamesDao {
                   'category': item.category,
                   'title': item.title,
                   'image': item.image,
-                  'isAsset':
-                      item.isAsset == null ? null : (item.isAsset! ? 1 : 0),
                   'createdAt': item.createdAt
                 });
 
@@ -259,8 +247,6 @@ class _$GamesDao extends GamesDao {
             category: row['category'] as int?,
             title: row['title'] as String?,
             image: row['image'] as String?,
-            isAsset:
-                row['isAsset'] == null ? null : (row['isAsset'] as int) != 0,
             createdAt: row['createdAt'] as String?),
         arguments: [id]);
   }
@@ -273,8 +259,6 @@ class _$GamesDao extends GamesDao {
             category: row['category'] as int?,
             title: row['title'] as String?,
             image: row['image'] as String?,
-            isAsset:
-                row['isAsset'] == null ? null : (row['isAsset'] as int) != 0,
             createdAt: row['createdAt'] as String?));
   }
 

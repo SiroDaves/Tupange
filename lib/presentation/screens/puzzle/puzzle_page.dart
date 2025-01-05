@@ -6,7 +6,7 @@ import '../../../data/models/puzzle.dart';
 import '../../../data/models/ticker.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
-import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../blocs/game/game_puzzle_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
@@ -25,7 +25,7 @@ class PuzzlePage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => PlanetPuzzleBloc(
+          create: (context) => GamePuzzleBloc(
             secondsToBegin: context.read<LevelSelectionCubit>().puzzleSize,
             ticker: const Ticker(),
           ),
@@ -33,7 +33,7 @@ class PuzzlePage extends StatelessWidget {
         BlocProvider(
           create: (context) => PuzzleInitCubit(
             context.read<LevelSelectionCubit>().puzzleSize,
-            context.read<PlanetPuzzleBloc>(),
+            context.read<GamePuzzleBloc>(),
           ),
         ),
         BlocProvider(

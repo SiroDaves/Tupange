@@ -10,7 +10,7 @@ import '../../../core/utils/constants/app_constants.dart';
 import '../../../core/utils/puzzle_utils.dart';
 import '../../../data/models/tile.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
-import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../blocs/game/game_puzzle_bloc.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
 import '../../theme/bloc/theme_bloc.dart';
@@ -116,13 +116,13 @@ class _PlanetPuzzleTileState extends State<PlanetPuzzleTile> {
     final isAutoSolving = puzzleHelperState.isAutoSolving;
     final showHelp = puzzleHelperState.showHelp;
 
-    AppUtils.logger('PlanetPuzzleTile: updated: isAutoSolving: $isAutoSolving');
+    AppUtils.logger('PuzzleTile: updated: isAutoSolving: $isAutoSolving');
 
-    final status = context.select((PlanetPuzzleBloc bloc) => bloc.state.status);
-    final hasStarted = status == PlanetPuzzleStatus.started;
+    final status = context.select((GamePuzzleBloc bloc) => bloc.state.status);
+    final hasStarted = status == GamePuzzleStatus.started;
 
     final movementDuration =
-        status == PlanetPuzzleStatus.loading ? AppConstants.kMS800 : AppConstants.kMS350;
+        status == GamePuzzleStatus.loading ? AppConstants.kMS800 : AppConstants.kMS350;
 
     final canPress = hasStarted && puzzleIncomplete && !isAutoSolving;
 

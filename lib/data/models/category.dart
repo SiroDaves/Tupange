@@ -14,7 +14,6 @@ class Category {
   String? title;
   String? description;
   String? image;
-  bool? isAsset;
   String createdAt;
 
   Category({
@@ -23,7 +22,6 @@ class Category {
     this.title,
     this.description,
     this.image,
-    this.isAsset,
     String? createdAt,
   })  : createdAt = createdAt ?? DateTime.now().toIso8601String();
 

@@ -5,12 +5,12 @@ import 'package:rive/rive.dart';
 
 import '../../../core/utils/app_utils.dart';
 import '../../../core/utils/constants/app_constants.dart';
-import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../blocs/game/game_puzzle_bloc.dart';
 
 part 'puzzle_init_state.dart';
 
 class PuzzleInitCubit extends Cubit<PuzzleInitState> {
-  final PlanetPuzzleBloc _planetPuzzleBloc;
+  final GamePuzzleBloc _planetPuzzleBloc;
   final int _puzzleSize;
 
   int get _lastTileKey => _puzzleSize * _puzzleSize - 1;
@@ -61,7 +61,7 @@ class PuzzleInitCubit extends Cubit<PuzzleInitState> {
 
   void onInit(int tileKey) {
     final hasStarted =
-        _planetPuzzleBloc.state.status == PlanetPuzzleStatus.started;
+        _planetPuzzleBloc.state.status == GamePuzzleStatus.started;
 
     AppUtils.logger('puzzle_init_cubit: onInit: hasStarted: $hasStarted');
 

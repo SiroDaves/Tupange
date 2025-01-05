@@ -6,7 +6,7 @@ import '../../../core/utils/app_utils.dart';
 import '../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
-import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../blocs/game/game_puzzle_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
 import '../animated_text.dart';
 import '../stylized_text.dart';
@@ -18,7 +18,7 @@ class PuzzleStats extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.select((PuzzleBloc bloc) => bloc.state);
 
-    return BlocListener<PlanetPuzzleBloc, PlanetPuzzleState>(
+    return BlocListener<GamePuzzleBloc, PlanetPuzzleState>(
       listener: (context, state) {
         if (!state.isCountdownRunning) {
           return;
@@ -29,7 +29,7 @@ class PuzzleStats extends StatelessWidget {
           context.read<AudioPlayerCubit>().beginCountDown();
         }
 
-        if (state.status == PlanetPuzzleStatus.started) {
+        if (state.status == GamePuzzleStatus.started) {
           context.read<TimerBloc>().add(const TimerStarted());
         }
 
@@ -69,7 +69,7 @@ class _PuzzleStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.select((PlanetPuzzleBloc bloc) => bloc.state);
+    final state = context.select((GamePuzzleBloc bloc) => bloc.state);
     final secondsElapsed = context.select(
       (TimerBloc bloc) => bloc.state.secondsElapsed,
     );
@@ -96,7 +96,7 @@ class _PuzzleStats extends StatelessWidget {
       }
     }
 
-    if (state.status == PlanetPuzzleStatus.notStarted) {
+    if (state.status == GamePuzzleStatus.notStarted) {
       textToShow = context.l10n.notStarted;
     }
 

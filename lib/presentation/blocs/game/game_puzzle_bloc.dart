@@ -5,17 +5,17 @@ import 'package:equatable/equatable.dart';
 
 import '../../../data/models/ticker.dart';
 
-part 'planet_puzzle_event.dart';
-part 'planet_puzzle_state.dart';
+part 'game_puzzle_event.dart';
+part 'game_puzzle_state.dart';
 
-class PlanetPuzzleBloc extends Bloc<PlanetPuzzleEvent, PlanetPuzzleState> {
+class GamePuzzleBloc extends Bloc<GamePuzzleEvent, PlanetPuzzleState> {
   final int secondsToBegin;
 
   final Ticker _ticker;
 
   StreamSubscription<int>? _tickerSubscription;
 
-  PlanetPuzzleBloc({
+  GamePuzzleBloc({
     required this.secondsToBegin,
     required Ticker ticker,
   })  : _ticker = ticker,

@@ -14,7 +14,6 @@ class Game {
   int? category;
   String? title;
   String? image;
-   bool? isAsset;
   String? createdAt;
 
   Game({
@@ -22,7 +21,6 @@ class Game {
     this.category,
     this.title,
     this.image,
-    this.isAsset,
     this.createdAt,
   });
 

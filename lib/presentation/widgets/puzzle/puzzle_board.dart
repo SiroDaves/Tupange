@@ -9,7 +9,7 @@ import '../../../core/utils/app_utils.dart';
 import '../../../core/utils/constants/app_constants.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
-import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../blocs/game/game_puzzle_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
@@ -37,7 +37,7 @@ class _PuzzleBoardState extends State<PuzzleBoard> {
 
     Timer(AppConstants.kMS300, () {
       // after dialog finishes, reset the puzzle to initial state
-      context.read<PlanetPuzzleBloc>().add(const PlanetPuzzleResetEvent());
+      context.read<GamePuzzleBloc>().add(const PlanetPuzzleResetEvent());
     });
 
     // show dialog
