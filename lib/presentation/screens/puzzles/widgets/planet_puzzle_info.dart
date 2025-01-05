@@ -11,7 +11,7 @@ import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../../widgets/animated_text.dart';
 import '../../../widgets/stylized_icon.dart';
 import '../../../widgets/stylized_text.dart';
-import '../../../cubits/puzzles/planet_fact_cubit.dart';
+import '../../../cubits/puzzle_fact/planet_fact_cubit.dart';
 
 class PlanetPuzzleInfo extends StatelessWidget {
   const PlanetPuzzleInfo({Key? key}) : super(key: key);
