@@ -11,6 +11,7 @@ class HomeViewState extends State<HomeView> {
   Size get size => MediaQuery.of(context).size;
   List<Category> categories = [];
   List<Game> games = [];
+  
   @override
   void initState() {
     super.initState();
