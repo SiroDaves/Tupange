@@ -37,6 +37,10 @@ abstract class PuzzleUtils {
     ];
   }
 
+  static Image getImagePath(String image) {
+    return Image.asset('images/$image.jpg');
+  }
+
   static Path getPuzzlePath(
     Size size,
     int puzzleSize,

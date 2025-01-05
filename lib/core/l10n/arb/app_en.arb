@@ -246,13 +246,13 @@
     "@congratsSubTitle": {
         "description": "Puzzle completion sub title"
     },
-    "successMessage": "You have successfully put together our {planetName} {extraText}",
+    "successMessage": "You have successfully put together our {title} {extraText}",
     "@successMessage": {
         "description": "Puzzle completion success message",
         "placeholders": {
-            "planetName": {
+            "title": {
                 "type": "String",
-                "example": "Earth"
+                "example": "Game Title"
             },
             "extraText": {
                 "type": "String",

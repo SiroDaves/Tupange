@@ -6,6 +6,7 @@ import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../core/utils/app_utils.dart';
+import '../../../core/utils/puzzle_utils.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
@@ -80,7 +81,7 @@ class PuzzleCompletionDialogSmall extends StatelessWidget {
           offset: Offset(xOffset, 0.0),
           child: Transform.scale(
             scale: 1.5,
-            child: Image.asset(game.image!),
+            child: PuzzleUtils.getImagePath(game.image!),
           ),
         ),
 
