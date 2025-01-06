@@ -11,7 +11,7 @@ import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/planet.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../cubits/level_selection/level_selection_cubit.dart';
-import '../../../cubits/game_selection/puzzle_selection_cubit.dart';
+import '../../../cubits/game_selection/game_selection_cubit.dart';
 import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../../widgets/stylized_button.dart';
 import '../../../widgets/stylized_container.dart';

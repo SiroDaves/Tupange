@@ -1,4 +1,4 @@
-part of 'puzzle_selection_cubit.dart';
+part of 'game_selection_cubit.dart';
 
 abstract class PuzzleSelectionState extends Equatable {
   const PuzzleSelectionState();

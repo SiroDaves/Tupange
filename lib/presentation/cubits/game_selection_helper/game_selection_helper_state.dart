@@ -1,4 +1,4 @@
-part of 'puzzle_selection_helper_cubit.dart';
+part of 'game_selection_helper_cubit.dart';
 
 class PuzzleSelectionHelperState extends Equatable {
   final bool isPaused;

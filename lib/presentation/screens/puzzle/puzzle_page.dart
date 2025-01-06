@@ -9,7 +9,7 @@ import '../../../data/models/ticker.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/puzzles/planet_puzzle_bloc.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
-import '../../cubits/game_selection/puzzle_selection_cubit.dart';
+import '../../cubits/game_selection/game_selection_cubit.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
 import '../../cubits/puzzle_fact/planet_fact_cubit.dart';
