@@ -12,7 +12,7 @@ import '../../../../core/utils/constants/app_constants.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
 import '../../../cubits/level_selection/level_selection_cubit.dart';
-import '../../../cubits/puzzle_selection/puzzle_selection_cubit.dart';
+import '../../../cubits/game_selection/puzzle_selection_cubit.dart';
 import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../layout/planet_puzzle_layout_delegate.dart';
 import 'planet_puzzle_completion_dialog.dart';
