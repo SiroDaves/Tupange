@@ -3,11 +3,11 @@ import 'dart:math';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../cubits/audio/audio_player_cubit.dart';
 import '../../../core/utils/app_utils.dart';
 import '../../../data/models/position.dart';
 import '../../../data/models/puzzle.dart';
 import '../../../data/models/tile.dart';
+import '../../cubits/audio/audio_player_cubit.dart';
 import '../../widgets/shake_animator.dart';
 
 part 'puzzle_event.dart';

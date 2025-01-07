@@ -5,8 +5,8 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../core/helpers/audio_player.dart';
-import '../../../core/utils/constants/app_assets.dart';
 import '../../../core/utils/app_utils.dart';
+import '../../../core/utils/constants/app_assets.dart';
 import '../../../core/utils/constants/app_constants.dart';
 import '../../blocs/audio/audio_control_bloc.dart';
 

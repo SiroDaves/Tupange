@@ -2,12 +2,12 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/di/injectable.dart';
-import '../../../domain/repository/prefs_repository.dart';
 import '../../../core/utils/constants/pref_constants.dart';
-import '../../../data/sources/remote/home_repository.dart';
 import '../../../data/models/category.dart';
 import '../../../data/models/game.dart';
+import '../../../data/sources/remote/home_repository.dart';
 import '../../../domain/repository/database_repository.dart';
+import '../../../domain/repository/prefs_repository.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
