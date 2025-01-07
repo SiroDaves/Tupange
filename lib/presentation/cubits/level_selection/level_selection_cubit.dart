@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../data/models/puzzle.dart';
 import '../../../core/utils/constants/app_constants.dart';
+import '../../../data/models/puzzle.dart';
 
 part 'level_selection_state.dart';
 

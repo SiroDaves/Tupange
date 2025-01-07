@@ -4,9 +4,9 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/utils/constants/app_constants.dart';
 import '../../../data/models/orbit.dart';
 import '../../../data/models/planet.dart';
-import '../../../core/utils/constants/app_constants.dart';
 
 part 'planet_orbital_animation_state.dart';
 

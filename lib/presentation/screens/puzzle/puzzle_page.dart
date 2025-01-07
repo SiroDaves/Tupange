@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../cubits/audio/audio_player_cubit.dart';
-import '../../blocs/timer/timer_bloc.dart';
 import '../../../core/utils/app_utils.dart';
 import '../../../data/models/puzzle.dart';
 import '../../../data/models/ticker.dart';
+import '../../blocs/timer/timer_bloc.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
@@ -19,7 +19,7 @@ import 'widgets/puzzle_header.dart';
 import 'widgets/puzzle_sections.dart';
 
 class PuzzlePage extends StatelessWidget {
-  const PuzzlePage({Key? key}) : super(key: key);
+  const PuzzlePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +75,7 @@ class PuzzlePage extends StatelessWidget {
 }
 
 class _PuzzleView extends StatelessWidget {
-  const _PuzzleView({Key? key}) : super(key: key);
+  const _PuzzleView();
 
   @override
   Widget build(BuildContext context) {
