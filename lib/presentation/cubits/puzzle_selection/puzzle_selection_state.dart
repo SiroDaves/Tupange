@@ -1,15 +1,15 @@
 part of 'puzzle_selection_cubit.dart';
 
-abstract class PlanetSelectionState extends Equatable {
-  const PlanetSelectionState();
+abstract class PuzzleSelectionState extends Equatable {
+  const PuzzleSelectionState();
 
   @override
   List<Object> get props => [];
 }
 
-class NoPlanetSelected extends PlanetSelectionState {}
+class NoPlanetSelected extends PuzzleSelectionState {}
 
-class PlanetSelected extends PlanetSelectionState {
+class PlanetSelected extends PuzzleSelectionState {
   final Planet planet;
 
   const PlanetSelected({required this.planet});

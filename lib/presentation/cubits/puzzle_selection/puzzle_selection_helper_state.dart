@@ -1,14 +1,14 @@
 part of 'puzzle_selection_helper_cubit.dart';
 
-class PlanetSelectionHelperState extends Equatable {
+class PuzzleSelectionHelperState extends Equatable {
   final bool isPaused;
 
-  const PlanetSelectionHelperState({this.isPaused = false});
+  const PuzzleSelectionHelperState({this.isPaused = false});
 
-  PlanetSelectionHelperState copyWith({
+  PuzzleSelectionHelperState copyWith({
     bool? isPaused,
   }) {
-    return PlanetSelectionHelperState(
+    return PuzzleSelectionHelperState(
       isPaused: isPaused ?? this.isPaused,
     );
   }

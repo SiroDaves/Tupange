@@ -33,7 +33,7 @@ class HomeKeyboardHandlerState extends State<HomeKeyboardHandler> {
   }
 
   void openPlanetAt(int digit) =>
-      context.read<PlanetSelectionCubit>().onPlanetSelected(
+      context.read<PuzzleSelectionCubit>().onPlanetSelected(
             widget.orbits[digit - 1].planet,
           );
 
@@ -49,7 +49,7 @@ class HomeKeyboardHandlerState extends State<HomeKeyboardHandler> {
       final physicalKey = event.data.physicalKey;
 
       if (physicalKey == PhysicalKeyboardKey.space) {
-        context.read<PlanetSelectionHelperCubit>().onPlanetMovementToggle();
+        context.read<PuzzleSelectionHelperCubit>().onPlanetMovementToggle();
       } else if (physicalKey == PhysicalKeyboardKey.arrowLeft) {
         context.read<LevelSelectionCubit>().onLevelDecrease();
       } else if (physicalKey == PhysicalKeyboardKey.arrowRight) {

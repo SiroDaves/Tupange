@@ -5,12 +5,12 @@ import '../planet_orbital/planet_orbital_animation_cubit.dart';
 
 part 'puzzle_selection_helper_state.dart';
 
-class PlanetSelectionHelperCubit extends Cubit<PlanetSelectionHelperState> {
+class PuzzleSelectionHelperCubit extends Cubit<PuzzleSelectionHelperState> {
   final PlanetOrbitalAnimationCubit planetAnimationCubit;
 
-  PlanetSelectionHelperCubit({
+  PuzzleSelectionHelperCubit({
     required this.planetAnimationCubit,
-  }) : super(const PlanetSelectionHelperState());
+  }) : super(const PuzzleSelectionHelperState());
 
   void onPlanetMovementToggle() {
     final newIsPaused = !state.isPaused;

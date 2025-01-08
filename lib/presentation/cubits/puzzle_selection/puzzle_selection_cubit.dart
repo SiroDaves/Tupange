@@ -10,11 +10,11 @@ import '../level_selection/level_selection_cubit.dart';
 
 part 'puzzle_selection_state.dart';
 
-class PlanetSelectionCubit extends Cubit<PlanetSelectionState> {
+class PuzzleSelectionCubit extends Cubit<PuzzleSelectionState> {
   final LevelSelectionCubit _levelSelectionCubit;
   final BuildContext _context;
 
-  PlanetSelectionCubit(this._levelSelectionCubit, this._context)
+  PuzzleSelectionCubit(this._levelSelectionCubit, this._context)
       : super(NoPlanetSelected());
 
   late Planet _planet;
@@ -25,7 +25,7 @@ class PlanetSelectionCubit extends Cubit<PlanetSelectionState> {
     _planet = planet;
 
     AppUtils.logger(
-      'PlanetSelectionCubit tapped: $planet: level: ${_levelSelectionCubit.state.level}',
+      'PuzzleSelectionCubit tapped: $planet: level: ${_levelSelectionCubit.state.level}',
     );
 
     final page = await AppUtils.buildPageAsync(
