@@ -6,7 +6,7 @@ import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../../core/utils/app_utils.dart';
-import '../../../cubits/planet_selection/planet_selection_cubit.dart';
+import '../../../cubits/puzzle_selection/puzzle_selection_cubit.dart';
 import '../../../cubits/puzzle/helper/puzzle_helper_cubit.dart';
 import '../../../widgets/animated_text.dart';
 import '../../../widgets/stylized_icon.dart';

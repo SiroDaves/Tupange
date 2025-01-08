@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 
 import '../planet_orbital/planet_orbital_animation_cubit.dart';
 
-part 'planet_selection_helper_state.dart';
+part 'puzzle_selection_helper_state.dart';
 
 class PlanetSelectionHelperCubit extends Cubit<PlanetSelectionHelperState> {
   final PlanetOrbitalAnimationCubit planetAnimationCubit;

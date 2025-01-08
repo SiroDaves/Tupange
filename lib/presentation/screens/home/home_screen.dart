@@ -12,8 +12,8 @@ import '../../blocs/home/home_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/planet_orbital/planet_orbital_animation_cubit.dart';
-import '../../cubits/planet_selection/planet_selection_cubit.dart';
-import '../../cubits/planet_selection/planet_selection_helper_cubit.dart';
+import '../../cubits/puzzle_selection/puzzle_selection_cubit.dart';
+import '../../cubits/puzzle_selection/puzzle_selection_helper_cubit.dart';
 import '../../widgets/controls/audio_control.dart';
 import '../../widgets/progress/custom_snackbar.dart';
 import '../../widgets/progress/general_progress.dart';
@@ -39,14 +39,14 @@ class HomeScreen extends StatelessWidget {
         ),
         BlocProvider(create: (_) => LevelSelectionCubit()),
         BlocProvider(
-          create: (c) => PlanetSelectionCubit(
-            c.read<LevelSelectionCubit>(),
+          create: (ctx) => PlanetSelectionCubit(
+            ctx.read<LevelSelectionCubit>(),
             context,
           ),
         ),
         BlocProvider(
-          create: (c) => PlanetSelectionHelperCubit(
-            planetAnimationCubit: c.read<PlanetOrbitalAnimationCubit>(),
+          create: (ctx) => PlanetSelectionHelperCubit(
+            planetAnimationCubit: ctx.read<PlanetOrbitalAnimationCubit>(),
           ),
         ),
       ],

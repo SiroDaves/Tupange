@@ -1,4 +1,4 @@
-part of 'planet_selection_cubit.dart';
+part of 'puzzle_selection_cubit.dart';
 
 abstract class PlanetSelectionState extends Equatable {
   const PlanetSelectionState();

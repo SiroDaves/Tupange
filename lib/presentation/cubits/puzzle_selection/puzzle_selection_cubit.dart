@@ -8,7 +8,7 @@ import '../../../core/utils/app_utils.dart';
 import '../../screens/puzzle/puzzle_page.dart';
 import '../level_selection/level_selection_cubit.dart';
 
-part 'planet_selection_state.dart';
+part 'puzzle_selection_state.dart';
 
 class PlanetSelectionCubit extends Cubit<PlanetSelectionState> {
   final LevelSelectionCubit _levelSelectionCubit;

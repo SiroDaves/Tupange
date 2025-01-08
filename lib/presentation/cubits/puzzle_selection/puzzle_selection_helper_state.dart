@@ -1,4 +1,4 @@
-part of 'planet_selection_helper_cubit.dart';
+part of 'puzzle_selection_helper_cubit.dart';
 
 class PlanetSelectionHelperState extends Equatable {
   final bool isPaused;
