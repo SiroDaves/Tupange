@@ -24,7 +24,8 @@ import 'widgets/header_widget.dart';
 import 'widgets/info_widget.dart';
 import 'widgets/menu_carousel.dart';
 
-part 'home_views.dart';
+part 'home_view.dart';
+part 'home_details.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -61,93 +62,6 @@ class HomeScreen extends StatelessWidget {
           child: HomeView(),
         ),
       ),
-    );
-  }
-}
-
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
-
-  @override
-  State<HomeView> createState() => HomeViewState();
-}
-
-class HomeViewState extends State<HomeView> {
-  Size get size => MediaQuery.of(context).size;
-
-  @override
-  void initState() {
-    super.initState();
-    context.read<AudioPlayerCubit>().playThemeMusic();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocConsumer<HomeBloc, HomeState>(
-      listener: (context, state) {
-        if (state is HomeFailureState) {
-          CustomSnackbar.show(context, state.feedback);
-        }
-      },
-      builder: (context, state) {
-        return SizedBox.fromSize(
-          size: size,
-          child: state.maybeWhen(
-            orElse: () => const SizedBox(),
-            failure: (feedback) => EmptyState(
-              //title: l10n.habitChooserFailure,
-              showRetry: true,
-              //onRetry: () => bloc.add(const FetchData()),
-            ),
-            loading: () => LoadingProgress(),
-            fetched: (categories, games) => Stack(
-              children: [
-                ResponsiveLayoutBuilder(
-                  small: (_, Widget? child) => HomeSmall(child: child!),
-                  medium: (_, Widget? child) => HomeMedium(child: child!),
-                  large: (_, Widget? child) => child!,
-                  child: (_) => HomeDetails(
-                    categories: categories,
-                    games: games,
-                  ),
-                ),
-                const HeaderWidget(),
-                ResponsiveLayoutBuilder(
-                  small: (_, __) => const SizedBox.shrink(),
-                  medium: (_, __) => const SizedBox.shrink(),
-                  large: (_, __) => const Align(
-                    alignment: AppConstants.kFOTopRight,
-                    child: AudioControl(),
-                  ),
-                ),
-                /*const Align(
-            alignment: AppConstants.kFOBottomRight,
-            child: PlanetAnimationToggleButton(),
-          ),*/
-                ResponsiveLayoutBuilder(
-                  small: (_, __) => const Align(
-                    alignment: AppConstants.kFOBottomLeft,
-                    child: InfoButton(),
-                  ),
-                  medium: (_, __) => const Align(
-                    alignment: AppConstants.kFOTopLeft,
-                    child: InfoButton(),
-                  ),
-                  large: (_, __) => const Align(
-                    alignment: AppConstants.kFOTopLeft,
-                    child: InfoButton(),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
     );
   }
 }
