@@ -3,4 +3,5 @@ class RouteNames {
 
   static const splash = 'splash';
   static const home = 'home';
+  static const puzzle = 'puzzle';
 }
