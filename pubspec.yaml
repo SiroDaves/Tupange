@@ -64,6 +64,6 @@ flutter:
     - assets/images/planets/
 
   fonts:
-    - family: Freshman
+    - family: Comic Sans MS
       fonts:
-        - asset: assets/fonts/freshman.ttf
+        - asset: assets/fonts/ComicSansMS.ttf
