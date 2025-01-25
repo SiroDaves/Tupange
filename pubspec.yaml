@@ -7,39 +7,39 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
-  animated_text_kit: ^4.2.3
-  audioplayers: ^6.4.0
-  bloc: ^9.0.0
-  carousel_slider: ^5.0.0
-  cupertino_icons: ^1.0.8
-  equatable: ^2.0.7
-  floor: ^1.5.0
+  animated_text_kit: ^4.2.3 # Pre-built animated text animations like typewriter and fade
+  audioplayers: ^6.4.0 # Play audio files from assets, files, or URLs
+  bloc: ^9.0.0 # Core implementation of the BLoC (Business Logic Component) pattern
+  carousel_slider: ^5.0.0 # Create carousels and image sliders
+  cupertino_icons: ^1.0.8 # iOS-style icons for Cupertino widgets
+  equatable: ^2.0.7 # Makes value comparisons easier for Dart objects
+  floor: ^1.5.0 # SQLite persistence layer using DAO and annotation processing
   flutter:
-    sdk: flutter
-  flutter_bloc: ^9.1.0
-  flutter_dotenv: ^5.2.1
+    sdk: flutter # Core Flutter SDK
+  flutter_bloc: ^9.1.0 # Flutter widgets and extensions for using BLoC
+  flutter_dotenv: ^5.2.1 # Load environment variables from a `.env` file
   flutter_localizations:
-    sdk: flutter
-  font_awesome_flutter: ^10.8.0
-  freezed_annotation: ^2.4.4 # Annotations for code generation with Freezed
-  gap: ^3.0.1
-  get_it: ^8.0.2 # Dependency injection container
-  injectable: ^2.5.0 # Code generator for dependency injection
-  intl: ^0.19.0
-  json_annotation: ^4.9.0 # Annotations for JSON serialization/deserialization
-  loading_indicator: ^3.1.1
-  path: ^1.9.0
-  path_provider: ^2.1.5
-  rive: ^0.13.20
-  shared_preferences: ^2.3.3 # Local key-value storage for simple data persistence
-  sqflite: ^2.4.1
-  styled_widget: ^0.4.1
-  supabase_auth_ui: ^0.5.4
-  supabase_flutter: ^2.8.4
-  textstyle_extensions: ^2.0.0-nullsafety
-  universal_html: ^2.2.4
-  url_launcher: ^6.3.1
-  uuid: ^4.5.1
+    sdk: flutter # Enables internationalization support
+  font_awesome_flutter: ^10.8.0 # Use Font Awesome icons in Flutter
+  freezed_annotation: ^2.4.4 # Annotations for use with the `freezed` code generator
+  gap: ^3.0.1 # Adds customizable space between widgets
+  get_it: ^8.0.2 # Simple service locator for dependency injection
+  injectable: ^2.5.0 # Code generator for configuring `get_it` DI
+  intl: ^0.19.0 # Internationalization, formatting for dates/numbers/messages
+  json_annotation: ^4.9.0 # Annotations for JSON serialization with `json_serializable`
+  loading_indicator: ^3.1.1 # Collection of animated loading indicators
+  path: ^1.9.0 # Utilities for handling file system paths
+  path_provider: ^2.1.5 # Platform-agnostic paths to commonly used directories
+  rive: ^0.13.20 # Render and control Rive animations
+  shared_preferences: ^2.3.3 # Local key-value storage for small data
+  sqflite: ^2.4.1 # SQLite plugin for Flutter
+  styled_widget: ^0.4.1 # Utility to style widgets using method chaining
+  supabase_auth_ui: ^0.5.4 # Prebuilt UI widgets for Supabase authentication
+  supabase_flutter: ^2.8.4 # Supabase integration for Flutter apps
+  textstyle_extensions: ^2.0.0-nullsafety # Utility extensions for working with `TextStyle`
+  universal_html: ^2.2.4 # HTML library for Flutter and Dart (web + native)
+  url_launcher: ^6.3.1 # Launch URLs in a browser or another app
+  uuid: ^4.5.1 # Generate UUIDs (v1, v4, etc.)
 
 dev_dependencies:
   build_runner: ^2.4.13 # Tool for generating code
