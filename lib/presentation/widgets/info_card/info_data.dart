@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../common/utils/app_localizationsx.dart';
+import '../../../core/utils/app_localizationsx.dart';
 import 'info_pair.dart';
 
 class InfoData {

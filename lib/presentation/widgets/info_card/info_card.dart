@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../common/utils/helpers/modal_helpers.dart';
+import '../../../core/utils/helpers/modal_helpers.dart';
 import '../layout/responsive_layout_builder.dart';
 import '../stylized_icon.dart';
 import '../stylized_text.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../common/utils/constants/app_dimens.dart';
+import '../../../core/utils/constants/app_dimens.dart';
 
 /// Represents the layout size passed to [ResponsiveLayoutBuilder.child].
 enum ResponsiveLayoutSize {

@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
 import '../cubits/audio/audio_player_cubit.dart';
-import '../../common/utils/app_localizationsx.dart';
-import '../../common/utils/constants/app_constants.dart';
-import '../../common/utils/constants/app_assets.dart';
-import '../../common/utils/constants/app_dimens.dart';
-import '../../common/utils/utils.dart';
+import '../../core/utils/app_localizationsx.dart';
+import '../../core/utils/constants/app_constants.dart';
+import '../../core/utils/constants/app_assets.dart';
+import '../../core/utils/constants/app_dimens.dart';
+import '../../core/utils/utils.dart';
 import '../widgets/layout/responsive_layout_builder.dart';
 import '../widgets/loading.dart';
 import '../widgets/stylized_button.dart';
@@ -16,7 +16,7 @@ import '../widgets/stylized_text.dart';
 import 'menu/menu_screen.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({Key? key}) : super(key: key);
+  const StartScreen({super.key});
 
   void nextAction(BuildContext context) async {
     context.read<AudioPlayerCubit>().playThemeMusic();
@@ -120,11 +120,11 @@ class StartScreenSmall extends StatelessWidget {
   final VoidCallback onStartPressed;
 
   const StartScreenSmall({
-    Key? key,
+    super.key,
     required this.isReady,
     required this.isInitialized,
     required this.onStartPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -135,8 +135,8 @@ class StartScreenSmall extends StatelessWidget {
         children: [
           // show asset
           Expanded(
-            child: Image.asset(AppAssets.appIcon),
             flex: 5,
+            child: Image.asset(AppAssets.appIcon),
           ),
 
           // show rest body
@@ -161,12 +161,12 @@ class MainBody extends StatelessWidget {
   final VoidCallback onPressed;
 
   const MainBody({
-    Key? key,
+    super.key,
     this.isLarge = false,
     required this.isInitialized,
     required this.isReady,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

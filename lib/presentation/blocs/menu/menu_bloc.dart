@@ -5,8 +5,8 @@ import 'package:equatable/equatable.dart';
 
 import '../../../data/models/game.dart';
 import '../../../data/models/categories/planet.dart';
-import '../../../common/utils/constants/app_assets.dart';
-import '../../../common/utils/constants/app_dimens.dart';
+import '../../../core/utils/constants/app_assets.dart';
+import '../../../core/utils/constants/app_dimens.dart';
 
 part 'menu_event.dart';
 part 'menu_state.dart';

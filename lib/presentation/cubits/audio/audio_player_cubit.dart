@@ -4,10 +4,10 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../common/utils/app_logger.dart';
-import '../../../common/utils/constants/app_assets.dart';
-import '../../../common/utils/constants/app_dimens.dart';
-import '../../../common/utils/helpers/audio_player.dart';
+import '../../../core/utils/app_logger.dart';
+import '../../../core/utils/constants/app_assets.dart';
+import '../../../core/utils/constants/app_dimens.dart';
+import '../../../core/utils/helpers/audio_player.dart';
 import '../../blocs/audio/audio_control_bloc.dart';
 
 part 'audio_player_state.dart';

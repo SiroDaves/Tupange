@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/utils/constants/app_constants.dart';
+import '../../core/utils/constants/app_constants.dart';
 
 class AppThemeData {
   AppThemeData._();

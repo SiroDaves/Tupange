@@ -5,7 +5,7 @@ import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/theme/theme_bloc.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../../data/models/tile.dart';
-import '../../../common/utils/app_logger.dart';
+import '../../../core/utils/app_logger.dart';
 import '../../widgets/keyboard_handlers/puzzle_keyboard_handler.dart';
 
 class PuzzleBoard extends StatelessWidget {

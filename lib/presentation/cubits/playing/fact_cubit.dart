@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../common/utils/constants/app_dimens.dart';
+import '../../../core/utils/constants/app_dimens.dart';
 
 part 'fact_state.dart';
 

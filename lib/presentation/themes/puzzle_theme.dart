@@ -1,4 +1,4 @@
-import '../../presentation/widgets/layout/puzzle_layout.dart';
+import '../widgets/layout/puzzle_layout.dart';
 
 abstract class PuzzleTheme {
   const PuzzleTheme();

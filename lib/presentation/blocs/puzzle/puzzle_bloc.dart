@@ -6,7 +6,7 @@ import 'package:equatable/equatable.dart';
 import '../../../data/models/position.dart';
 import '../../../data/models/puzzle.dart';
 import '../../../data/models/tile.dart';
-import '../../../common/utils/app_logger.dart';
+import '../../../core/utils/app_logger.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
 import '../../widgets/shake_animator.dart';
 

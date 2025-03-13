@@ -6,8 +6,8 @@ import '../presentation/cubits/puzzle/puzzle_helper_cubit.dart';
 import '../data/models/position.dart';
 import '../data/models/solver_tile.dart';
 import '../data/models/tile.dart';
-import '../common/utils/app_logger.dart';
-import '../common/utils/constants/app_dimens.dart';
+import 'utils/app_logger.dart';
+import 'utils/constants/app_dimens.dart';
 
 enum Direction { left, right, up, down }
 

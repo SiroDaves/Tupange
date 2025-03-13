@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../cubits/audio/audio_player_cubit.dart';
-import '../../common/utils/constants/app_dimens.dart';
+import '../../core/utils/constants/app_dimens.dart';
 
 class StylizedButton extends StatelessWidget {
   final Widget child;

@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import '../../common/utils/constants/app_dimens.dart';
+import '../../core/utils/constants/app_dimens.dart';
 
 const _shakeAnimationDuration = AppDimens.kMS400;
 const double _offsetAmount = 8.0;

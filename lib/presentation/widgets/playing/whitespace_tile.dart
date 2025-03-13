@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/playing/playing_bloc.dart';
 import '../../../data/models/tile.dart';
-import '../../../common/utils/app_logger.dart';
+import '../../../core/utils/app_logger.dart';
 import 'playing_tile.dart';
 
 class WhitespaceTile extends StatelessWidget {

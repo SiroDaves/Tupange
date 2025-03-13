@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../common/utils/constants/app_dimens.dart';
+import '../../core/utils/constants/app_dimens.dart';
 import 'layout/responsive_layout_builder.dart';
 import 'stylized_button.dart';
 import 'stylized_container.dart';

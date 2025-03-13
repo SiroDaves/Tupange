@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../data/models/puzzle.dart';
-import '../../../common/utils/app_localizationsx.dart';
+import '../../../core/utils/app_localizationsx.dart';
 import '../layout/responsive_layout_builder.dart';
 import '../stylized_button.dart';
 import '../stylized_container.dart';

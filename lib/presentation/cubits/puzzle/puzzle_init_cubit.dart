@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common/utils/app_logger.dart';
-import '../../../common/utils/constants/app_dimens.dart';
+import '../../../core/utils/app_logger.dart';
+import '../../../core/utils/constants/app_dimens.dart';
 import '../../blocs/playing/playing_bloc.dart';
 
 part 'puzzle_init_state.dart';

@@ -1,6 +1,6 @@
-import '../../common/utils/constants/app_assets.dart';
-import '../../presentation/widgets/layout/puzzle_layout.dart';
-import '../../presentation/widgets/layout/puzzle_layout_delegate.dart';
+import '../../core/utils/constants/app_assets.dart';
+import '../widgets/layout/puzzle_layout.dart';
+import '../widgets/layout/puzzle_layout_delegate.dart';
 import 'puzzle_theme.dart';
 
 abstract class CountyTheme extends PuzzleTheme {

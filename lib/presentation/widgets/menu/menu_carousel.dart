@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/models/game.dart';
-import '../../../common/utils/utils.dart';
+import '../../../core/utils/utils.dart';
 import '../stylized_text.dart';
 
 class MenuCarousel extends StatelessWidget {

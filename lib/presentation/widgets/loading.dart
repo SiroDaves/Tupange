@@ -4,8 +4,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import '../../data/models/position.dart';
-import '../../common/utils/constants/app_assets.dart';
-import '../../common/utils/constants/app_dimens.dart';
+import '../../core/utils/constants/app_assets.dart';
+import '../../core/utils/constants/app_dimens.dart';
 
 const Duration _animationTick = AppDimens.kMS200;
 const int _fallOffset = 2;

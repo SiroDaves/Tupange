@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/utils/constants/app_dimens.dart';
+import '../../core/utils/constants/app_dimens.dart';
 
 class AppAnimatedWidget extends StatefulWidget {
   final Widget child;

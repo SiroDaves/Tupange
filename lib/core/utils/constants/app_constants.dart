@@ -5,13 +5,13 @@ import '../../../data/models/categories/planet.dart';
 import '../../../data/models/categories/president.dart';
 import '../../../data/models/categories/vehicle.dart';
 import '../../../data/models/puzzle.dart';
-import '../../../core/themes/animal_theme.dart';
-import '../../../core/themes/country_theme.dart';
-import '../../../core/themes/county_theme.dart';
-import '../../../core/themes/planet_theme.dart';
-import '../../../core/themes/president_theme.dart';
-import '../../../core/themes/puzzle_theme.dart';
-import '../../../core/themes/vehicle_theme.dart';
+import '../../../presentation/themes/animal_theme.dart';
+import '../../../presentation/themes/country_theme.dart';
+import '../../../presentation/themes/county_theme.dart';
+import '../../../presentation/themes/planet_theme.dart';
+import '../../../presentation/themes/president_theme.dart';
+import '../../../presentation/themes/puzzle_theme.dart';
+import '../../../presentation/themes/vehicle_theme.dart';
 
 class AppConstants {
   AppConstants._();

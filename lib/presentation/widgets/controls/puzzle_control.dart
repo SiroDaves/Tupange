@@ -7,7 +7,7 @@ import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../cubits/puzzle/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle/puzzle_init_cubit.dart';
-import '../../../common/utils/app_localizationsx.dart';
+import '../../../core/utils/app_localizationsx.dart';
 import '../layout/responsive_layout_builder.dart';
 import '../stylized_button.dart';
 import '../stylized_container.dart';

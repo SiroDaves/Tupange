@@ -6,8 +6,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'presentation/blocs/audio/audio_control_bloc.dart';
 import 'presentation/cubits/audio/audio_player_cubit.dart';
-import 'core/themes/theme_data.dart';
-import 'common/utils/constants/app_constants.dart';
+import 'presentation/themes/theme_data.dart';
+import 'core/utils/constants/app_constants.dart';
 import 'presentation/screens/start_screen.dart';
 import 'presentation/widgets/keyboard_handlers/app_keyboard_handler.dart';
 

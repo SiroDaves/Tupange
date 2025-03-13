@@ -6,8 +6,8 @@ import '../../blocs/menu/menu_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/menu/game_selection_cubit.dart';
 import '../../../data/models/game.dart';
-import '../../../common/utils/constants/app_dimens.dart';
-import '../../../common/utils/utils.dart';
+import '../../../core/utils/constants/app_dimens.dart';
+import '../../../core/utils/utils.dart';
 import '../../widgets/menu/menu_carousel.dart';
 import '../../widgets/stylized_text.dart';
 
