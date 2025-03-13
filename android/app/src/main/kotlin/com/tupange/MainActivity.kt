@@ -1,4 +1,4 @@
-package com.example.tupange
+package com.tupange
 
 import io.flutter.embedding.android.FlutterActivity
 
