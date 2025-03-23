@@ -1,0 +1,327 @@
+{
+    "language": "English",
+    "@language": {
+        "description": "The current language"
+    },
+    "appTitle": "Planets",
+    "@appTitle": {
+        "description": "The title of the app"
+    },
+    "loadingScreenReady": "Ready when you are, Captain!",
+    "@loadingScreenReady": {
+        "description": "Ready text shown in Loading screen, after important assets are cached"
+    },
+    "loadingScreenInitializing": "Please wait, initializing...",
+    "@loadingScreenInitializing": {
+        "description": "When caching, show initializing text"
+    },
+    "loadingScreenSubTitle1": "Made with",
+    "@loadingScreenSubTitle1": {
+        "description": "Part of 'Made with <3 powered by Flutter'"
+    },
+    "loadingScreenSubTitle2": "powered by Flutter",
+    "@loadingScreenSubTitle2": {
+        "description": "Part of 'Made with <3 powered by Flutter'"
+    },
+    "start": "Start",
+    "@start": {
+        "description": "Start Button text"
+    },
+    "dashboardHeading": "Tap on a planet to begin",
+    "@dashboardHeading": {
+        "description": "Instruction to start the game"
+    },
+    "easy": "Easy",
+    "@easy": {
+        "description": "Level - easy, for the game"
+    },
+    "medium": "Medium",
+    "@medium": {
+        "description": "Level - medium, for the game"
+    },
+    "hard": "Hard",
+    "@hard": {
+        "description": "Level - hard, for the game"
+    },
+    "appShortcuts": "App Shortcuts",
+    "@appShortcuts": {
+        "description": "Heading for app shortcuts info"
+    },
+    "appShortcutMusic": "Mute/Unmute music",
+    "@appShortcutMusic": {
+        "description": "Music shortcut"
+    },
+    "appShortcutSoundEffect": "Mute/Unmute sound effect",
+    "@appShortcutSoundEffect": {
+        "description": "Sound effect shortcut"
+    },
+    "dashboardShortcuts": "Dashboard Shortcuts",
+    "@dashboardShortcuts": {
+        "description": "Heading for dashboard shortcuts info"
+    },
+    "dashboardShortcutOrbitalAnimation": "Play/Pause planet orbit animation",
+    "@dashboardShortcutOrbitalAnimation": {
+        "description": "Instruction for planet orbital animation"
+    },
+    "dashboardShortcutDiffDec": "Decrease difficulty level",
+    "@dashboardShortcutDiffDec": {
+        "description": "Decrease difficulty level"
+    },
+    "dashboardShortcutDiffInc": "Increase difficulty level",
+    "@dashboardShortcutDiffInc": {
+        "description": "Increase difficulty level"
+    },
+    "dashboardShortcutInfo": "Show this shortcut dialog",
+    "@dashboardShortcutInfo": {
+        "description": "Show shortcut dialog info"
+    },
+    "dashboardShortcutChooseAPlanet": "Choose a Planet",
+    "@dashboardShortcutInfo": {
+        "description": "Choose a planet to begin the puzzle"
+    },
+    "dashboardShortcutClose": "Close dialog",
+    "@dashboardShortcutClose": {
+        "description": "Close dialog shortcut info"
+    },
+    "puzzleShortcuts": "Puzzle Shortcuts",
+    "@puzzleShortcuts": {
+        "description": "Heading for puzzle shortcuts info"
+    },
+    "puzzleShortcutControl": "Start / Auto Solve / Stop",
+    "@puzzleShortcutControl": {
+        "description": "To control the puzzle, i.e. start/stop or to start auto solver"
+    },
+    "puzzleShortcutRestart": "Restart puzzle",
+    "@puzzleShortcutRestart": {
+        "description": "Restart puzzle"
+    },
+    "puzzleShortcutHintVisibility": "Toggle number hint visibility",
+    "@puzzleShortcutHintVisibility": {
+        "description": "Toggling hint visibility"
+    },
+    "whitespaceUp": "Move whitespace up",
+    "@whitespaceUp": {
+        "description": "Move whitespace up"
+    },
+    "whitespaceDown": "Move whitespace down",
+    "@whitespaceDown": {
+        "description": "Move whitespace down"
+    },
+    "whitespaceLeft": "Move whitespace left",
+    "@whitespaceLeft": {
+        "description": "Move whitespace left"
+    },
+    "whitespaceRight": "Move whitespace right",
+    "@whitespaceRight": {
+        "description": "Move whitespace right"
+    },
+    "backToSolarSystem": "Go back to solar system",
+    "@backToSolarSystem": {
+        "description": "Quit puzzle screen and go back to dashboard"
+    },
+    "solarSystem": "Solar System",
+    "@solarSystem": {
+        "description": "Solar System"
+    },
+    "stop": "Stop",
+    "@stop": {
+        "description": "Stop puzzle"
+    },
+    "restart": "Restart",
+    "@restart": {
+        "description": "Restart puzzle"
+    },
+    "autoSolve": "Auto Solve",
+    "@autoSolve": {
+        "description": "Auto solve puzzle"
+    },
+    "getReady": "Get Ready",
+    "@getReady": {
+        "description": "Get Ready puzzle"
+    },
+    "pleaseWait": "Please Wait",
+    "@pleaseWait": {
+        "description": "Please wait puzzle"
+    },
+    "go": "Go!",
+    "@go": {
+        "description": "Go - stats"
+    },
+    "notStarted": "Not Started",
+    "@notStarted": {
+        "description": "Not Started - puzzle stats"
+    },
+    "puzzleStats": "{timeText} | {numberOfMoves} Moves",
+    "@puzzleStats": {
+        "description": "Puzzle Stats",
+        "placeholders": {
+            "timeText": {
+                "type": "String",
+                "example": "00:14:09"
+            },
+            "numberOfMoves": {
+                "type": "int",
+                "example": "178"
+            }
+        }
+    },
+    "sharableText": "I just assembled {planetName}, it's a fun challenge, join the #FlutterPuzzleHack! Check it out here ↓",
+    "@sharableText": {
+        "description": "Text that can be shared on social media",
+        "placeholders": {
+            "planetName": {
+                "type": "String",
+                "example": "Earth"
+            }
+        }
+    },
+    "mercury": "Mercury",
+    "@mercury": {
+        "description": "Planet name - mercury"
+    },
+    "mercuryFact1": "Mercury is the smallest planet in the Solar System, of course because someone (Pluto) is not considered a planet anymore.",
+    "mercuryFact2": "Imagine able to sleep once every 2 months, that's one mercurial day, equals to almost 59 earth days.",
+    "mercuryFact3": "Though the closest planet to Sun, Mercury's temperatures can drop to as low as -180 degrees Celsius / -290 degrees Fahrenheit.",
+    "venus": "Venus",
+    "@venus": {
+        "description": "Planet name - venus"
+    },
+    "venusFact1": "In Venus a day is longer than a year. For reference, 1 Venus day equal 243 Earth days, and 1 Venus year equals 225 Earth days. Interesting huh?",
+    "venusFact2": "Venus, for some unknown reason, spins the opposite direction of Earth and most other planets.",
+    "venusFact3": "Due to its thick atmosphere, Venus traps heat (global warming?) making it the hottest planet in our solar system. To top that off, there are more than 1600 major volcano.",
+    "earth": "Earth",
+    "@earth": {
+        "description": "Planet name - earth"
+    },
+    "earthFact1": "Our home",
+    "earthFact2": "Our Earth's rotation is slowing. Precisely, slowing down 17 milliseconds, every 100 years. Not much huh?",
+    "earthFact3": "Earth takes exactly 23 hours, 56 minutes and 4 seconds to complete one rotation around its axis. A 4 min gap every day will add up over months, and probably it's technically night right now, with daylight.",
+    "mars": "Mars",
+    "@mars": {
+        "description": "Planet name - mars"
+    },
+    "marsFact1": "A year on Mars is almost twice as long as a year on Earth.",
+    "marsFact2": "If you are 100 lbs (or, 45 kg) on Earth, you would weight only 38 lbs (or, 17 kg) on Mars.",
+    "marsFact3": "Mars is called the “Red Planet” because, well it’s red. This color comes from the large amount of iron oxide present in its rocks and soil. Iron oxide, in simple terms, is just rust.",
+    "jupiter": "Jupiter",
+    "@jupiter": {
+        "description": "Planet name - jupiter"
+    },
+    "jupiterFact1": "Jupiter is the fastest spinning planet in our solar system. To give a context, Jupiter’s one day lasts around 10 earth hours.",
+    "jupiterFact2": "Being the third brightest object in our Solar System (after Venus and Moon), we can see Jupiter with our own eyes.",
+    "jupiterFact3": "Jupiter too has rings. They were the last to be discovered (after Saturn & Uranus’s rings) due to the fact that they are particularly faint.",
+    "saturn": "Saturn",
+    "@saturn": {
+        "description": "Planet name - saturn"
+    },
+    "saturnFact1": "Saturn’s revolution around the Sun is very slow. A year on Saturn is more than 29 Earth years.",
+    "saturnFact2": "This planet was named after the Roman god of farming, Saturn. And interestingly, the day Saturday was named after the planet, Saturn.",
+    "saturnFact3": "Saturn has beautiful rings, and they aren’t solid, they are made up of ice, dust and rocks.",
+    "uranus": "Uranus",
+    "@uranus": {
+        "description": "Planet name - uranus"
+    },
+    "uranusFact1": "Uranus, for some unknown reason, spins the opposite direction of Earth and most other planets, and an Uranian day lasts about 17 Earth hours.",
+    "uranusFact2": "Uranus has rings too. It is thought that the rings are to be parts of a moon or moons that were sometime shattered by high speed impacts with an object such as comet or asteroid.",
+    "uranusFact3": "Uranus takes almost 84 Earth years to complete one orbit. Imagine having a single Uranian birthday for your entire Earthian life.",
+    "neptune": "Neptune",
+    "@neptune": {
+        "description": "Planet name - neptune"
+    },
+    "neptuneFact1": "Neptune’s one year lasts 165 Earth years. Neptune has just completed one orbit around the Sun, since its discovery in 1846.",
+    "neptuneFact2": "Neptune has the strongest winds of any planets in the Solar System. Some winds can reach up to 2000 km / 1200 mi per hour. Supersonic winds, huh!",
+    "neptuneFact3": "It rains diamonds in Neptune! It is thought that the Methane decomposes into diamond crystals due to the planet’s conditions.",
+    "pluto": "Pluto",
+    "@pluto": {
+        "description": "Planet name - pluto"
+    },
+    "plutoFact1": "I understand Pluto is not a planet anymore, but I felt sad excluding it.",
+    "plutoFact2": "Pluto was demoted to dwarf planet status in 2006 - as its merely the brightest member of the Kuiper Belt, it’s simply not unique (unlike other planets)",
+    "plutoFact3": "Being one of the farthest member from Sun, Pluto can actually get closer to the Sun than Neptune. It was last inside Neptune’s orbit between 1979 and 1999.",
+    "congrats": "Congrats!",
+    "@congrats": {
+        "description": "Puzzle completion congrats text"
+    },
+    "congratsSubTitle": "You're an intergalactic champ!",
+    "@congratsSubTitle": {
+        "description": "Puzzle completion sub title"
+    },
+    "successMessage": "You have successfully put together our {planetName} {extraText}",
+    "@successMessage": {
+        "description": "Puzzle completion success message",
+        "placeholders": {
+            "planetName": {
+                "type": "String",
+                "example": "Earth"
+            },
+            "extraText": {
+                "type": "String",
+                "example": "without any aid"
+            }
+        }
+    },
+    "scoreBoard": "Score Board",
+    "@scoreBoard": {
+        "description": "Score board title"
+    },
+    "totalMoves": "{totalMoves} moves",
+    "@totalMoves": {
+        "description": "total moves",
+         "placeholders": {
+            "totalMoves": {
+                "type": "int",
+                "example": "157"
+            }
+        }
+    },
+    "usedAutosolve": "Used Auto solve",
+    "@usedAutosolve": {
+        "description": "If user had used auto solve during gameplay"
+    },
+    "noAutosolve": "No Auto solve",
+    "@noAutosolve": {
+        "description": "If user had NOT used auto solve during gameplay"
+    },
+    "share": "Share!",
+    "@share": {
+        "description": "Share text"
+    },
+    "optimizedLabel": "Optimized Puzzle",
+    "@optimizedLabel": {
+        "description": "The label to show, if a puzzle is running an optimized version"
+    },
+    "optimizedDescription": "You are running an optimized version of the puzzle, to avoid performance drop",
+    "@optimizedDescription": {
+        "description": "The description of why the optimized label is shown"
+    },
+    "levelSelectionLabel": "Choose puzzle level from easy, medium or hard",
+    "@levelSelectionLabel": {
+        "description": "Semantic label for level selection widget"
+    },
+    "puzzleDurationLabelText": "{hours} hours {minutes} minutes {seconds} seconds",
+    "@puzzleDurationLabelText": {
+        "description": "Semantic label for the puzzle timer",
+        "placeholders": {
+            "hours": {
+                "type": "String",
+                "example": "2"
+            },
+            "minutes": {
+                "type": "String",
+                "example": "6"
+            },
+            "seconds": {
+                "type": "String",
+                "example": "24"
+            }
+        }
+    },
+    "visibilityButtonSemanticLabel": "Show/hide puzzle help - tile numbers",
+    "@visibilityButtonSemanticLabel": {
+        "description": "Semantic label for the visibility helper button"
+    },
+    "viewOnGithub": "View on Github",
+    "@viewOnGithub": {
+        "description": "View on github button text"
+    }
+}
