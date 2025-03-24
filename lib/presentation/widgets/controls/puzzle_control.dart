@@ -4,7 +4,6 @@ import 'package:gap/gap.dart';
 
 import '../../../core/l10n/l10n.dart';
 import '../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../core/utils/quick_visit_counter.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/puzzles/planet_puzzle_bloc.dart';
 import '../../cubits/puzzle/helper/puzzle_helper_cubit.dart';
@@ -15,7 +14,7 @@ import '../stylized_container.dart';
 import '../stylized_text.dart';
 
 class PuzzleControl extends StatelessWidget {
-  const PuzzleControl({Key? key}) : super(key: key);
+  const PuzzleControl({super.key});
 
   void _onStart(BuildContext context, bool hasStarted) {
     context.read<TimerBloc>().add(const TimerReset());
@@ -26,7 +25,6 @@ class PuzzleControl extends StatelessWidget {
 
   void _onAutoSolve(BuildContext context, PuzzleAutoSolveState autoSolveState) {
     if (autoSolveState == PuzzleAutoSolveState.start) {
-      QuickVisitCounter.countAutoSolverUsed();
       context.read<PuzzleHelperCubit>().startAutoSolver();
     } else {
       context.read<PuzzleHelperCubit>().stopAutoSolver();

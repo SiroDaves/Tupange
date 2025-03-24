@@ -6,7 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../core/layout/utils/app_breakpoints.dart';
 import '../../../../core/utils/constants/app_constants.dart';
-import '../../../blocs/dashboard/dashboard_bloc.dart';
+import '../../../blocs/home/home_bloc.dart';
 import '../../../cubits/dashboard/planet_selection/planet_selection_helper_cubit.dart';
 import '../../../widgets/info_card/info_card.dart';
 import '../../../widgets/stylized_button.dart';
@@ -66,10 +66,10 @@ class PlanetAnimationToggleButton extends StatelessWidget {
   }
 }
 
-class DashboardPageSmall extends StatelessWidget {
+class HomePageSmall extends StatelessWidget {
   final Widget child;
 
-  const DashboardPageSmall({super.key, required this.child});
+  const HomePageSmall({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +77,10 @@ class DashboardPageSmall extends StatelessWidget {
   }
 }
 
-class DashboardPageMedium extends StatelessWidget {
+class HomePageMedium extends StatelessWidget {
   final Widget child;
 
-  const DashboardPageMedium({super.key, required this.child});
+  const HomePageMedium({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -165,25 +165,18 @@ class _ScrollableSolarSystemState extends State<ScrollableSolarSystem> {
   }
 }
 
-class DashboardPageLarge extends StatelessWidget {
-  final DashboardReady state;
+class HomePageLarge extends StatelessWidget {
+  final HomeReady state;
 
-  const DashboardPageLarge({super.key, required this.state});
+  const HomePageLarge({super.key, required this.state});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
-        // sun
-        const SunWidget(
-          key: Key('Sun'),
-        ),
-
-        // orbits
+        const SunWidget(key: Key('Sun')),
         ...state.orbits.map<Widget>((orbit) => orbit.widget).toList(),
-
-        // planets
         ...(state).orbits.map<Widget>((orbit) => orbit.planet.widget).toList(),
       ],
     );

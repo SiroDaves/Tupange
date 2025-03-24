@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../core/utils/quick_visit_counter.dart';
 import '../../../data/models/planet.dart';
 import '../themes/earth_puzzle_theme.dart';
 import '../themes/jupiter_puzzle_theme.dart';
@@ -37,7 +36,6 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeState> {
   ThemeBloc({required Planet planet})
       : super(ThemeState(theme: _getTheme(planet))) {
     on<ThemeChangedEvent>(_onThemeChanged);
-    QuickVisitCounter.countPuzzlePageOpened(planet.name);
   }
 
   void _onThemeChanged(ThemeChangedEvent event, Emitter<ThemeState> emit) {

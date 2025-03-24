@@ -15,7 +15,6 @@ import 'package:uuid/uuid.dart';
 
 import '../../data/models/planet.dart';
 import 'constants/app_constants.dart';
-import 'quick_visit_counter.dart';
 
 abstract class AppUtils {
   static void logger(String message) {
@@ -124,7 +123,6 @@ $message
   }
 
   static void onGithubTap() {
-    QuickVisitCounter.viewOnGithubClicked();
     openLink(AppConstants.kGithubUrl);
   }
 

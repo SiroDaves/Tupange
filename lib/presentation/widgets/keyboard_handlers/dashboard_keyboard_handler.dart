@@ -8,22 +8,22 @@ import '../../cubits/dashboard/planet_selection/planet_selection_cubit.dart';
 import '../../cubits/dashboard/planet_selection/planet_selection_helper_cubit.dart';
 import '../info_card/info_card.dart';
 
-class DashboardKeyboardHandler extends StatefulWidget {
+class HomeKeyboardHandler extends StatefulWidget {
   final Widget child;
   final List<Orbit> orbits;
 
-  const DashboardKeyboardHandler({
-    Key? key,
+  const HomeKeyboardHandler({
+    super.key,
     required this.child,
     required this.orbits,
-  }) : super(key: key);
+  });
 
   @override
-  _DashboardKeyboardHandlerState createState() =>
-      _DashboardKeyboardHandlerState();
+  HomeKeyboardHandlerState createState() =>
+      HomeKeyboardHandlerState();
 }
 
-class _DashboardKeyboardHandlerState extends State<DashboardKeyboardHandler> {
+class HomeKeyboardHandlerState extends State<HomeKeyboardHandler> {
   final FocusNode _focusNode = FocusNode();
 
   @override
