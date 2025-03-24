@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/models/star.dart';
-import '../../../core/utils/constants.dart';
+import '../../../core/utils/constants/app_constants.dart';
 
 class StarWidget extends StatelessWidget {
   final Star star;
   const StarWidget({
-    Key? key,
+    super.key,
     required this.star,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return AnimatedPositioned(
-      duration: kMS500,
+      duration: AppConstants.kMS500,
       left: star.pos.x.toDouble(),
       top: star.pos.y.toDouble(),
       width: star.size,

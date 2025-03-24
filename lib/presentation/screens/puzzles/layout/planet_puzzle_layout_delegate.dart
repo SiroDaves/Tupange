@@ -4,7 +4,7 @@ import '../../../../core/layout/delegates/puzzle_layout_delegate.dart';
 import '../../../../core/layout/utils/responsive_gap.dart';
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../../core/utils/app_utils.dart';
-import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../data/models/tile.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../theme/themes/puzzle_theme.dart';
@@ -49,7 +49,7 @@ class PlanetPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
     return Stack(
       children: [
         ColorFiltered(
-          colorFilter: kGreyscaleColorFilter,
+          colorFilter: AppConstants.kGreyscaleColorFilter,
           child: landscapeWidget,
         ),
 
@@ -57,7 +57,7 @@ class PlanetPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
         /// we hide the first 30% of the following widget
         ClipRect(
           child: AnimatedAlign(
-            duration: percentageSolved > 0.85 ? kMS800 : kS4,
+            duration: percentageSolved > 0.85 ? AppConstants.kMS800 : AppConstants.kS4,
             alignment: Alignment.centerLeft,
             widthFactor: percentageSolved,
             child: landscapeWidget,

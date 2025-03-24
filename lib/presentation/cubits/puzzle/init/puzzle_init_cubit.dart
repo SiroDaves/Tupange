@@ -3,9 +3,9 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
-import '../../../core/utils/constants.dart';
-import '../../../core/utils/app_utils.dart';
-import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../../../core/utils/constants/app_constants.dart';
+import '../../../../core/utils/app_utils.dart';
+import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
 
 part 'puzzle_init_state.dart';
 
@@ -23,7 +23,6 @@ class PuzzleInitCubit extends Cubit<PuzzleInitState> {
 
   RiveAnimationController getRiveControllerFor(int tileKey) {
     if (tileKey == 0) {
-      // we call this function when we need to load the rive widgets
       emit(const PuzzleInitLoading());
     }
 
@@ -48,7 +47,7 @@ class PuzzleInitCubit extends Cubit<PuzzleInitState> {
 
   void _startAnimating() async {
     // for performance reasons
-    await Future.delayed(kMS250);
+    await Future.delayed(AppConstants.kMS250);
 
     _riveController.forEach((_, controller) {
       controller.reset();

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import 'app_utils.dart';
-import 'constants.dart';
+import 'constants/app_constants.dart';
 
 // visit counter
 const _webPageCounterKey = 'total_web_page_visits';
@@ -19,7 +19,7 @@ abstract class QuickVisitCounter {
       return AppUtils.logger('QuickVisitCounter :: DEBUG COUNT $counterKey');
     }
 
-    final url = 'https://api.countapi.xyz/hit/$kProjectDomain/$counterKey';
+    final url = 'https://api.countapi.xyz/hit/${AppConstants.kProjectDomain}/$counterKey';
     final response = await http.get(Uri.parse(url));
     AppUtils.logger('QuickVisitCounter :: $counterKey :: ${response.body}');
   }
@@ -30,7 +30,7 @@ abstract class QuickVisitCounter {
 
   static void countPuzzlePageOpened(String planet) {
     _count(_puzzlePageCounterKey);
-    _count(_puzzlePageCounterKey + '_' + planet);
+    _count('${_puzzlePageCounterKey}_$planet');
   }
 
   static void countAutoSolverUsed() => _count(_autoSolverUsedCounterKey);

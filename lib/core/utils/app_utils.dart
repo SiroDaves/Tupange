@@ -14,7 +14,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../data/models/planet.dart';
-import 'constants.dart';
+import 'constants/app_constants.dart';
 import 'quick_visit_counter.dart';
 
 abstract class AppUtils {

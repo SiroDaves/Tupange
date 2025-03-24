@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../../core/utils/constants.dart';
+import '../../core/utils/constants/app_constants.dart';
 
 class AppAnimatedWidget extends StatefulWidget {
   final Widget child;
   final bool showOnComplete;
 
   const AppAnimatedWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.showOnComplete = false,
-  }) : super(key: key);
+  });
 
   @override
   State<AppAnimatedWidget> createState() => _AppAnimatedWidgetState();
@@ -31,7 +31,7 @@ class _AppAnimatedWidgetState extends State<AppAnimatedWidget>
 
     controller = AnimationController(
       vsync: this,
-      duration: kS1,
+      duration: AppConstants.kS1,
     );
 
     inOpacity = Tween<double>(begin: 0, end: 1).animate(

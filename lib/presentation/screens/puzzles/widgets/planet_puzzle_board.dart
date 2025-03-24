@@ -8,12 +8,12 @@ import '../../../../core/helpers/modal_helpers.dart';
 import '../../../../core/layout/layout.dart';
 import '../../../../core/timer/timer.dart';
 import '../../../../core/utils/app_utils.dart';
-import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
-import '../../../cubits/dashboard/level_selection_cubit.dart';
-import '../../../cubits/dashboard/planet_selection_cubit.dart';
-import '../../../cubits/puzzle/puzzle_helper_cubit.dart';
+import '../../../cubits/dashboard/level_selection/level_selection_cubit.dart';
+import '../../../cubits/dashboard/planet_selection/planet_selection_cubit.dart';
+import '../../../cubits/puzzle/helper/puzzle_helper_cubit.dart';
 import '../layout/planet_puzzle_layout_delegate.dart';
 import 'planet_puzzle_completion_dialog.dart';
 
@@ -35,7 +35,7 @@ class _PlanetPuzzleBoardState extends State<PlanetPuzzleBoard> {
     // play completion audio
     context.read<AudioPlayerCubit>().completion();
 
-    Timer(kMS300, () {
+    Timer(AppConstants.kMS300, () {
       // after dialog finishes, reset the puzzle to initial state
       context.read<PlanetPuzzleBloc>().add(const PlanetPuzzleResetEvent());
     });
@@ -70,23 +70,23 @@ class _PlanetPuzzleBoardState extends State<PlanetPuzzleBoard> {
     return BlocListener<PuzzleBloc, PuzzleState>(
       listener: (BuildContext context, PuzzleState state) {
         if (state.puzzleStatus == PuzzleStatus.complete) {
-          _completePuzzleTimer = Timer(kMS500, () {
+          _completePuzzleTimer = Timer(AppConstants.kMS500, () {
             _onPuzzleCompletionDialog(context);
           });
         }
       },
       child: ResponsiveLayoutBuilder(
         small: (_, Widget? child) => _PuzzleBoard(
-          child: child,
           size: BoardSize.small,
+          child: child,
         ),
         medium: (_, Widget? child) => _PuzzleBoard(
-          child: child,
           size: BoardSize.medium,
+          child: child,
         ),
         large: (_, Widget? child) => _PuzzleBoard(
-          child: child,
           size: BoardSize.large,
+          child: child,
         ),
         child: (_) => Stack(children: widget.tiles),
       ),
@@ -99,10 +99,9 @@ class _PuzzleBoard extends StatelessWidget {
   final Widget? child;
 
   const _PuzzleBoard({
-    Key? key,
     this.child,
     required this.size,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

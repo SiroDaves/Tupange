@@ -3,17 +3,17 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../core/layout/layout.dart';
-import '../../core/utils/constants.dart';
+import '../../core/utils/constants/app_constants.dart';
 import 'stylized_button.dart';
 import 'stylized_container.dart';
 import 'stylized_icon.dart';
 
 class AppDialog extends StatelessWidget {
   const AppDialog({
-    Key? key,
+    super.key,
     required this.child,
     this.sameSize = false,
-  }) : super(key: key);
+  });
 
   final bool sameSize;
   final Widget child;
@@ -67,7 +67,7 @@ class AppDialog extends StatelessWidget {
 
         return Dialog(
           backgroundColor: Colors.transparent,
-          child: _LargeDialogBody(child: child, dialogWidth: dialogWidth),
+          child: _LargeDialogBody(dialogWidth: dialogWidth, child: child),
         );
       },
     );
@@ -79,10 +79,9 @@ class _LargeDialogBody extends StatefulWidget {
   final Widget child;
 
   const _LargeDialogBody({
-    Key? key,
     required this.child,
     required this.dialogWidth,
-  }) : super(key: key);
+  });
 
   @override
   State<_LargeDialogBody> createState() => _LargeDialogBodyState();
@@ -99,7 +98,7 @@ class _LargeDialogBodyState extends State<_LargeDialogBody> {
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (_timer?.isActive == true) _timer?.cancel();
-      _timer = Timer(kMS50, () {
+      _timer = Timer(AppConstants.kMS50, () {
         dialogSizeVn.value =
             (dialogKey.currentContext?.findRenderObject() as RenderBox?)?.size;
       });

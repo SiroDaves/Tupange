@@ -6,13 +6,13 @@ import 'package:rive/rive.dart' as rive;
 
 import '../../../../core/layout/utils/app_breakpoints.dart';
 import '../../../../core/utils/app_utils.dart';
-import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/tile.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
-import '../../../cubits/puzzle/puzzle_helper_cubit.dart';
-import '../../../cubits/puzzle/puzzle_init_cubit.dart';
+import '../../../cubits/puzzle/helper/puzzle_helper_cubit.dart';
+import '../../../cubits/puzzle/init/puzzle_init_cubit.dart';
 import '../../../theme/bloc/theme_bloc.dart';
 import '../../../widgets/shake_animator.dart';
 import '../../../widgets/stylized_text.dart';
@@ -92,7 +92,7 @@ class _PlanetPuzzleTileState extends State<PlanetPuzzleTile> {
     super.initState();
     themeBloc = context.read<ThemeBloc>();
     puzzleInitCubit = context.read<PuzzleInitCubit>();
-    _timer = Timer(kMS800, _buildChild);
+    _timer = Timer(AppConstants.kMS800, _buildChild);
   }
 
   @override
@@ -122,7 +122,7 @@ class _PlanetPuzzleTileState extends State<PlanetPuzzleTile> {
     final hasStarted = status == PlanetPuzzleStatus.started;
 
     final movementDuration =
-        status == PlanetPuzzleStatus.loading ? kMS800 : kMS350;
+        status == PlanetPuzzleStatus.loading ? AppConstants.kMS800 : AppConstants.kMS350;
 
     final canPress = hasStarted && puzzleIncomplete && !isAutoSolving;
 
@@ -147,7 +147,7 @@ class _PlanetPuzzleTileState extends State<PlanetPuzzleTile> {
         child: AnimatedScale(
           scale: scale,
           curve: Curves.easeInOut,
-          duration: kMS250,
+          duration: AppConstants.kMS250,
           alignment: FractionalOffset(
             ((correctX + 1 / 2) * offset) / size,
             ((correctY + 1 / 2) * offset) / size,
@@ -183,7 +183,7 @@ class _PlanetPuzzleTileState extends State<PlanetPuzzleTile> {
                             return isInCorrectPosition
                                 ? child
                                 : ColorFiltered(
-                                    colorFilter: kGreyscaleColorFilter,
+                                    colorFilter: AppConstants.kGreyscaleColorFilter,
                                     child: child,
                                   );
                           },
@@ -246,8 +246,8 @@ class _HelpWidget extends StatelessWidget {
         ((correctY + 1 / 2) * offset) - containerSize / 2,
       ),
       child: AnimatedSwitcher(
-        duration: kMS250,
-        reverseDuration: kMS250,
+        duration: AppConstants.kMS250,
+        reverseDuration: AppConstants.kMS250,
         switchInCurve: Curves.easeInOut,
         switchOutCurve: Curves.easeInOut,
         child: showHelp

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import 'planet_orbital_animation_cubit.dart';
+import '../planet_orbital/planet_orbital_animation_cubit.dart';
 
 part 'planet_selection_helper_state.dart';
 

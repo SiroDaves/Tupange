@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/planet.dart';
-import '../../../cubits/dashboard/planet_orbital_animation_cubit.dart';
-import '../../../cubits/dashboard/planet_selection_cubit.dart';
+import '../../../cubits/dashboard/planet_orbital/planet_orbital_animation_cubit.dart';
+import '../../../cubits/dashboard/planet_selection/planet_selection_cubit.dart';
 
 class PlanetWidget extends StatelessWidget {
   final Planet planet;

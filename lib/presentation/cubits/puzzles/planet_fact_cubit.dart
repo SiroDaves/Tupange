@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/utils/puzzle_utils.dart';
 import '../../../data/models/planet.dart';
-import '../../../core/utils/constants.dart';
+import '../../../core/utils/constants/app_constants.dart';
 
 part 'planet_fact_state.dart';
 
@@ -21,7 +21,7 @@ class PlanetFactCubit extends Cubit<PlanetFactState> {
   void newFact() {
     // start user interaction timer
     _userInteractionTimer?.cancel();
-    _userInteractionTimer = Timer(kS20, () {
+    _userInteractionTimer = Timer(AppConstants.kS20, () {
       // reset back - so that auto updating works again
       hasUserInteracted = false;
     });
@@ -61,7 +61,7 @@ class PlanetFactCubit extends Cubit<PlanetFactState> {
     // update fact for the first time
     _updateFact();
 
-    _timer = Timer.periodic(kS20, (_) => _updateFact());
+    _timer = Timer.periodic(AppConstants.kS20, (_) => _updateFact());
   }
 
   @override

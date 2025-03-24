@@ -5,8 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/models/tile.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/puzzles/planet_puzzle_bloc.dart';
-import '../../cubits/puzzle/puzzle_helper_cubit.dart';
-import '../../cubits/puzzle/puzzle_init_cubit.dart';
+import '../../cubits/puzzle/helper/puzzle_helper_cubit.dart';
+import '../../cubits/puzzle/init/puzzle_init_cubit.dart';
 import '../../../core/timer/timer.dart';
 
 class PuzzleKeyboardHandler extends StatefulWidget {

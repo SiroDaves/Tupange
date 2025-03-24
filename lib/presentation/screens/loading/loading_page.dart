@@ -5,21 +5,21 @@ import 'package:gap/gap.dart';
 
 import '../../../core/l10n/l10n.dart';
 import '../../../core/resource/app_assets.dart';
-import '../../../core/utils/constants.dart';
+import '../../../core/utils/constants/app_constants.dart';
 import '../../../core/app/cubit/audio_player_cubit.dart';
-import '../dashboard/dashboard_page.dart';
+import '../../../core/layout/layout.dart';
+import '../../../core/utils/app_utils.dart';
+import '../../cubits/loading/assetcache_cubit.dart';
 import '../../widgets/background/background.dart';
 import '../../widgets/stylized_button.dart';
 import '../../widgets/stylized_container.dart';
 import '../../widgets/stylized_icon.dart';
 import '../../widgets/stylized_text.dart';
-import '../../../core/layout/layout.dart';
-import '../../cubits/loading/assetcache_cubit.dart';
+import '../dashboard/dashboard_page.dart';
 import 'widgets/loading.dart';
-import '../../../core/utils/app_utils.dart';
 
 class LoadingPage extends StatelessWidget {
-  const LoadingPage({Key? key}) : super(key: key);
+  const LoadingPage({super.key});
 
   void _move(BuildContext context) async {
     /// we can play the theme music only upon the first interaction
@@ -34,7 +34,7 @@ class LoadingPage extends StatelessWidget {
         pageBuilder: (_, __, ___) => page,
         transitionsBuilder: (_, anim, __, child) =>
             FadeTransition(opacity: anim, child: child),
-        transitionDuration: kMS800,
+        transitionDuration: AppConstants.kMS800,
       ),
     );
   }
@@ -86,7 +86,7 @@ class LoadingPage extends StatelessWidget {
 }
 
 class _ProjectGithubLink extends StatelessWidget {
-  const _ProjectGithubLink({Key? key}) : super(key: key);
+  const _ProjectGithubLink();
 
   @override
   Widget build(BuildContext context) {
@@ -152,11 +152,10 @@ class _LoadingPageLarge extends StatelessWidget {
   final VoidCallback onStartPressed;
 
   const _LoadingPageLarge({
-    Key? key,
     required this.isReady,
     required this.isInitialized,
     required this.onStartPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -184,11 +183,10 @@ class _LoadingPageSmall extends StatelessWidget {
   final VoidCallback onStartPressed;
 
   const _LoadingPageSmall({
-    Key? key,
     required this.isReady,
     required this.isInitialized,
     required this.onStartPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -199,8 +197,8 @@ class _LoadingPageSmall extends StatelessWidget {
         children: [
           // show asset
           Expanded(
-            child: Image.asset(AppAssets.planetsImage),
             flex: 5,
+            child: Image.asset(AppAssets.planetsImage),
           ),
 
           // show rest body
@@ -225,12 +223,11 @@ class _MainBody extends StatelessWidget {
   final VoidCallback onPressed;
 
   const _MainBody({
-    Key? key,
     this.isLarge = false,
     required this.isInitialized,
     required this.isReady,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -285,7 +282,7 @@ class _MainBody extends StatelessWidget {
           children: [
             // loading animation
             AnimatedSwitcher(
-              duration: kMS300,
+              duration: AppConstants.kMS300,
               switchInCurve: Curves.easeInOut,
               switchOutCurve: Curves.easeInOut,
               child: !isInitialized
@@ -315,7 +312,7 @@ class _MainBody extends StatelessWidget {
 
             // loading animation
             AnimatedOpacity(
-              duration: kMS300,
+              duration: AppConstants.kMS300,
               opacity: isReady ? 1.0 : 0.0,
               child: Loading(
                 key: ValueKey(isReady),

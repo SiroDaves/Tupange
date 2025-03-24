@@ -4,16 +4,16 @@ import 'dart:math' as math;
 import '../../data/models/position.dart';
 import '../../data/models/tile.dart';
 import '../../presentation/blocs/puzzle/puzzle_bloc.dart';
-import '../../presentation/cubits/puzzle/puzzle_helper_cubit.dart';
+import '../../presentation/cubits/puzzle/helper/puzzle_helper_cubit.dart';
 import '../utils/app_utils.dart';
-import '../utils/constants.dart';
+import '../utils/constants/app_constants.dart';
 import 'solver_tile.dart';
 
 enum Direction { left, right, up, down }
 
 enum SpecialCaseGroup { topRight, bottomLeft, none }
 
-const _stepDuration = kMS150;
+const _stepDuration = AppConstants.kMS150;
 
 extension ListHelper on List<SolverTile> {
   SolverTile whitespace() => firstWhere((e) => e.isWhitespace);
@@ -42,25 +42,6 @@ class PuzzleSolver {
   /// returns absolute value of `x`
   int abs(int x) => x > 0 ? x : -x;
 
-  /// determines the order in which the tiles will be sovled
-  /// first the top row, then left column
-  /// 1, 2, 3, 4, 7 ... ->  solving top row and left column,
-  /// the problem reduces to a 2x2 grid, then apply the same algorithm,
-  /// works perfectly for higher order nxn grids as well
-  /// this row-col method should be easy for humans to follow as well, thus instead of writing any
-  /// sophisticated algorithms such as A*, wanted to write this simple to follow one
-  ///   ┌─────0───────1───────2────► x
-  ///   │  ┌─────┐ ┌─────┐ ┌─────┐
-  ///   0  │  1  │ │  2  │ │  3  │
-  ///   │  └─────┘ └─────┘ └─────┘
-  ///   │  ┌─────┐
-  ///   1  │  4  │
-  ///   │  └─────┘
-  ///   │  ┌─────┐
-  ///   2  │  7  │
-  ///   │  └─────┘
-  ///   ▼
-  ///   y
   List<SolverTile> _determineSolveOrder() {
     final tiles = <SolverTile>[];
 
@@ -652,7 +633,7 @@ class PuzzleSolver {
 
     _takeStep(_lastStep);
 
-    Timer(kMS50, () {
+    Timer(AppConstants.kMS50, () {
       // stopped due to puzzle completion
       _onAutoSolvingStopped();
     });

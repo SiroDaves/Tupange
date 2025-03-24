@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../data/models/puzzle.dart';
-import '../../../core/utils/constants.dart';
+import '../../../../data/models/puzzle.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 
 part 'level_selection_state.dart';
 
@@ -29,6 +29,6 @@ class LevelSelectionCubit extends Cubit<LevelSelectionState> {
     onNewLevelSelected(_puzzleLevels[currentLevel]);
   }
 
-  int get puzzleSize => kPuzzleLevel[_level]!;
+  int get puzzleSize => AppConstants.kPuzzleLevel[_level]!;
   PuzzleLevel get puzzleLevel => _level;
 }

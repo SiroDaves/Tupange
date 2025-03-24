@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 
 import '../../../data/models/position.dart';
 import '../../../data/models/star.dart';
-import '../../../core/utils/constants.dart';
+import '../../../core/utils/constants/app_constants.dart';
 
 class Background extends StatefulWidget {
   final Widget child;
 
-  const Background({Key? key, required this.child}) : super(key: key);
+  const Background({super.key, required this.child});
 
   @override
   State<Background> createState() => _BackgroundState();
@@ -72,22 +72,22 @@ class _BackgroundState extends State<Background> with WidgetsBindingObserver {
 
   void _buildStars({bool isFirstTime = false}) {
     if (_debounce?.isActive == true) _debounce?.cancel();
-    _debounce = Timer(kMS150, () {
+    _debounce = Timer(AppConstants.kMS150, () {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         if (!isFirstTime) stars.clear();
-        setState(() => stars.addAll(_makeStars(kNoStars)));
+        setState(() => stars.addAll(_makeStars(AppConstants.kNoStars)));
       });
     });
   }
 
   void _initStarVariables() {
     _starSizes = List.generate(
-      kNoStars,
-      (i) => math.max(_random.nextDouble(), kMinStarPercentage) * kBaseStarSize,
+      AppConstants.kNoStars,
+      (i) => math.max(_random.nextDouble(), AppConstants.kMinStarPercentage) * AppConstants.kBaseStarSize,
     );
 
     _starRotations = List.generate(
-      kNoStars,
+      AppConstants.kNoStars,
       (i) => _random.nextDouble() * math.pi,
     );
   }
@@ -120,7 +120,7 @@ class _BackgroundState extends State<Background> with WidgetsBindingObserver {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            colors: kBackgroundGradient,
+            colors: AppConstants.kBackgroundGradient,
           ),
         ),
         child: SafeArea(

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/app/cubit/audio_player_cubit.dart';
-import '../../core/utils/constants.dart';
+import '../../core/utils/constants/app_constants.dart';
 
 class StylizedButton extends StatelessWidget {
   final Widget child;
   final VoidCallback? onPressed;
 
   StylizedButton({
-    Key? key,
+    super.key,
     required this.child,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   final _buttonPressedVn = ValueNotifier<bool>(false);
 
@@ -21,7 +21,7 @@ class StylizedButton extends StatelessWidget {
   }
 
   Future<void> _reverseAnimate() async {
-    await Future.delayed(kMS50);
+    await Future.delayed(AppConstants.kMS50);
     _buttonPressedVn.value = false;
   }
 
@@ -48,7 +48,7 @@ class StylizedButton extends StatelessWidget {
             return AnimatedScale(
               scale: isPressed ? 0.90 : 1.0,
               curve: Curves.elasticOut,
-              duration: kMS300,
+              duration: AppConstants.kMS300,
               child: child,
             );
           },

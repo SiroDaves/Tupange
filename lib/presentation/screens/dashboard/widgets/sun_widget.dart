@@ -3,15 +3,15 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../../../core/resource/app_assets.dart';
-import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 
 class SunWidget extends StatelessWidget {
-  const SunWidget({Key? key}) : super(key: key);
+  const SunWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     final parentSize = MediaQuery.of(context).size;
-    final double sunSize = math.max(parentSize.width * 0.33, kMinSunSize);
+    final double sunSize = math.max(parentSize.width * 0.33, AppConstants.kMinSunSize);
 
     return Positioned(
       top: parentSize.height / 2 - sunSize / 2,

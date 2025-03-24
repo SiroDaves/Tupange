@@ -4,17 +4,17 @@ import 'package:gap/gap.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../../core/utils/constants.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/app_utils.dart';
 import '../../../../data/models/puzzle.dart';
-import '../../../cubits/dashboard/level_selection_cubit.dart';
+import '../../../cubits/dashboard/level_selection/level_selection_cubit.dart';
 import '../../../widgets/controls/audio_control.dart';
 import '../../../widgets/stylized_button.dart';
 import '../../../widgets/stylized_container.dart';
 import '../../../widgets/stylized_text.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({Key? key}) : super(key: key);
+  const HeaderWidget({super.key});
 
   Map<PuzzleLevel, String> _getLevelWidgets(BuildContext context) {
     final map = {
@@ -33,7 +33,7 @@ class HeaderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: kFOTopCenter,
+      alignment: AppConstants.kFOTopCenter,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -99,11 +99,10 @@ class _SegmentedControl extends StatelessWidget {
   final ValueChanged<PuzzleLevel> onValueChanged;
 
   const _SegmentedControl({
-    Key? key,
     required this.groupValue,
     required this.children,
     required this.onValueChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

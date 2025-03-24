@@ -2,19 +2,19 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import '../../core/utils/constants.dart';
+import '../../core/utils/constants/app_constants.dart';
 
-const _shakeAnimationDuration = kMS400;
+const _shakeAnimationDuration = AppConstants.kMS400;
 const double _offsetAmount = 8.0;
 const double _w = 26.4;
 const double _a = 0.8;
 
 class ShakeAnimator extends StatefulWidget {
   const ShakeAnimator({
-    Key? key,
+    super.key,
     this.controller,
     this.child,
-  }) : super(key: key);
+  });
 
   final ShakeAnimatorController? controller;
   final Widget? child;

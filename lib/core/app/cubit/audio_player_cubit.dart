@@ -7,7 +7,7 @@ import 'package:equatable/equatable.dart';
 import '../../helpers/audio_player.dart';
 import '../../resource/app_assets.dart';
 import '../../utils/app_utils.dart';
-import '../../utils/constants.dart';
+import '../../utils/constants/app_constants.dart';
 import '../bloc/audio_control_bloc.dart';
 
 part 'audio_player_state.dart';
@@ -64,7 +64,7 @@ class AudioPlayerCubit extends Cubit<AudioPlayerState> {
   void _init() {
     // do audio initializations after showing loading screen
     // to avoid freeze screen
-    _timer = Timer(kMS200, () async {
+    _timer = Timer(AppConstants.kMS200, () async {
       // theme music setup
       await _themeMusicPlayer.setSource(_themeMusicSource);
       await _themeMusicPlayer.setVolume(_maxThemeVolume);

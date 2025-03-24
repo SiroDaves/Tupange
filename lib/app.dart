@@ -6,7 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/app/bloc/audio_control_bloc.dart';
 import 'core/app/cubit/audio_player_cubit.dart';
 import 'core/l10n/l10n.dart';
-import 'core/utils/constants.dart';
+import 'core/utils/constants/app_constants.dart';
 import 'core/utils/quick_visit_counter.dart';
 import 'presentation/cubits/loading/assetcache_cubit.dart';
 import 'presentation/screens/loading/loading_page.dart';
@@ -51,7 +51,7 @@ class MyAppState extends State<MyApp> {
             GlobalWidgetsLocalizations.delegate,
           ],
           title: 'Planets',
-          theme: ThemeData(fontFamily: kFontFamily),
+          theme: ThemeData(fontFamily: AppConstants.kFontFamily),
           home: const LoadingPage(),
         ),
       ),

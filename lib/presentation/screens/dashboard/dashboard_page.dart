@@ -6,13 +6,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../core/layout/utils/app_breakpoints.dart';
 import '../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../core/utils/constants.dart';
+import '../../../core/utils/constants/app_constants.dart';
 import '../../../core/utils/quick_visit_counter.dart';
 import '../../blocs/dashboard/dashboard_bloc.dart';
-import '../../cubits/dashboard/level_selection_cubit.dart';
-import '../../cubits/dashboard/planet_orbital_animation_cubit.dart';
-import '../../cubits/dashboard/planet_selection_cubit.dart';
-import '../../cubits/dashboard/planet_selection_helper_cubit.dart';
+import '../../cubits/dashboard/level_selection/level_selection_cubit.dart';
+import '../../cubits/dashboard/planet_orbital/planet_orbital_animation_cubit.dart';
+import '../../cubits/dashboard/planet_selection/planet_selection_cubit.dart';
+import '../../cubits/dashboard/planet_selection/planet_selection_helper_cubit.dart';
 import '../../widgets/background/background.dart';
 import '../../widgets/controls/audio_control.dart';
 import '../../widgets/info_card/info_card.dart';
@@ -25,7 +25,7 @@ import 'widgets/scroll_buttons.dart';
 import 'widgets/sun_widget.dart';
 
 class DashboardPage extends StatelessWidget {
-  const DashboardPage({Key? key}) : super(key: key);
+  const DashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class DashboardPage extends StatelessWidget {
 }
 
 class _DashboardView extends StatefulWidget {
-  const _DashboardView({Key? key}) : super(key: key);
+  const _DashboardView();
 
   @override
   State<_DashboardView> createState() => _DashboardViewState();
@@ -124,29 +124,29 @@ class _DashboardViewState extends State<_DashboardView>
                 small: (_, __) => const SizedBox.shrink(),
                 medium: (_, __) => const SizedBox.shrink(),
                 large: (_, __) => const Align(
-                  alignment: kFOTopRight,
+                  alignment: AppConstants.kFOTopRight,
                   child: AudioControl(),
                 ),
               ),
 
               // planet animation pause/play button
               const Align(
-                alignment: kFOBottomRight,
+                alignment: AppConstants.kFOBottomRight,
                 child: _PlanetAnimationToggleButton(),
               ),
 
               // info button
               ResponsiveLayoutBuilder(
                 small: (_, __) => const Align(
-                  alignment: kFOBottomLeft,
+                  alignment: AppConstants.kFOBottomLeft,
                   child: _InfoButton(),
                 ),
                 medium: (_, __) => const Align(
-                  alignment: kFOTopLeft,
+                  alignment: AppConstants.kFOTopLeft,
                   child: _InfoButton(),
                 ),
                 large: (_, __) => const Align(
-                  alignment: kFOTopLeft,
+                  alignment: AppConstants.kFOTopLeft,
                   child: _InfoButton(),
                 ),
               ),
@@ -159,7 +159,7 @@ class _DashboardViewState extends State<_DashboardView>
 }
 
 class _InfoButton extends StatelessWidget {
-  const _InfoButton({Key? key}) : super(key: key);
+  const _InfoButton();
 
   @override
   Widget build(BuildContext context) {
@@ -182,7 +182,7 @@ class _InfoButton extends StatelessWidget {
 }
 
 class _PlanetAnimationToggleButton extends StatelessWidget {
-  const _PlanetAnimationToggleButton({Key? key}) : super(key: key);
+  const _PlanetAnimationToggleButton();
 
   @override
   Widget build(BuildContext context) {
@@ -212,10 +212,7 @@ class _PlanetAnimationToggleButton extends StatelessWidget {
 class _DashboardPageSmall extends StatelessWidget {
   final Widget child;
 
-  const _DashboardPageSmall({
-    Key? key,
-    required this.child,
-  }) : super(key: key);
+  const _DashboardPageSmall({required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -226,10 +223,7 @@ class _DashboardPageSmall extends StatelessWidget {
 class _DashboardPageMedium extends StatelessWidget {
   final Widget child;
 
-  const _DashboardPageMedium({
-    Key? key,
-    required this.child,
-  }) : super(key: key);
+  const _DashboardPageMedium({required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -240,10 +234,7 @@ class _DashboardPageMedium extends StatelessWidget {
 class _ScrollableSolarSystem extends StatefulWidget {
   final Widget solarSystem;
 
-  const _ScrollableSolarSystem({
-    Key? key,
-    required this.solarSystem,
-  }) : super(key: key);
+  const _ScrollableSolarSystem({required this.solarSystem});
 
   @override
   State<_ScrollableSolarSystem> createState() => _ScrollableSolarSystemState();
@@ -263,7 +254,7 @@ class _ScrollableSolarSystemState extends State<_ScrollableSolarSystem> {
   void _moveToOffset() {
     _controller.animateTo(
       _scrollOffset,
-      duration: kMS350,
+      duration: AppConstants.kMS350,
       curve: Curves.easeInOut,
     );
   }
@@ -309,7 +300,7 @@ class _ScrollableSolarSystemState extends State<_ScrollableSolarSystem> {
 
         // control buttons
         Align(
-          alignment: kFOBottomCenter,
+          alignment: AppConstants.kFOBottomCenter,
           child: ScrollButtons(onPrevious: _onMovePrev, onNext: _onMoveNext),
         ),
       ],
@@ -320,10 +311,7 @@ class _ScrollableSolarSystemState extends State<_ScrollableSolarSystem> {
 class _DashboardPageLarge extends StatelessWidget {
   final DashboardReady state;
 
-  const _DashboardPageLarge({
-    Key? key,
-    required this.state,
-  }) : super(key: key);
+  const _DashboardPageLarge({required this.state});
 
   @override
   Widget build(BuildContext context) {

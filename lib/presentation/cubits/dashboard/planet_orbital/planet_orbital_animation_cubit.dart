@@ -4,9 +4,9 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/models/orbit.dart';
-import '../../../data/models/planet.dart';
-import '../../../core/utils/constants.dart';
+import '../../../../data/models/orbit.dart';
+import '../../../../data/models/planet.dart';
+import '../../../../core/utils/constants/app_constants.dart';
 
 part 'planet_orbital_animation_state.dart';
 
@@ -33,7 +33,7 @@ class PlanetOrbitalAnimationCubit extends Cubit<PlanetOrbitalAnimationState> {
   static const _thresholdRadian = (math.pi * _thresholdDegree) / 180;
 
   double _getThresholdFactor(PlanetType type) {
-    return kRevolutionThresholdFactor[type]!;
+    return AppConstants.kRevolutionThresholdFactor[type]!;
   }
 
   double _getMinAngle(Orbit orbit) {
@@ -62,7 +62,7 @@ class PlanetOrbitalAnimationCubit extends Cubit<PlanetOrbitalAnimationState> {
   Duration _getDuration(PlanetType type) {
     return Duration(
       milliseconds:
-          ((kRevolutionFactor[type]! * kBaseRevolutionSeconds) * 1000)
+          ((AppConstants.kRevolutionFactor[type]! * AppConstants.kBaseRevolutionSeconds) * 1000)
               .toInt(),
     );
   }
@@ -96,8 +96,8 @@ class PlanetOrbitalAnimationCubit extends Cubit<PlanetOrbitalAnimationState> {
       // AppUtils.logger('planetpositionfinding: $planetType :: $v');
       controller.stop();
       controller.animateTo(
-        kPausedPosition[planetType]!,
-        duration: kMS300,
+        AppConstants.kPausedPosition[planetType]!,
+        duration: AppConstants.kMS300,
       );
     });
   }
