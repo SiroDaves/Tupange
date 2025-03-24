@@ -1,8 +1,14 @@
 abstract class AppAssets {
   // audio assets
   static const _audioBase = 'audio';
+  
   // theme music
-  static const planetThemeMusic = '$_audioBase/planet_theme_music.mp3';
+  static const themeMusic1 = '$_audioBase/theme1.mp3';
+  static const themeMusic2 = '$_audioBase/theme2.mp3';
+  static const themeMusic3 = '$_audioBase/theme3.mp3';
+
+  static const introMusic = '$_audioBase/intro.mp3';
+  
   // button click
   static const buttonClick = '$_audioBase/button_click.mp3';
   // visibility show
@@ -16,7 +22,10 @@ abstract class AppAssets {
   static const tileTapError = '$_audioBase/tile_tap_error.mp3';
 
   // image assets
+  static const _iconBase = 'assets/icons';
   static const _imageBase = 'assets/images';
+
+  static const appIcon = '$_iconBase/app_icon.png';
 
   // loading screen images
   static const planetsImage = '$_imageBase/planets.png';

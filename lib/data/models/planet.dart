@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../../presentation/screens/dashboard/widgets/planet_widget.dart';
+import '../../presentation/screens/home/widgets/planet_widget.dart';
 import 'coordinate.dart';
 
 enum PlanetType {

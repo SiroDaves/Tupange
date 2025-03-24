@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
-import '../../../../core/app/cubit/audio_player_cubit.dart';
+import '../../../../core/audio/cubit/audio_player_cubit.dart';
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../../core/timer/bloc/timer_bloc.dart';
 import '../../../../core/utils/app_utils.dart';

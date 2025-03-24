@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../../presentation/screens/dashboard/widgets/orbit_widget.dart';
+import '../../presentation/screens/home/widgets/orbit_widget.dart';
 import 'coordinate.dart';
 import 'planet.dart';
 

@@ -125,14 +125,14 @@ $message
 
   static void onGithubTap() {
     QuickVisitCounter.viewOnGithubClicked();
-    openLink(kGithubUrl);
+    openLink(AppConstants.kGithubUrl);
   }
 
   static void onFacebookTap(final String planetName, BuildContext context) {
     final shareText = sharableText(planetName, context);
     final encodedShareText = Uri.encodeComponent(shareText);
     final facebookUrl =
-        'https://www.facebook.com/sharer.php?u=$kUrl&quote=$encodedShareText';
+        'https://www.facebook.com/sharer.php?u=${AppConstants.kUrl}&quote=$encodedShareText';
     openLink(facebookUrl);
   }
 
@@ -140,7 +140,7 @@ $message
     final shareText = sharableText(planetName, context);
     final encodedShareText = Uri.encodeComponent(shareText);
     final twitterUrl =
-        'https://twitter.com/intent/tweet?url=$kUrl&text=$encodedShareText';
+        'https://twitter.com/intent/tweet?url=${AppConstants.kUrl}&text=$encodedShareText';
     openLink(twitterUrl);
   }
 
@@ -168,7 +168,7 @@ $message
         final applicationDir = await getApplicationDocumentsDirectory();
         // ignore: unused_local_variable
         final file =
-            await File(applicationDir.path + '/${const Uuid().v1()}.png')
+            await File('${applicationDir.path}/${const Uuid().v1()}.png')
                 .writeAsBytes(imageData);
       }
     } catch (e) {
@@ -186,15 +186,15 @@ $message
 
     switch (puzzleSize) {
       case 3:
-        if (secondsTaken > k3PuzzleDuration.inSeconds) totalScore--;
+        if (secondsTaken > AppConstants.k3PuzzleDuration.inSeconds) totalScore--;
         break;
 
       case 4:
-        if (secondsTaken > k4PuzzleDuration.inSeconds) totalScore--;
+        if (secondsTaken > AppConstants.k4PuzzleDuration.inSeconds) totalScore--;
         break;
 
       case 5:
-        if (secondsTaken > k5PuzzleDuration.inSeconds) totalScore--;
+        if (secondsTaken > AppConstants.k5PuzzleDuration.inSeconds) totalScore--;
         break;
     }
 

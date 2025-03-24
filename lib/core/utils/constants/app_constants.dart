@@ -4,6 +4,8 @@ import '../../../data/models/planet.dart';
 import '../../../data/models/puzzle.dart';
 
 class AppConstants {
+  static const appTitle = 'Tupange';
+
 // theme
   static const kFontFamily = 'Freshman';
 

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/app/cubit/audio_player_cubit.dart';
+import '../../../../core/audio/cubit/audio_player_cubit.dart';
 import '../../../../core/helpers/modal_helpers.dart';
 import '../../../../core/layout/layout.dart';
 import '../../../../core/timer/timer.dart';

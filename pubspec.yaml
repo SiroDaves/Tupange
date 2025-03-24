@@ -7,6 +7,7 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+  animated_text_kit: ^4.2.3
   audioplayers: ^6.4.0
   bloc: ^9.0.0
   cupertino_icons: ^1.0.8
@@ -44,6 +45,7 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
+    - assets/icons/
     - assets/audio/
     - assets/images/
     - assets/planets/earth/
