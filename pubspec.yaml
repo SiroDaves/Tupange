@@ -17,18 +17,28 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   font_awesome_flutter: ^10.8.0
+  freezed_annotation: ^2.4.4 # Annotations for code generation with Freezed
   gap: ^3.0.1
+  get_it: ^8.0.2 # Dependency injection container
+  injectable: ^2.5.0 # Code generator for dependency injection
   intl: ^0.19.0
+  json_annotation: ^4.9.0 # Annotations for JSON serialization/deserialization
   path_provider: ^2.1.5
   rive: ^0.13.20
+  shared_preferences: ^2.3.3 # Local key-value storage for simple data persistence
   universal_html: ^2.2.4
   url_launcher: ^6.3.1
   uuid: ^4.5.1
 
 dev_dependencies:
+  build_runner: ^2.4.13 # Tool for generating code
+  floor_generator: ^1.5.0 # Code generator for Floor ORM
+  flutter_lints: ^5.0.0 # Recommended lint rules for Flutter
   flutter_test:
-    sdk: flutter
-  flutter_lints: ^5.0.0
+    sdk: flutter # Testing framework for Flutter apps
+  freezed: ^2.5.7 # Code generator for Freezed data classes
+  injectable_generator: ^2.6.2 # Code generator for Injectable DI
+  json_serializable: ^6.8.0 # Code generator for JSON serialization
 
 flutter:
   generate: true

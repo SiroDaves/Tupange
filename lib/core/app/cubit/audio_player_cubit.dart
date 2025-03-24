@@ -6,7 +6,7 @@ import 'package:equatable/equatable.dart';
 
 import '../../helpers/audio_player.dart';
 import '../../resource/app_assets.dart';
-import '../../utils/app_logger.dart';
+import '../../utils/app_utils.dart';
 import '../../utils/constants.dart';
 import '../bloc/audio_control_bloc.dart';
 
@@ -153,7 +153,7 @@ class AudioPlayerCubit extends Cubit<AudioPlayerState> {
   // public methods
 
   void tileTappedAudio(int tileValue, {isError = false}) {
-    AppLogger.log('AudioPlayerCubit :: tileTappedAudio');
+    AppUtils.logger('AudioPlayerCubit :: tileTappedAudio');
     if (!_isSoundEffectEnabled) return;
     if (isError) {
       unawaited(_tileTapError[tileValue]!.replay(_tileTapErrorSource));

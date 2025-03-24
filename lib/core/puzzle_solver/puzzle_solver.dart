@@ -5,7 +5,7 @@ import '../../data/models/position.dart';
 import '../../data/models/tile.dart';
 import '../../presentation/blocs/puzzle/puzzle_bloc.dart';
 import '../../presentation/cubits/puzzle/puzzle_helper_cubit.dart';
-import '../utils/app_logger.dart';
+import '../utils/app_utils.dart';
 import '../utils/constants.dart';
 import 'solver_tile.dart';
 
@@ -615,7 +615,7 @@ class PuzzleSolver {
   }
 
   void _onAutoSolvingStopped() {
-    AppLogger.log('PuzzleSolver: _onAutoSolvingDone');
+    AppUtils.logger('PuzzleSolver: _onAutoSolvingDone');
     puzzleHelperCubit.onAutoSolvingEnded();
   }
 
@@ -632,7 +632,7 @@ class PuzzleSolver {
 
   Future<int> _solve(List<SolverTile> steps) async {
     for (final step in steps) {
-      AppLogger.log('puzzle_solver :: _solve : taking steps');
+      AppUtils.logger('puzzle_solver :: _solve : taking steps');
       // if interupted, return
       if (_isInterupted) {
         // stopped due to interuption
@@ -665,7 +665,7 @@ class PuzzleSolver {
   /// starts the auto solver, and returns the number of steps taken by the auto solver
   /// This method completes either when the puzzle is solved, or when stop is invoked
   Future<int> start() async {
-    AppLogger.log('PuzzleSolver: start()');
+    AppUtils.logger('PuzzleSolver: start()');
     // take a snapshot of the current tiles arrangement
     _tiles.clear();
     _tiles.addAll(tiles.map((tile) => SolverTile.fromTile(tile)));
@@ -680,7 +680,7 @@ class PuzzleSolver {
     if (steps.isEmpty) return 0;
 
     _lastStep = steps.removeLast();
-    AppLogger.log('PuzzleSolver: start: steps.length: ${steps.length}');
+    AppUtils.logger('PuzzleSolver: start: steps.length: ${steps.length}');
 
     /// take real steps to solve the puzzle
     return _solve(steps);

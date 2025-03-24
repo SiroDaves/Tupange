@@ -3,9 +3,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
-import '../../../core/utils/app_logger.dart';
 import '../../../core/utils/constants.dart';
-import '../../../core/utils/utils.dart';
+import '../../../core/utils/app_utils.dart';
 import '../../blocs/puzzles/planet_puzzle_bloc.dart';
 
 part 'puzzle_init_state.dart';
@@ -31,7 +30,7 @@ class PuzzleInitCubit extends Cubit<PuzzleInitState> {
     if (_riveController.containsKey(tileKey)) return _riveController[tileKey]!;
 
     final controller = SimpleAnimation(
-      Utils.planetRotationAnimationName,
+      AppUtils.planetRotationAnimationName,
       autoplay: false,
     );
     _riveController[tileKey] = controller;
@@ -65,7 +64,7 @@ class PuzzleInitCubit extends Cubit<PuzzleInitState> {
     final hasStarted =
         _planetPuzzleBloc.state.status == PlanetPuzzleStatus.started;
 
-    AppLogger.log('puzzle_init_cubit: onInit: hasStarted: $hasStarted');
+    AppUtils.logger('puzzle_init_cubit: onInit: hasStarted: $hasStarted');
 
     if (tileKey == _lastTileKey) {
       _startAnimating();

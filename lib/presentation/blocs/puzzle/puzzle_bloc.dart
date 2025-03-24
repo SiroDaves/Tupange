@@ -4,11 +4,11 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../core/app/cubit/audio_player_cubit.dart';
-import '../../widgets/shake_animator.dart';
+import '../../../core/utils/app_utils.dart';
 import '../../../data/models/position.dart';
 import '../../../data/models/puzzle.dart';
 import '../../../data/models/tile.dart';
-import '../../../core/utils/app_logger.dart';
+import '../../widgets/shake_animator.dart';
 
 part 'puzzle_event.dart';
 part 'puzzle_state.dart';
@@ -62,7 +62,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
       direction = ShakeDirection.oppositeDiagonal;
     }
 
-    AppLogger.log('_notifyShakeAnimation: shakeDirection: $direction');
+    AppUtils.logger('_notifyShakeAnimation: shakeDirection: $direction');
 
     _shakeControllers[tile.value]!.shake(direction);
   }
@@ -98,7 +98,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
       final mutablePuzzle = Puzzle(tiles: [...state.puzzle.tiles]);
       final puzzle = mutablePuzzle.moveTiles(tappedTile, []);
       if (puzzle.isComplete()) {
-        AppLogger.log('PuzzleBloc: puzzle.isComplete()');
+        AppUtils.logger('PuzzleBloc: puzzle.isComplete()');
         emit(
           state.copyWith(
             puzzle: puzzle.sort(),

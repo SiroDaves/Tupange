@@ -4,25 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rive/rive.dart' as rive;
 
-import '../../../blocs/puzzle/puzzle_bloc.dart';
-import '../../../widgets/stylized_text.dart';
-import '../../../cubits/puzzle/puzzle_helper_cubit.dart';
+import '../../../../core/layout/utils/app_breakpoints.dart';
+import '../../../../core/utils/app_utils.dart';
 import '../../../../core/utils/constants.dart';
-import '../../../../core/utils/app_logger.dart';
-import '../../../widgets/shake_animator.dart';
+import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/tile.dart';
-import '../../../cubits/puzzle/puzzle_init_cubit.dart';
+import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
-import '../layout/planet_puzzle_layout_delegate.dart';
+import '../../../cubits/puzzle/puzzle_helper_cubit.dart';
+import '../../../cubits/puzzle/puzzle_init_cubit.dart';
 import '../../../theme/bloc/theme_bloc.dart';
-import '../../../../core/utils/utils.dart';
-
-import '../../../../core/layout/layout.dart';
+import '../../../widgets/shake_animator.dart';
+import '../../../widgets/stylized_text.dart';
+import '../layout/planet_puzzle_layout_delegate.dart';
 
 class PlanetPuzzleTile extends StatefulWidget {
   final Tile tile;
 
-  const PlanetPuzzleTile({Key? key, required this.tile}) : super(key: key);
+  const PlanetPuzzleTile({super.key, required this.tile});
 
   @override
   State<PlanetPuzzleTile> createState() => _PlanetPuzzleTileState();
@@ -117,7 +116,7 @@ class _PlanetPuzzleTileState extends State<PlanetPuzzleTile> {
     final isAutoSolving = puzzleHelperState.isAutoSolving;
     final showHelp = puzzleHelperState.showHelp;
 
-    AppLogger.log('PlanetPuzzleTile: updated: isAutoSolving: $isAutoSolving');
+    AppUtils.logger('PlanetPuzzleTile: updated: isAutoSolving: $isAutoSolving');
 
     final status = context.select((PlanetPuzzleBloc bloc) => bloc.state.status);
     final hasStarted = status == PlanetPuzzleStatus.started;
@@ -226,11 +225,11 @@ class _HelpWidget extends StatelessWidget {
   final double size;
 
   const _HelpWidget({
-    Key? key,
+    super.key,
     required this.tile,
     required this.showHelp,
     required this.size,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -278,7 +277,7 @@ class _PuzzlePieceClipper extends CustomClipper<Path> {
 
   @override
   Path getClip(Size size) {
-    return Utils.getPuzzlePath(size, tile.puzzleSize, tile.correctPosition);
+    return PuzzleUtils.getPuzzlePath(size, tile.puzzleSize, tile.correctPosition);
   }
 
   @override
@@ -291,9 +290,9 @@ class _KeyWidget extends StatelessWidget {
   final Widget child;
 
   const _KeyWidget({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

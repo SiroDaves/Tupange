@@ -5,7 +5,7 @@ import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../../core/utils/constants.dart';
-import '../../../../core/utils/utils.dart';
+import '../../../../core/utils/app_utils.dart';
 import '../../../../data/models/puzzle.dart';
 import '../../../cubits/dashboard/level_selection_cubit.dart';
 import '../../../widgets/controls/audio_control.dart';
@@ -23,7 +23,7 @@ class HeaderWidget extends StatelessWidget {
     };
 
     /// add hard level, only for non optimized puzzle
-    if (!Utils.isOptimizedPuzzle()) {
+    if (!AppUtils.isOptimizedPuzzle()) {
       map[PuzzleLevel.hard] = context.l10n.hard;
     }
 

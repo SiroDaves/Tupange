@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../data/models/position.dart';
 import '../../../../core/utils/constants.dart';
-import '../../../../core/utils/utils.dart';
+import '../../../../core/utils/app_utils.dart';
 
 const Duration _animationTick = kMS200;
 const int _fallOffset = 2;
@@ -291,7 +291,7 @@ class _Tile extends StatelessWidget {
         child: Container(
           margin: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
-            color: Utils.darkenColor(Colors.blue, 0.38),
+            color: AppUtils.darkenColor(Colors.blue, 0.38),
             boxShadow: const [
               BoxShadow(
                 blurRadius: 0.1,

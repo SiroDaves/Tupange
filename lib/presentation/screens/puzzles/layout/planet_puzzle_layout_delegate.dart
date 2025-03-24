@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/layout/delegates/puzzle_layout_delegate.dart';
 import '../../../../core/layout/utils/responsive_gap.dart';
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../../core/utils/app_logger.dart';
+import '../../../../core/utils/app_utils.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../data/models/tile.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
@@ -42,7 +42,7 @@ class PlanetPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
   @override
   Widget backgroundBuilder(PuzzleTheme theme, PuzzleState puzzleState) {
     final percentageSolved = _getPercentageOfPuzzleSolved(puzzleState);
-    AppLogger.log('PlanetPuzzleLayoutDelegate :: $percentageSolved');
+    AppUtils.logger('PlanetPuzzleLayoutDelegate :: $percentageSolved');
 
     final landscapeWidget = _LandscapeWidget(theme: theme);
 
@@ -117,7 +117,7 @@ class PlanetPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
 
 class _LandscapeWidget extends StatelessWidget {
   final PuzzleTheme theme;
-  const _LandscapeWidget({Key? key, required this.theme}) : super(key: key);
+  const _LandscapeWidget({required this.theme});
 
   @override
   Widget build(BuildContext context) {

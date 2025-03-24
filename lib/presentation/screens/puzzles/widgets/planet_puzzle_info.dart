@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../../core/utils/utils.dart';
+import '../../../../core/utils/app_utils.dart';
 import '../../../cubits/dashboard/planet_selection_cubit.dart';
 import '../../../cubits/puzzle/puzzle_helper_cubit.dart';
 import '../../../widgets/animated_text.dart';
@@ -44,7 +44,7 @@ class PlanetPuzzleInfo extends StatelessWidget {
             children: [
               // title
               Text(
-                Utils.planetName(planet.type, context),
+                AppUtils.planetName(planet.type, context),
                 style: TextStyle(
                   fontSize: isLarge ? 48.0 : 32.0,
                   color: Colors.white,

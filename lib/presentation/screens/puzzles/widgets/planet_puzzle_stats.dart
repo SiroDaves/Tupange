@@ -5,7 +5,7 @@ import 'package:tupange/core/l10n/l10n.dart';
 import '../../../../core/app/cubit/audio_player_cubit.dart';
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../../core/timer/bloc/timer_bloc.dart';
-import '../../../../core/utils/utils.dart';
+import '../../../../core/utils/app_utils.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
 import '../../../widgets/animated_text.dart';
@@ -81,7 +81,7 @@ class _PuzzleStats extends StatelessWidget {
 
     if (!state.isCountdownRunning || state.secondsToBegin > 3) {
       // show: '00:00:00 | 0 Moves',
-      final timeText = Utils.getFormattedElapsedSeconds(secondsElapsed);
+      final timeText = AppUtils.getFormattedElapsedSeconds(secondsElapsed);
       textToShow = context.l10n.puzzleStats(
         timeText,
         puzzleState.numberOfMoves,

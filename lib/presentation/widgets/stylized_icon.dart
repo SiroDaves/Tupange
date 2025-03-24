@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/utils/utils.dart';
+import '../../core/utils/app_utils.dart';
 import 'stylized_text.dart';
 
 class StylizedIcon extends StatelessWidget {
@@ -25,7 +25,7 @@ class StylizedIcon extends StatelessWidget {
       text: String.fromCharCode(icon.codePoint),
       strokeWidth: strokeWidth,
       strokeColor:
-          color == Colors.white ? Colors.black : Utils.darkenColor(color),
+          color == Colors.white ? Colors.black : AppUtils.darkenColor(color),
       offset: offset,
       style: TextStyle(
         inherit: false,

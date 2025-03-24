@@ -6,7 +6,8 @@ import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../../core/timer/bloc/timer_bloc.dart';
-import '../../../../core/utils/utils.dart';
+import '../../../../core/utils/app_utils.dart';
+import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/planet.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../cubits/dashboard/level_selection_cubit.dart';
@@ -18,7 +19,7 @@ import '../../../widgets/stylized_icon.dart';
 import '../../../widgets/stylized_text.dart';
 
 class PlanetPuzzleCompletionDialog extends StatelessWidget {
-  PlanetPuzzleCompletionDialog({Key? key}) : super(key: key);
+  PlanetPuzzleCompletionDialog({super.key});
 
   final globalKey = GlobalKey();
 
@@ -59,9 +60,9 @@ class _PlanetPuzzleCompletionDialogSmall extends StatelessWidget {
   final GlobalKey globalKey;
 
   const _PlanetPuzzleCompletionDialogSmall({
-    Key? key,
+    super.key,
     required this.globalKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +84,7 @@ class _PlanetPuzzleCompletionDialogSmall extends StatelessWidget {
           child: Transform.scale(
             scale: 1.5,
             child: Image.asset(
-              Utils.getPlanetImageFor(planet.type),
+              PuzzleUtils.getPlanetImageFor(planet.type),
             ),
           ),
         ),
@@ -126,7 +127,7 @@ class _PlanetPuzzleCompletionDialogSmall extends StatelessWidget {
               Text(
                 context.l10n.successMessage(
                   planet.name,
-                  Utils.getSuccessExtraText(
+                  AppUtils.getSuccessExtraText(
                     totalSteps: totalMoves,
                     autoSolverSteps: autoSolverSteps,
                   ),
@@ -143,7 +144,7 @@ class _PlanetPuzzleCompletionDialogSmall extends StatelessWidget {
 
               // star
               WinStarWidget(
-                star: Utils.getScore(
+                star: AppUtils.getScore(
                   secondsTaken: secondsElapsed,
                   totalSteps: totalMoves,
                   autoSolverSteps: autoSolverSteps,
@@ -172,7 +173,7 @@ class _PlanetPuzzleCompletionDialogSmall extends StatelessWidget {
 
               ScoreTile(
                 icon: FontAwesomeIcons.stopwatch,
-                text: Utils.getFormattedElapsedSeconds(secondsElapsed),
+                text: AppUtils.getFormattedElapsedSeconds(secondsElapsed),
               ),
 
               const Gap(8.0),
@@ -208,10 +209,10 @@ class ShareButtons extends StatelessWidget {
   final GlobalKey globalKey;
 
   const ShareButtons({
-    Key? key,
+    super.key,
     required this.planet,
     required this.globalKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -220,7 +221,7 @@ class ShareButtons extends StatelessWidget {
       children: [
         StylizedButton(
           onPressed: () {
-            Utils.onFacebookTap(planet.name, context);
+            AppUtils.onFacebookTap(planet.name, context);
           },
           child: const StylizedContainer(
             padding: EdgeInsets.all(8.0),
@@ -236,7 +237,7 @@ class ShareButtons extends StatelessWidget {
         // twitter
         StylizedButton(
           onPressed: () {
-            Utils.onTwitterTap(planet.name, context);
+            AppUtils.onTwitterTap(planet.name, context);
           },
           child: const StylizedContainer(
             padding: EdgeInsets.all(8.0),
@@ -252,8 +253,8 @@ class ShareButtons extends StatelessWidget {
         // download
         StylizedButton(
           onPressed: () async {
-            final bytes = await Utils.capturePng(globalKey);
-            Utils.onDownloadTap(bytes);
+            final bytes = await AppUtils.capturePng(globalKey);
+            AppUtils.onDownloadTap(bytes);
           },
           child: const StylizedContainer(
             padding: EdgeInsets.all(8.0),
@@ -274,10 +275,10 @@ class ScoreTile extends StatelessWidget {
   final String text;
 
   const ScoreTile({
-    Key? key,
+    super.key,
     required this.icon,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -314,7 +315,7 @@ class WinStarWidget extends StatelessWidget {
   static const maxStar = 5;
   final int star;
 
-  const WinStarWidget({Key? key, this.star = 5}) : super(key: key);
+  const WinStarWidget({super.key, this.star = 5});
 
   @override
   Widget build(BuildContext context) {
@@ -335,9 +336,9 @@ class _PlanetPuzzleCompletionDialogLarge extends StatelessWidget {
   final GlobalKey globalKey;
 
   const _PlanetPuzzleCompletionDialogLarge({
-    Key? key,
+    super.key,
     required this.globalKey,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -366,7 +367,7 @@ class _PlanetPuzzleCompletionDialogLarge extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Image.asset(
-                        Utils.getPlanetImageFor(planet.type),
+                        PuzzleUtils.getPlanetImageFor(planet.type),
                       ),
                     ),
                     Positioned.fill(
@@ -400,7 +401,7 @@ class _PlanetPuzzleCompletionDialogLarge extends StatelessWidget {
                         Text(
                           context.l10n.successMessage(
                             planet.name,
-                            Utils.getSuccessExtraText(
+                            AppUtils.getSuccessExtraText(
                               totalSteps: totalMoves,
                               autoSolverSteps: autoSolverSteps,
                             ),
@@ -418,7 +419,7 @@ class _PlanetPuzzleCompletionDialogLarge extends StatelessWidget {
 
                         // star
                         WinStarWidget(
-                          star: Utils.getScore(
+                          star: AppUtils.getScore(
                             secondsTaken: secondsElapsed,
                             totalSteps: totalMoves,
                             autoSolverSteps: autoSolverSteps,
@@ -447,7 +448,7 @@ class _PlanetPuzzleCompletionDialogLarge extends StatelessWidget {
 
                         ScoreTile(
                           icon: FontAwesomeIcons.stopwatch,
-                          text: Utils.getFormattedElapsedSeconds(
+                          text: AppUtils.getFormattedElapsedSeconds(
                             secondsElapsed,
                           ),
                         ),

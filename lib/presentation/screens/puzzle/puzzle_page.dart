@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/app/cubit/audio_player_cubit.dart';
 import '../../../core/timer/bloc/timer_bloc.dart';
-import '../../../core/utils/utils.dart';
+import '../../../core/utils/app_utils.dart';
 import '../../../data/models/puzzle.dart';
 import '../../../data/models/ticker.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
@@ -47,7 +47,7 @@ class PuzzlePage extends StatelessWidget {
           create: (context) => PuzzleHelperCubit(
             context.read<PuzzleBloc>(),
             context.read<AudioPlayerCubit>(),
-            optimized: Utils.isOptimizedPuzzle() ||
+            optimized: AppUtils.isOptimizedPuzzle() ||
                 context.read<LevelSelectionCubit>().puzzleLevel ==
                     PuzzleLevel.hard,
           ),

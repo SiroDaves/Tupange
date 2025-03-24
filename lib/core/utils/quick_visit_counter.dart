@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-import 'app_logger.dart';
+import 'app_utils.dart';
 import 'constants.dart';
 
 // visit counter
@@ -16,12 +16,12 @@ const _viewOnGithubClickedCounterKey = 'github_link_clicked_counter';
 abstract class QuickVisitCounter {
   static void _count(String counterKey) async {
     if (kDebugMode) {
-      return AppLogger.log('QuickVisitCounter :: DEBUG COUNT $counterKey');
+      return AppUtils.logger('QuickVisitCounter :: DEBUG COUNT $counterKey');
     }
 
     final url = 'https://api.countapi.xyz/hit/$kProjectDomain/$counterKey';
     final response = await http.get(Uri.parse(url));
-    AppLogger.log('QuickVisitCounter :: $counterKey :: ${response.body}');
+    AppUtils.logger('QuickVisitCounter :: $counterKey :: ${response.body}');
   }
 
   static void countWebPageOpened() => _count(_webPageCounterKey);

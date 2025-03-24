@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/utils/utils.dart';
+import '../../core/utils/app_utils.dart';
 
 class StylizedContainer extends StatefulWidget {
   final Widget child;
@@ -56,7 +56,7 @@ class _StylizedContainerState extends State<StylizedContainer> {
     return Container(
       margin: widget.margin,
       decoration: BoxDecoration(
-        color: Utils.darkenColor(widget.color),
+        color: AppUtils.darkenColor(widget.color),
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Transform.translate(

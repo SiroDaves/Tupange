@@ -93,7 +93,7 @@ class PlanetOrbitalAnimationCubit extends Cubit<PlanetOrbitalAnimationState> {
     _isStopped = true;
     _animationController.forEach((planetType, controller) {
       // final v = math.max(math.min(_random.nextDouble(), 0.60), 0.30);
-      // AppLogger.log('planetpositionfinding: $planetType :: $v');
+      // AppUtils.logger('planetpositionfinding: $planetType :: $v');
       controller.stop();
       controller.animateTo(
         kPausedPosition[planetType]!,

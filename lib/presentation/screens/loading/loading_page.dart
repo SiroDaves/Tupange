@@ -16,7 +16,7 @@ import '../../widgets/stylized_text.dart';
 import '../../../core/layout/layout.dart';
 import '../../cubits/loading/assetcache_cubit.dart';
 import 'widgets/loading.dart';
-import '../../../core/utils/utils.dart';
+import '../../../core/utils/app_utils.dart';
 
 class LoadingPage extends StatelessWidget {
   const LoadingPage({Key? key}) : super(key: key);
@@ -26,7 +26,7 @@ class LoadingPage extends StatelessWidget {
     /// due to chrome policy: https://goo.gl/xX8pDD
     context.read<AudioPlayerCubit>().playThemeMusic();
 
-    final page = await Utils.buildPageAsync(const DashboardPage());
+    final page = await AppUtils.buildPageAsync(const DashboardPage());
 
     Navigator.pushReplacement(
       context,
@@ -94,7 +94,7 @@ class _ProjectGithubLink extends StatelessWidget {
       small: (_, child) => Align(
         alignment: Alignment.bottomLeft,
         child: StylizedButton(
-          onPressed: Utils.onGithubTap,
+          onPressed: AppUtils.onGithubTap,
           child: const SizedBox(
             width: 70.0,
             child: FittedBox(
@@ -116,7 +116,7 @@ class _ProjectGithubLink extends StatelessWidget {
         return Align(
           alignment: Alignment.bottomCenter,
           child: StylizedButton(
-            onPressed: Utils.onGithubTap,
+            onPressed: AppUtils.onGithubTap,
             child: StylizedContainer(
               color: Colors.blueGrey,
               child: Row(
@@ -243,7 +243,7 @@ class _MainBody extends StatelessWidget {
             StylizedText(
               text: context.l10n.appTitle,
               fontSize: isLarge ? 68.0 : 48.0,
-              textColor: Utils.darkenColor(Colors.blue),
+              textColor: AppUtils.darkenColor(Colors.blue),
               strokeColor: Colors.white,
             ),
             const Gap(4.0),

@@ -12,14 +12,14 @@ import 'presentation/cubits/loading/assetcache_cubit.dart';
 import 'presentation/screens/loading/loading_page.dart';
 import 'presentation/widgets/keyboard_handlers/app_keyboard_handler.dart';
 
-class App extends StatefulWidget {
-  const App({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
   @override
-  _AppState createState() => _AppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _AppState extends State<App> {
+class MyAppState extends State<MyApp> {
   @override
   void initState() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(

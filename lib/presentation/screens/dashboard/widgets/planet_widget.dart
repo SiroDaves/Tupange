@@ -3,15 +3,15 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/planet.dart';
-import '../../../../core/utils/utils.dart';
 import '../../../cubits/dashboard/planet_orbital_animation_cubit.dart';
 import '../../../cubits/dashboard/planet_selection_cubit.dart';
 
 class PlanetWidget extends StatelessWidget {
   final Planet planet;
 
-  const PlanetWidget({Key? key, required this.planet}) : super(key: key);
+  const PlanetWidget({super.key, required this.planet});
 
   double _getX(double theta) {
     return planet.origin.x +
@@ -82,7 +82,7 @@ class _CorePlanet extends StatelessWidget {
       },
       child: Transform.rotate(
         angle: planet.type == PlanetType.saturn ? 0 : math.pi / 10,
-        child: Image.asset(Utils.getPlanetThumbFor(planet.type)),
+        child: Image.asset(PuzzleUtils.getPlanetThumbFor(planet.type)),
       ),
     );
   }

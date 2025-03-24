@@ -1,39 +1,20 @@
 import 'dart:async';
-import 'dart:developer';
 
-import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
+import 'core/di/injectable.dart';
 
-void main() {
-  bootstrap(() => const App());
-}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  //await dotenv.load(fileName: ".env");
+  
+  //final supabaseUrl = dotenv.env['SUPABASE_URL'];
+  //final supabaseAnonKey = dotenv.env['SUPABASE_ANON_KEY'];
 
-
-class AppBlocObserver extends BlocObserver {
-  @override
-  void onChange(BlocBase bloc, Change change) {
-    super.onChange(bloc, change);
-    log('onChange(${bloc.runtimeType}, $change)');
-  }
-
-  @override
-  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    log('onError(${bloc.runtimeType}, $error, $stackTrace)');
-    super.onError(bloc, error, stackTrace);
-  }
-}
-
-Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
-  FlutterError.onError = (details) {
-    log(details.exceptionAsString(), stackTrace: details.stack);
-  };
-
-  Bloc.observer = AppBlocObserver();
-
-  await runZonedGuarded(
-    () async => runApp(await builder()),
-    (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
-  );
+  //await supa.Supabase.initialize(url: supabaseUrl!, anonKey: supabaseAnonKey!);
+  //AppUtils.logger('Supabase init started: $supabaseUrl');
+  await configureDependencies(kIsWeb ? 'dev' : 'prod');
+  runApp(const MyApp());
 }

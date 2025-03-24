@@ -4,9 +4,10 @@ import 'dart:math';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../core/utils/puzzle_utils.dart';
 import '../../../data/models/planet.dart';
 import '../../../core/utils/constants.dart';
-import '../../../core/utils/utils.dart';
 
 part 'planet_fact_state.dart';
 
@@ -53,7 +54,7 @@ class PlanetFactCubit extends Cubit<PlanetFactState> {
     required PlanetType planetType,
     required BuildContext context,
   }) : super(const PlanetFactState()) {
-    facts = Utils.planetFacts(planetType, context);
+    facts = PuzzleUtils.planetFacts(planetType, context);
 
     facts.shuffle();
 
