@@ -4,15 +4,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/audio/cubit/audio_player_cubit.dart';
 import '../../../core/layout/utils/app_breakpoints.dart';
 import '../../../core/layout/utils/responsive_layout_builder.dart';
+import '../../../core/resource/app_assets.dart';
 import '../../../core/utils/constants/app_constants.dart';
 import '../../blocs/home/home_bloc.dart';
 import '../../cubits/dashboard/level_selection/level_selection_cubit.dart';
 import '../../cubits/dashboard/planet_orbital/planet_orbital_animation_cubit.dart';
 import '../../cubits/dashboard/planet_selection/planet_selection_cubit.dart';
 import '../../cubits/dashboard/planet_selection/planet_selection_helper_cubit.dart';
-import '../../widgets/background/background.dart';
 import '../../widgets/controls/audio_control.dart';
-import '../../widgets/keyboard_handlers/dashboard_keyboard_handler.dart';
 import 'views/home_views.dart';
 import 'widgets/header_widget.dart';
 
@@ -43,7 +42,18 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ],
-      child: const HomeView(),
+      child: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(AppAssets.nairobiImg),
+              fit: BoxFit.cover,
+            ),
+          ),
+          padding: EdgeInsets.only(top: 10),
+          child: HomeView(),
+        ),
+      ),
     );
   }
 }
@@ -90,52 +100,44 @@ class HomeViewState extends State<HomeView>
       return const SizedBox.shrink();
     }
 
-    return HomeKeyboardHandler(
-      orbits: (state as HomeReady).orbits,
-      child: Background(
-        child: SizedBox.fromSize(
-          size: size,
-          child: Stack(
-            children: [
-              ResponsiveLayoutBuilder(
-                small: (_, Widget? child) => HomePageSmall(child: child!),
-                medium: (_, Widget? child) =>
-                    HomePageMedium(child: child!),
-                large: (_, Widget? child) => child!,
-                child: (_) => HomePageLarge(state: state),
-              ),
-              const HeaderWidget(),
-
-              ResponsiveLayoutBuilder(
-                small: (_, __) => const SizedBox.shrink(),
-                medium: (_, __) => const SizedBox.shrink(),
-                large: (_, __) => const Align(
-                  alignment: AppConstants.kFOTopRight,
-                  child: AudioControl(),
-                ),
-              ),
-
-              const Align(
-                alignment: AppConstants.kFOBottomRight,
-                child: PlanetAnimationToggleButton(),
-              ),
-              ResponsiveLayoutBuilder(
-                small: (_, __) => const Align(
-                  alignment: AppConstants.kFOBottomLeft,
-                  child: InfoButton(),
-                ),
-                medium: (_, __) => const Align(
-                  alignment: AppConstants.kFOTopLeft,
-                  child: InfoButton(),
-                ),
-                large: (_, __) => const Align(
-                  alignment: AppConstants.kFOTopLeft,
-                  child: InfoButton(),
-                ),
-              ),
-            ],
+    return SizedBox.fromSize(
+      size: size,
+      child: Stack(
+        children: [
+          ResponsiveLayoutBuilder(
+            small: (_, Widget? child) => HomePageSmall(child: child!),
+            medium: (_, Widget? child) => HomePageMedium(child: child!),
+            large: (_, Widget? child) => child!,
+            child: (_) => HomePageLarge(state: state as HomeReady),
           ),
-        ),
+          const HeaderWidget(),
+          ResponsiveLayoutBuilder(
+            small: (_, __) => const SizedBox.shrink(),
+            medium: (_, __) => const SizedBox.shrink(),
+            large: (_, __) => const Align(
+              alignment: AppConstants.kFOTopRight,
+              child: AudioControl(),
+            ),
+          ),
+          const Align(
+            alignment: AppConstants.kFOBottomRight,
+            child: PlanetAnimationToggleButton(),
+          ),
+          ResponsiveLayoutBuilder(
+            small: (_, __) => const Align(
+              alignment: AppConstants.kFOBottomLeft,
+              child: InfoButton(),
+            ),
+            medium: (_, __) => const Align(
+              alignment: AppConstants.kFOTopLeft,
+              child: InfoButton(),
+            ),
+            large: (_, __) => const Align(
+              alignment: AppConstants.kFOTopLeft,
+              child: InfoButton(),
+            ),
+          ),
+        ],
       ),
     );
   }

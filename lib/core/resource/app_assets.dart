@@ -29,6 +29,7 @@ abstract class AppAssets {
 
   // loading screen images
   static const planetsImage = '$_imageBase/planets.png';
+  static const nairobiImg = '$_imageBase/nairobi.jpg';
 
   // dashboard images
   static const sunImage = '$_imageBase/sun.png';

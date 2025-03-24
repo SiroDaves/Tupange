@@ -13,7 +13,6 @@ import '../../../widgets/stylized_button.dart';
 import '../../../widgets/stylized_container.dart';
 import '../../../widgets/stylized_icon.dart';
 import '../widgets/scroll_buttons.dart';
-import '../widgets/sun_widget.dart';
 
 class InfoButton extends StatelessWidget {
   const InfoButton({super.key});
@@ -175,9 +174,9 @@ class HomePageLarge extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        const SunWidget(key: Key('Sun')),
-        ...state.orbits.map<Widget>((orbit) => orbit.widget).toList(),
-        ...(state).orbits.map<Widget>((orbit) => orbit.planet.widget).toList(),
+        //const SunWidget(key: Key('Sun')),
+        //...state.orbits.map<Widget>((orbit) => orbit.widget).toList(),
+        //...(state).orbits.map<Widget>((orbit) => orbit.planet.widget).toList(),
       ],
     );
   }
