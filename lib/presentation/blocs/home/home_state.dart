@@ -11,6 +11,7 @@ class HomeLoading extends HomeState {}
 
 class HomeReady extends HomeState {
   final List<Orbit> orbits;
+  //final List<Game> games;
 
   const HomeReady(this.orbits);
 

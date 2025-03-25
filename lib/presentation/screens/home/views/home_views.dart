@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -147,13 +148,36 @@ class HomePageLarge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        //const SunWidget(key: Key('Sun')),
-        //...state.orbits.map<Widget>((orbit) => orbit.widget).toList(),
-        //...(state).orbits.map<Widget>((orbit) => orbit.planet.widget).toList(),
-      ],
+    return SizedBox(
+      child: LayoutBuilder(
+        builder: (ctx, dimens) {
+          return Center(
+            child: CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 2.0,
+                enlargeCenterPage: true,
+                enableInfiniteScroll: false,
+                initialPage: 0,
+                autoPlay: true,
+              ),
+              items: state.games.map((game) {
+                return Builder(
+                  builder: (BuildContext ctx) {
+                    return MenuCarousel(
+                      game: game,
+                      height: dimens.maxHeight,
+                      onPressed: () {
+                        //context.read<AudioPlayerCubit>().buttonClickAudio();
+                        //context.read<GameSelectionCubit>().onGameSelected(game);
+                      },
+                    );
+                  },
+                );
+              }).toList(),
+            ),
+          );
+        },
+      ),
     );
   }
 }

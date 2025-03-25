@@ -13,6 +13,7 @@ dependencies:
   carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.8
   equatable: ^2.0.7
+  floor: ^1.5.0
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.0
@@ -25,9 +26,11 @@ dependencies:
   injectable: ^2.5.0 # Code generator for dependency injection
   intl: ^0.19.0
   json_annotation: ^4.9.0 # Annotations for JSON serialization/deserialization
+  path: ^1.9.0
   path_provider: ^2.1.5
   rive: ^0.13.20
   shared_preferences: ^2.3.3 # Local key-value storage for simple data persistence
+  sqflite: ^2.4.1
   supabase_auth_ui: ^0.5.4
   supabase_flutter: ^2.8.4
   universal_html: ^2.2.4

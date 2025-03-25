@@ -16,6 +16,9 @@ import 'package:uuid/uuid.dart';
 import '../../data/models/planet.dart';
 import 'constants/app_constants.dart';
 
+bool isDesktop = Platform.isWindows || Platform.isLinux || Platform.isMacOS;
+bool isMobile = Platform.isAndroid || Platform.isIOS || Platform.isFuchsia;
+
 abstract class AppUtils {
   static void logger(String message) {
     return logging.log('''
