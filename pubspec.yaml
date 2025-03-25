@@ -10,6 +10,7 @@ dependencies:
   animated_text_kit: ^4.2.3
   audioplayers: ^6.4.0
   bloc: ^9.0.0
+  carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.8
   equatable: ^2.0.7
   flutter:
@@ -27,6 +28,8 @@ dependencies:
   path_provider: ^2.1.5
   rive: ^0.13.20
   shared_preferences: ^2.3.3 # Local key-value storage for simple data persistence
+  supabase_auth_ui: ^0.5.4
+  supabase_flutter: ^2.8.4
   universal_html: ^2.2.4
   url_launcher: ^6.3.1
   uuid: ^4.5.1

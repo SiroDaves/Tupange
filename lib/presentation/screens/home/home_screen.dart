@@ -14,6 +14,7 @@ import '../../cubits/dashboard/planet_selection/planet_selection_helper_cubit.da
 import '../../widgets/controls/audio_control.dart';
 import 'views/home_views.dart';
 import 'widgets/header_widget.dart';
+import 'widgets/info_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -119,10 +120,10 @@ class HomeViewState extends State<HomeView>
               child: AudioControl(),
             ),
           ),
-          const Align(
+          /*const Align(
             alignment: AppConstants.kFOBottomRight,
             child: PlanetAnimationToggleButton(),
-          ),
+          ),*/
           ResponsiveLayoutBuilder(
             small: (_, __) => const Align(
               alignment: AppConstants.kFOBottomLeft,
