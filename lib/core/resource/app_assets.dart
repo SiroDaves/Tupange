@@ -26,6 +26,7 @@ abstract class AppAssets {
   static const _imageBase = 'assets/images';
 
   static const appIcon = '$_iconBase/app_icon.png';
+  static const imgZeroState = '$_iconBase/app_icon.png';
 
   // loading screen images
   static const planetsImage = '$_imageBase/planets.png';

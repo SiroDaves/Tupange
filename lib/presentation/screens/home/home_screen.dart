@@ -15,6 +15,8 @@ import '../../cubits/dashboard/planet_orbital/planet_orbital_animation_cubit.dar
 import '../../cubits/dashboard/planet_selection/planet_selection_cubit.dart';
 import '../../cubits/dashboard/planet_selection/planet_selection_helper_cubit.dart';
 import '../../widgets/controls/audio_control.dart';
+import '../../widgets/progress/custom_snackbar.dart';
+import '../../widgets/progress/general_progress.dart';
 import '../../widgets/stylized_button.dart';
 import '../../widgets/stylized_container.dart';
 import '../../widgets/stylized_icon.dart';
@@ -22,8 +24,7 @@ import 'widgets/header_widget.dart';
 import 'widgets/info_widget.dart';
 import 'widgets/menu_carousel.dart';
 
-part  'views/home_details.dart';
-part  'views/home_views.dart';
+part 'home_views.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -87,46 +88,66 @@ class HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-
-    return SizedBox.fromSize(
-      size: size,
-      child: Stack(
-        children: [
-          ResponsiveLayoutBuilder(
-            small: (_, Widget? child) => HomeSmall(child: child!),
-            medium: (_, Widget? child) => HomeMedium(child: child!),
-            large: (_, Widget? child) => child!,
-            child: (_) => HomeDetails(),
-          ),
-          const HeaderWidget(),
-          ResponsiveLayoutBuilder(
-            small: (_, __) => const SizedBox.shrink(),
-            medium: (_, __) => const SizedBox.shrink(),
-            large: (_, __) => const Align(
-              alignment: AppConstants.kFOTopRight,
-              child: AudioControl(),
+    return BlocConsumer<HomeBloc, HomeState>(
+      listener: (context, state) {
+        if (state is HomeFailureState) {
+          CustomSnackbar.show(context, state.feedback);
+        }
+      },
+      builder: (context, state) {
+        return SizedBox.fromSize(
+          size: size,
+          child: state.maybeWhen(
+            orElse: () => const SizedBox(),
+            failure: (feedback) => EmptyState(
+              //title: l10n.habitChooserFailure,
+              showRetry: true,
+              //onRetry: () => bloc.add(const FetchData()),
             ),
-          ),
-          /*const Align(
+            loading: () => LoadingProgress(),
+            fetched: (categories, games) => Stack(
+              children: [
+                ResponsiveLayoutBuilder(
+                  small: (_, Widget? child) => HomeSmall(child: child!),
+                  medium: (_, Widget? child) => HomeMedium(child: child!),
+                  large: (_, Widget? child) => child!,
+                  child: (_) => HomeDetails(
+                    categories: categories,
+                    games: games,
+                  ),
+                ),
+                const HeaderWidget(),
+                ResponsiveLayoutBuilder(
+                  small: (_, __) => const SizedBox.shrink(),
+                  medium: (_, __) => const SizedBox.shrink(),
+                  large: (_, __) => const Align(
+                    alignment: AppConstants.kFOTopRight,
+                    child: AudioControl(),
+                  ),
+                ),
+                /*const Align(
             alignment: AppConstants.kFOBottomRight,
             child: PlanetAnimationToggleButton(),
           ),*/
-          ResponsiveLayoutBuilder(
-            small: (_, __) => const Align(
-              alignment: AppConstants.kFOBottomLeft,
-              child: InfoButton(),
-            ),
-            medium: (_, __) => const Align(
-              alignment: AppConstants.kFOTopLeft,
-              child: InfoButton(),
-            ),
-            large: (_, __) => const Align(
-              alignment: AppConstants.kFOTopLeft,
-              child: InfoButton(),
+                ResponsiveLayoutBuilder(
+                  small: (_, __) => const Align(
+                    alignment: AppConstants.kFOBottomLeft,
+                    child: InfoButton(),
+                  ),
+                  medium: (_, __) => const Align(
+                    alignment: AppConstants.kFOTopLeft,
+                    child: InfoButton(),
+                  ),
+                  large: (_, __) => const Align(
+                    alignment: AppConstants.kFOTopLeft,
+                    child: InfoButton(),
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
