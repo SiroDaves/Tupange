@@ -17,6 +17,7 @@ Future<void> main() async {
 
   await supa.Supabase.initialize(url: supabaseUrl!, anonKey: supabaseAnonKey!);
   AppUtils.logger('Supabase init started: $supabaseUrl');
+  
   await configureDependencies('prod');
   runApp(const MyApp());
 }
