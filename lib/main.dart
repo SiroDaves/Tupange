@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as supa;
@@ -18,6 +17,6 @@ Future<void> main() async {
 
   await supa.Supabase.initialize(url: supabaseUrl!, anonKey: supabaseAnonKey!);
   AppUtils.logger('Supabase init started: $supabaseUrl');
-  await configureDependencies(kIsWeb ? 'dev' : 'prod');
+  await configureDependencies('prod');
   runApp(const MyApp());
 }
