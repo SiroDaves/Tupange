@@ -7,7 +7,7 @@ import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../core/utils/app_utils.dart';
 import '../../../../data/models/puzzle.dart';
-import '../../../cubits/dashboard/level_selection/level_selection_cubit.dart';
+import '../../../cubits/level_selection/level_selection_cubit.dart';
 import '../../../widgets/controls/audio_control.dart';
 import '../../../widgets/stylized_button.dart';
 import '../../../widgets/stylized_container.dart';

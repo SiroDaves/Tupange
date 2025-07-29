@@ -2,10 +2,10 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../data/models/planet.dart';
-import '../../../../core/utils/constants/app_constants.dart';
-import '../../../../core/utils/app_utils.dart';
-import '../../../screens/puzzle/puzzle_page.dart';
+import '../../../data/models/planet.dart';
+import '../../../core/utils/constants/app_constants.dart';
+import '../../../core/utils/app_utils.dart';
+import '../../screens/puzzle/puzzle_page.dart';
 import '../level_selection/level_selection_cubit.dart';
 
 part 'planet_selection_state.dart';

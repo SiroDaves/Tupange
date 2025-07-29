@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/models/orbit.dart';
-import '../../cubits/dashboard/level_selection/level_selection_cubit.dart';
-import '../../cubits/dashboard/planet_selection/planet_selection_cubit.dart';
-import '../../cubits/dashboard/planet_selection/planet_selection_helper_cubit.dart';
+import '../../cubits/level_selection/level_selection_cubit.dart';
+import '../../cubits/planet_selection/planet_selection_cubit.dart';
+import '../../cubits/planet_selection/planet_selection_helper_cubit.dart';
 import '../info_card/info_card.dart';
 
 class HomeKeyboardHandler extends StatefulWidget {
