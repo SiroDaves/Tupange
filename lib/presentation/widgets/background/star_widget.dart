@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../data/models/star.dart';
 import '../../../core/utils/constants/app_constants.dart';
+import '../../../data/models/star.dart';
 
 class StarWidget extends StatelessWidget {
   final Star star;

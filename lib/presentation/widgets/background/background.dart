@@ -3,9 +3,9 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../../core/utils/constants/app_constants.dart';
 import '../../../data/models/position.dart';
 import '../../../data/models/star.dart';
-import '../../../core/utils/constants/app_constants.dart';
 
 class Background extends StatefulWidget {
   final Widget child;
