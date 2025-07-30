@@ -55,6 +55,7 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
+    - .env
     - assets/audio/
     - assets/icons/
     - assets/images/
