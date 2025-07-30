@@ -7,11 +7,11 @@ import 'package:tupange/core/l10n/l10n.dart';
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../../core/utils/app_utils.dart';
 import '../../../cubits/game_selection/game_selection_cubit.dart';
+import '../../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
 import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../../widgets/animated_text.dart';
 import '../../../widgets/stylized_icon.dart';
 import '../../../widgets/stylized_text.dart';
-import '../../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
 
 class PlanetPuzzleInfo extends StatelessWidget {
   const PlanetPuzzleInfo({super.key});
@@ -111,10 +111,10 @@ class _FactWidget extends StatelessWidget {
   final bool isSmall;
 
   const _FactWidget({
-    Key? key,
+    super.key,
     required this.isLarge,
     required this.isSmall,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
