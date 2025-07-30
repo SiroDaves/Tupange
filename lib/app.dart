@@ -66,8 +66,9 @@ class AppViewState extends State<AppView> {
       providers: [
         BlocProvider(create: (_) => AudioControlBloc()),
         BlocProvider(
-          create: (context) =>
-              AudioPlayerCubit(context.read<AudioControlBloc>()),
+          create: (context) => AudioPlayerCubit(
+            context.read<AudioControlBloc>(),
+          ),
         ),
         BlocProvider(create: (_) => AssetcacheCubit()),
       ],

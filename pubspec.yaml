@@ -59,6 +59,9 @@ flutter:
     - assets/audio/
     - assets/icons/
     - assets/images/
+    - assets/images/animals/
+    - assets/images/countries/
+    - assets/images/planets/
 
   fonts:
     - family: Freshman
