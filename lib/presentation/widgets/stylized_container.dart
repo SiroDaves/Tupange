@@ -9,7 +9,7 @@ class StylizedContainer extends StatefulWidget {
   final Color color;
 
   const StylizedContainer({
-    Key? key,
+    super.key,
     required this.child,
     this.padding = const EdgeInsets.symmetric(
       horizontal: 18.0,
@@ -17,7 +17,7 @@ class StylizedContainer extends StatefulWidget {
     ),
     this.margin,
     this.color = Colors.white,
-  }) : super(key: key);
+  });
 
   @override
   State<StylizedContainer> createState() => _StylizedContainerState();

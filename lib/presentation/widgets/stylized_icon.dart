@@ -11,13 +11,13 @@ class StylizedIcon extends StatelessWidget {
   final Color color;
 
   const StylizedIcon({
-    Key? key,
+    super.key,
     required this.icon,
     this.size = 24.0,
     this.strokeWidth = 6.0,
     this.offset = 2.0,
     this.color = Colors.white,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

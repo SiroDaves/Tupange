@@ -5,10 +5,10 @@ class AppIconButton extends StatelessWidget {
   final IconData iconData;
 
   const AppIconButton({
-    Key? key,
+    super.key,
     required this.iconData,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -9,10 +9,10 @@ class AudioControlListener extends StatefulWidget {
   final Widget child;
 
   const AudioControlListener({
-    Key? key,
+    super.key,
     this.audioPlayer,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   State<AudioControlListener> createState() => _AudioControlListenerState();

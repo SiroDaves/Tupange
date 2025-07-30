@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class BorderedText extends StatelessWidget {
   const BorderedText({
-    Key? key,
+    super.key,
     required this.child,
     this.strokeCap = StrokeCap.round,
     this.strokeJoin = StrokeJoin.round,
     this.strokeWidth = 6.0,
     this.strokeColor = const Color.fromRGBO(53, 0, 71, 1),
     this.offset = 0.0,
-  }) : super(key: key);
+  });
 
   /// stoke offset amount
   final double offset;
