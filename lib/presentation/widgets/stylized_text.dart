@@ -14,7 +14,7 @@ class StylizedText extends StatelessWidget {
   final String? semanticsLabel;
 
   const StylizedText({
-    Key? key,
+    super.key,
     required this.text,
     this.textColor = Colors.white,
     this.strokeColor = Colors.black,
@@ -24,7 +24,7 @@ class StylizedText extends StatelessWidget {
     this.style,
     this.textAlign,
     this.semanticsLabel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
