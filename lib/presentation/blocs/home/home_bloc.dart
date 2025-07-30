@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/di/injectable.dart';
-import '../../../core/repository/prefs_repository.dart';
+import '../../../domain/repository/prefs_repository.dart';
 import '../../../core/utils/constants/pref_constants.dart';
 import '../../../data/datasources/remote/home_repository.dart';
 import '../../../data/models/category.dart';

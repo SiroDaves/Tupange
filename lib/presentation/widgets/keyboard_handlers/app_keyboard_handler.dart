@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/audio/bloc/audio_control_bloc.dart';
+import '../../blocs/audio/audio_control_bloc.dart';
 
 class AppKeyboardHandler extends StatefulWidget {
   final Widget child;

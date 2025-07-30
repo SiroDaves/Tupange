@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import '../../../core/resource/app_assets.dart';
+import '../../../core/utils/constants/app_assets.dart';
 
 class CircularProgress extends StatelessWidget {
   const CircularProgress({super.key});

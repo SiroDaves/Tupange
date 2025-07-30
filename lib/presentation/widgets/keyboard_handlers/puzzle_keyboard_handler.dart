@@ -5,23 +5,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/models/tile.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../blocs/timer/timer_bloc.dart';
 import '../../cubits/puzzle/helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle/init/puzzle_init_cubit.dart';
-import '../../../core/timer/timer.dart';
 
 class PuzzleKeyboardHandler extends StatefulWidget {
   final Widget child;
 
   const PuzzleKeyboardHandler({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
-  _PuzzleKeyboardHandlerState createState() => _PuzzleKeyboardHandlerState();
+  PuzzleKeyboardHandlerState createState() => PuzzleKeyboardHandlerState();
 }
 
-class _PuzzleKeyboardHandlerState extends State<PuzzleKeyboardHandler> {
+class PuzzleKeyboardHandlerState extends State<PuzzleKeyboardHandler> {
   final FocusNode _focusNode = FocusNode();
 
   @override

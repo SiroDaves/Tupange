@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../core/audio/cubit/audio_player_cubit.dart';
+import '../../cubits/audio/audio_player_cubit.dart';
 import '../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../core/resource/app_assets.dart';
+import '../../../core/utils/constants/app_assets.dart';
 import '../../../core/utils/constants/app_constants.dart';
 import '../../../data/models/category.dart';
 import '../../../data/models/game.dart';

@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import '../../../core/resource/app_assets.dart';
+import '../../../core/utils/constants/app_assets.dart';
 
 part 'assetcache_state.dart';
 

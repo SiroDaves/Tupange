@@ -1,4 +1,4 @@
-import '../../../core/resource/app_assets.dart';
+import '../../../core/utils/constants/app_assets.dart';
 import 'planet_puzzle_theme.dart';
 
 class MarsPuzzleTheme extends PlanetPuzzleTheme {

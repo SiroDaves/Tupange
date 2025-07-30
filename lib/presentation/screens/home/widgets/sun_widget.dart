@@ -2,7 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-import '../../../../core/resource/app_assets.dart';
+import '../../../../core/utils/constants/app_assets.dart';
 import '../../../../core/utils/constants/app_constants.dart';
 
 class SunWidget extends StatelessWidget {

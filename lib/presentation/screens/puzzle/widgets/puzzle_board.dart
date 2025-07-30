@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/timer/bloc/timer_bloc.dart';
+import '../../../blocs/timer/timer_bloc.dart';
 import '../../../../core/utils/app_utils.dart';
 import '../../../../data/models/tile.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';

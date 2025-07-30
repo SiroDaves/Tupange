@@ -3,8 +3,8 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/audio/cubit/audio_player_cubit.dart';
-import '../../../core/resource/app_assets.dart';
+import '../../cubits/audio/audio_player_cubit.dart';
+import '../../../core/utils/constants/app_assets.dart';
 import '../../../core/utils/constants/app_constants.dart';
 import '../../cubits/loading/assetcache_cubit.dart';
 import '../../navigator/route_names.dart';

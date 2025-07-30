@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/models/planet.dart';
 import '../../data/models/position.dart';
-import '../resource/app_assets.dart';
+import 'constants/app_assets.dart';
 import 'app_utils.dart';
 
 const _paddingOffset = 5.0;

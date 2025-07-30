@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'core/audio/bloc/audio_control_bloc.dart';
-import 'core/audio/cubit/audio_player_cubit.dart';
-import 'core/auth/auth_bloc.dart';
+import 'presentation/blocs/audio/audio_control_bloc.dart';
+import 'presentation/cubits/audio/audio_player_cubit.dart';
+import 'presentation/blocs/auth/auth_bloc.dart';
 import 'core/l10n/l10n.dart';
-import 'core/repository/auth_repository.dart';
+import 'domain/repository/auth_repository.dart';
 import 'core/utils/constants/app_constants.dart';
 import 'presentation/cubits/loading/assetcache_cubit.dart';
 import 'presentation/navigator/main_navigator.dart';

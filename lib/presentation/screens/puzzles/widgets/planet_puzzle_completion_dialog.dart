@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../../core/timer/bloc/timer_bloc.dart';
+import '../../../blocs/timer/timer_bloc.dart';
 import '../../../../core/utils/app_utils.dart';
 import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/planet.dart';
