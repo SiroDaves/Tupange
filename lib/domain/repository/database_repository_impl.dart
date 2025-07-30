@@ -1,6 +1,6 @@
-import '../datasources/local/app_database.dart';
-import '../models/category.dart';
-import '../models/game.dart';
+import '../../data/sources/local/app_database.dart';
+import '../../data/models/category.dart';
+import '../../data/models/game.dart';
 import 'database_repository.dart';
 
 /// Implementor of Database Repository

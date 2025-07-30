@@ -1,5 +1,5 @@
-import '../models/category.dart';
-import '../models/game.dart';
+import '../../data/models/category.dart';
+import '../../data/models/game.dart';
 
 abstract class DatabaseRepository {
   Future<List<Game>> fetchGames();
