@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
-import '../../../cubits/audio/audio_player_cubit.dart';
+import '../../../../core/utils/app_utils.dart';
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../blocs/timer/timer_bloc.dart';
-import '../../../../core/utils/app_utils.dart';
 import '../../../blocs/puzzle/puzzle_bloc.dart';
 import '../../../blocs/puzzles/planet_puzzle_bloc.dart';
+import '../../../cubits/audio/audio_player_cubit.dart';
 import '../../../widgets/animated_text.dart';
 import '../../../widgets/stylized_text.dart';
 
 class PlanetPuzzleStats extends StatelessWidget {
-  const PlanetPuzzleStats({Key? key}) : super(key: key);
+  const PlanetPuzzleStats({super.key});
 
   @override
   Widget build(BuildContext context) {
