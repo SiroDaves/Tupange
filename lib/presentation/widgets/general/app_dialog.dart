@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../core/layout/utils/responsive_layout_builder.dart';
-import '../../core/utils/constants/app_constants.dart';
+import '../../../core/layout/utils/responsive_layout_builder.dart';
+import '../../../core/utils/constants/app_constants.dart';
 import 'stylized_button.dart';
 import 'stylized_container.dart';
 import 'stylized_icon.dart';

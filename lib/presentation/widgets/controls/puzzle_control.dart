@@ -9,9 +9,9 @@ import '../../blocs/game/game_puzzle_bloc.dart';
 import '../../blocs/timer/timer_bloc.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
-import '../stylized_button.dart';
-import '../stylized_container.dart';
-import '../stylized_text.dart';
+import '../general/stylized_button.dart';
+import '../general/stylized_container.dart';
+import '../general/stylized_text.dart';
 
 class PuzzleControl extends StatelessWidget {
   const PuzzleControl({super.key});

@@ -5,10 +5,10 @@ import 'package:gap/gap.dart';
 import '../../../cubits/audio/audio_player_cubit.dart';
 
 import '../../../widgets/controls/audio_control.dart';
-import '../../../widgets/stylized_button.dart';
-import '../../../widgets/stylized_container.dart';
-import '../../../widgets/stylized_icon.dart';
-import '../../../widgets/stylized_text.dart';
+import '../../../widgets/general/stylized_button.dart';
+import '../../../widgets/general/stylized_container.dart';
+import '../../../widgets/general/stylized_icon.dart';
+import '../../../widgets/general/stylized_text.dart';
 import '../../../../core/l10n/l10n.dart';
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../cubits/puzzle_helper/puzzle_helper_cubit.dart';

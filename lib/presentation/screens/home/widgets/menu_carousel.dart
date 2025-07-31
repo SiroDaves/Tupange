@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/category.dart';
-import '../../../widgets/stylized_text.dart';
+import '../../../widgets/general/stylized_text.dart';
 
 class MenuCarousel extends StatelessWidget {
   final Category category;

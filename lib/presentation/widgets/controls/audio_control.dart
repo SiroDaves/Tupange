@@ -5,9 +5,9 @@ import 'package:gap/gap.dart';
 
 import '../../blocs/audio/audio_control_bloc.dart';
 import '../info_card/info_card.dart';
-import '../stylized_button.dart';
-import '../stylized_container.dart';
-import '../stylized_icon.dart';
+import '../general/stylized_button.dart';
+import '../general/stylized_container.dart';
+import '../general/stylized_icon.dart';
 
 class AudioControl extends StatelessWidget {
   final bool isSmall;

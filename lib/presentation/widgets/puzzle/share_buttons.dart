@@ -3,9 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../core/utils/app_utils.dart';
 import '../../../data/models/game.dart';
-import '../stylized_button.dart';
-import '../stylized_container.dart';
-import '../stylized_icon.dart';
+import '../general/stylized_button.dart';
+import '../general/stylized_container.dart';
+import '../general/stylized_icon.dart';
 
 class ShareButtons extends StatelessWidget {
   final Game game;

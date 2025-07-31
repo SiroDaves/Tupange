@@ -5,8 +5,8 @@ import 'package:gap/gap.dart';
 import '../../../core/helpers/modal_helpers.dart';
 import '../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../core/l10n/l10n.dart';
-import '../stylized_icon.dart';
-import '../stylized_text.dart';
+import '../general/stylized_icon.dart';
+import '../general/stylized_text.dart';
 
 part 'selection_data.dart';
 
@@ -38,7 +38,7 @@ class _SelectionCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0),
         border: Border.all(
           width: 2.0,
-          color: Colors.amber,
+          color: Colors.blue,
         ),
       ),
       child: SingleChildScrollView(

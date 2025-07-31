@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/utils/app_utils.dart';
+import '../../../core/utils/app_utils.dart';
 
 class StylizedContainer extends StatefulWidget {
   final Widget child;

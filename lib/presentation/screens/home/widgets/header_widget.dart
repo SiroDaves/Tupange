@@ -9,9 +9,9 @@ import '../../../../core/utils/constants/app_constants.dart';
 import '../../../../data/models/puzzle.dart';
 import '../../../cubits/level_selection/level_selection_cubit.dart';
 import '../../../widgets/controls/audio_control.dart';
-import '../../../widgets/stylized_button.dart';
-import '../../../widgets/stylized_container.dart';
-import '../../../widgets/stylized_text.dart';
+import '../../../widgets/general/stylized_button.dart';
+import '../../../widgets/general/stylized_container.dart';
+import '../../../widgets/general/stylized_text.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({super.key});

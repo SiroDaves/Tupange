@@ -12,7 +12,7 @@ import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
-import '../stylized_text.dart';
+import '../general/stylized_text.dart';
 import 'puzzle_completion_dialog_large.dart';
 import 'share_buttons.dart';
 

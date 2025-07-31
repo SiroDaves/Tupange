@@ -8,9 +8,9 @@ import '../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
 import '../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
-import '../animated_text.dart';
-import '../stylized_icon.dart';
-import '../stylized_text.dart';
+import '../general/animated_text.dart';
+import '../general/stylized_icon.dart';
+import '../general/stylized_text.dart';
 
 class PuzzleInfo extends StatelessWidget {
   const PuzzleInfo({super.key});

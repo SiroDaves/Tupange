@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../../widgets/stylized_button.dart';
-import '../../../widgets/stylized_container.dart';
-import '../../../widgets/stylized_icon.dart';
+import '../../../widgets/general/stylized_button.dart';
+import '../../../widgets/general/stylized_container.dart';
+import '../../../widgets/general/stylized_icon.dart';
 
 class ScrollButtons extends StatelessWidget {
   final VoidCallback? onNext;

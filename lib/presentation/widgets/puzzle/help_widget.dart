@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/utils/constants/app_constants.dart';
 import '../../../core/utils/puzzle_utils.dart';
 import '../../../data/models/tile.dart';
-import '../stylized_text.dart';
+import '../general/stylized_text.dart';
 
 class HelpWidget extends StatelessWidget {
   final Tile tile;

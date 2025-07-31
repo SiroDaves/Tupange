@@ -8,8 +8,8 @@ import '../../blocs/timer/timer_bloc.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/game/game_puzzle_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
-import '../animated_text.dart';
-import '../stylized_text.dart';
+import '../general/animated_text.dart';
+import '../general/stylized_text.dart';
 
 class PuzzleStats extends StatelessWidget {
   const PuzzleStats({super.key});

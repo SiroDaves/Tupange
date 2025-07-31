@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../presentation/widgets/app_dialog.dart';
+import '../../presentation/widgets/general/app_dialog.dart';
 import '../utils/constants/app_constants.dart';
 
 Future<T?> showAppDialog<T>({

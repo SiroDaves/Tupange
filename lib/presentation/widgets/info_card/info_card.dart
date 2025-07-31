@@ -5,8 +5,8 @@ import 'package:gap/gap.dart';
 import '../../../core/helpers/modal_helpers.dart';
 import '../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../core/l10n/l10n.dart';
-import '../stylized_icon.dart';
-import '../stylized_text.dart';
+import '../general/stylized_icon.dart';
+import '../general/stylized_text.dart';
 
 part 'info_data.dart';
 

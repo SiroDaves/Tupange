@@ -8,7 +8,7 @@ import '../../../data/models/position.dart';
 import '../../../data/models/puzzle.dart';
 import '../../../data/models/tile.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
-import '../../widgets/shake_animator.dart';
+import '../../widgets/general/shake_animator.dart';
 
 part 'puzzle_event.dart';
 part 'puzzle_state.dart';
