@@ -8,9 +8,9 @@ import '../../../core/l10n/l10n.dart';
 import '../stylized_icon.dart';
 import '../stylized_text.dart';
 
-part 'info_data.dart';
+part 'selection_data.dart';
 
-abstract class InfoCard {
+abstract class SelectionCard {
   static bool _isVisible = false;
   static Future<void> show({required BuildContext context}) async {
     if (_isVisible) return;
@@ -18,27 +18,27 @@ abstract class InfoCard {
 
     await showAppDialog(
       context: context,
-      child: _InfoCard(AppShortcutData.data(context)),
+      child: _SelectionCard(AppShortcutData.data(context)),
     );
 
     _isVisible = false;
   }
 }
 
-class _InfoCard extends StatelessWidget {
-  final List<InfoData> _data;
+class _SelectionCard extends StatelessWidget {
+  final List<SelectionData> _data;
 
-  const _InfoCard(this._data);
+  const _SelectionCard(this._data);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.black.withValues(alpha: 0.80),
-        borderRadius: BorderRadius.circular(15.0),
+        borderRadius: BorderRadius.circular(12.0),
         border: Border.all(
           width: 2.0,
-          color: Colors.white,
+          color: Colors.amber,
         ),
       ),
       child: SingleChildScrollView(
@@ -68,7 +68,7 @@ class _InfoCard extends StatelessWidget {
 }
 
 class _ShortcutColumn extends StatelessWidget {
-  final InfoData infoData;
+  final SelectionData infoData;
   const _ShortcutColumn(this.infoData);
 
   @override
@@ -76,8 +76,13 @@ class _ShortcutColumn extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        // header
         _ShortcutScreenHeader(infoData.title),
+
+        // gap
         const Gap(28),
+
+        // body
         Column(
           mainAxisSize: MainAxisSize.min,
           children: infoData.infoPairs
@@ -111,7 +116,7 @@ class _ShortcutScreenHeader extends StatelessWidget {
 }
 
 class _ShortcutListTile extends StatelessWidget {
-  final InfoPair _infopair;
+  final SelectionPair _infopair;
   const _ShortcutListTile(this._infopair);
 
   @override

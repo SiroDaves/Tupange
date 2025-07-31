@@ -1,95 +1,82 @@
-part of 'info_card.dart';
+part of 'selection_card.dart';
 
-class InfoData {
+class SelectionData {
   final String title;
-  final List<InfoPair> infoPairs;
+  final List<SelectionPair> infoPairs;
 
-  const InfoData({
+  const SelectionData({
     required this.title,
     required this.infoPairs,
   });
 }
 
 abstract class AppShortcutData {
-  static List<InfoData> data(BuildContext context) => [
-        InfoData(
+  static List<SelectionData> data(BuildContext context) => [
+        SelectionData(
           title: context.l10n.appShortcuts,
           infoPairs: [
-            InfoPair(
+            SelectionPair(
               titleText: 'M',
               description: context.l10n.appShortcutMusic,
             ),
-            InfoPair(
+            SelectionPair(
               titleText: 'S',
               description: context.l10n.appShortcutSoundEffect,
             ),
           ],
         ),
-        InfoData(
+        SelectionData(
           title: context.l10n.dashboardShortcuts,
           infoPairs: [
-            InfoPair(
+            SelectionPair(
               showIcon: true,
               titleIcon: Icons.space_bar_rounded,
               description: context.l10n.dashboardShortcutOrbitalAnimation,
             ),
-            InfoPair(
+            SelectionPair(
               showIcon: true,
               titleIcon: FontAwesomeIcons.arrowLeft,
               description: context.l10n.dashboardShortcutDiffDec,
             ),
-            InfoPair(
-              showIcon: true,
-              titleIcon: FontAwesomeIcons.arrowRight,
-              description: context.l10n.dashboardShortcutDiffInc,
-            ),
-            InfoPair(
-              titleText: 'i',
-              description: context.l10n.dashboardShortcutInfo,
-            ),
-            InfoPair(
-              titleText: 'ESC',
-              description: context.l10n.dashboardShortcutClose,
-            ),
           ],
         ),
-        InfoData(
+        SelectionData(
           title: context.l10n.puzzleShortcuts,
           infoPairs: [
-            InfoPair(
+            SelectionPair(
               showIcon: true,
               titleIcon: Icons.space_bar_rounded,
               description: context.l10n.puzzleShortcutControl,
             ),
-            InfoPair(
+            SelectionPair(
               titleText: 'R',
               description: context.l10n.puzzleShortcutRestart,
             ),
-            InfoPair(
+            SelectionPair(
               titleText: 'V',
               description: context.l10n.puzzleShortcutHintVisibility,
             ),
-            InfoPair(
+            SelectionPair(
               showIcon: true,
               titleIcon: FontAwesomeIcons.arrowUp,
               description: context.l10n.whitespaceUp,
             ),
-            InfoPair(
+            SelectionPair(
               showIcon: true,
               titleIcon: FontAwesomeIcons.arrowDown,
               description: context.l10n.whitespaceDown,
             ),
-            InfoPair(
+            SelectionPair(
               showIcon: true,
               titleIcon: FontAwesomeIcons.arrowLeft,
               description: context.l10n.whitespaceLeft,
             ),
-            InfoPair(
+            SelectionPair(
               showIcon: true,
               titleIcon: FontAwesomeIcons.arrowRight,
               description: context.l10n.whitespaceRight,
             ),
-            InfoPair(
+            SelectionPair(
               titleText: 'ESC',
               description: context.l10n.backToSolarSystem,
             ),
@@ -98,13 +85,13 @@ abstract class AppShortcutData {
       ];
 }
 
-class InfoPair {
+class SelectionPair {
   final IconData titleIcon;
   final String titleText;
   final String description;
   final bool showIcon;
 
-  const InfoPair({
+  const SelectionPair({
     this.titleIcon = FontAwesomeIcons.info,
     this.titleText = '',
     required this.description,

@@ -12,6 +12,7 @@ import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
 import '../../widgets/controls/audio_control.dart';
+import '../../widgets/info_card/info_card.dart';
 import '../../widgets/progress/custom_snackbar.dart';
 import '../../widgets/progress/general_progress.dart';
 import 'widgets/header_widget.dart';

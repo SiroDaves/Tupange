@@ -50,7 +50,8 @@ class HomeDetails extends StatelessWidget {
                       height: dimens.maxHeight,
                       onPressed: () {
                         context.read<AudioPlayerCubit>().buttonClickAudio();
-                        //context.read<GameSelectionCubit>().onGameSelected(game);
+                        InfoCard.show(context: context);
+                        // context.read<GameSelectionCubit>().onGameSelected(category);
                       },
                     );
                   },

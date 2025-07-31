@@ -69,10 +69,7 @@ class _StylizedContainerState extends State<StylizedContainer> {
           child: Stack(
             alignment: Alignment.topCenter,
             children: [
-              // reflection widget
               topReflectionWidget ?? const SizedBox.shrink(),
-
-              // child widget
               Container(
                 margin: widget.padding,
                 key: globalKey,

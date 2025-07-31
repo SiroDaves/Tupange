@@ -41,15 +41,13 @@ class AppDialog extends StatelessWidget {
 
             // close button
             Positioned(
-              right: paddingHorizontal / 4,
-              top: paddingVertical / 4,
+              right: paddingHorizontal / 1.2,
+              top: paddingVertical / 1.6,
               child: StylizedButton(
                 onPressed: () => Navigator.pop(context),
                 child: const StylizedContainer(
                   color: Colors.redAccent,
-                  child: StylizedIcon(
-                    icon: Icons.close_rounded,
-                  ),
+                  child: StylizedIcon(icon: Icons.close_rounded),
                 ),
               ),
             ),
@@ -134,7 +132,6 @@ class _LargeDialogBodyState extends State<_LargeDialogBody> {
           ),
           builder: (_, Size? size, Widget? child) {
             if (size == null) return const SizedBox.shrink();
-
             return SizedBox.fromSize(
               size: Size(size.width + 20.0, size.height + 20.0),
               child: child,

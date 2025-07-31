@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../presentation/widgets/app_dialog.dart';
 import '../utils/constants/app_constants.dart';
 
-/// Displays the [AppDialog] above the current contents of the app.
 Future<T?> showAppDialog<T>({
   required BuildContext context,
   required Widget child,
