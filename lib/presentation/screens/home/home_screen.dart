@@ -15,7 +15,6 @@ import '../../widgets/controls/audio_control.dart';
 import '../../widgets/progress/custom_snackbar.dart';
 import '../../widgets/progress/general_progress.dart';
 import 'widgets/header_widget.dart';
-import 'widgets/info_widget.dart';
 import 'widgets/menu_carousel.dart';
 
 part 'home_view.dart';

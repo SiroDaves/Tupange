@@ -3,7 +3,7 @@
   "@language": {
     "description": "The current language"
   },
-  "appTitle": "Sayari",
+  "appTitle": "Tupange",
   "@appTitle": {
     "description": "The title of the app"
   },
@@ -27,7 +27,7 @@
   "@start": {
     "description": "Start Button text"
   },
-  "dashboardHeading": "Gusa sayari ili kuanza",
+  "dashboardHeading": "Anza mpango wowote",
   "@dashboardHeading": {
     "description": "Instruction to start the game"
   },

@@ -55,20 +55,6 @@ class HomeViewState extends State<HomeView> {
                 child: AudioControl(),
               ),
             ),
-            ResponsiveLayoutBuilder(
-              small: (_, __) => const Align(
-                alignment: AppConstants.kFOBottomLeft,
-                child: InfoButton(),
-              ),
-              medium: (_, __) => const Align(
-                alignment: AppConstants.kFOTopLeft,
-                child: InfoButton(),
-              ),
-              large: (_, __) => const Align(
-                alignment: AppConstants.kFOTopLeft,
-                child: InfoButton(),
-              ),
-            ),
           ],
         );
         return SizedBox.fromSize(
