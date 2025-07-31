@@ -5,6 +5,10 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../data/sources/local/app_database.dart';
+import '../../domain/repository/database_repository.dart';
+import '../../domain/repository/database_repository_impl.dart';
+import '../utils/constants/app_constants.dart';
 import 'injectable.config.dart';
 
 final getIt = GetIt.instance;
@@ -25,6 +29,18 @@ abstract class RegisterModule {
   @preResolve
   Future<SharedPreferences> prefsRepository() =>
       SharedPreferences.getInstance();
+
+  @prod
+  @singleton
+  @preResolve
+  Future<AppDatabase> provideAppDatabase() async => await $FloorAppDatabase
+      .databaseBuilder(await AppConstants.databaseFile)
+      .build();
+
+  @prod
+  @lazySingleton
+  DatabaseRepository provideDatabaseRepository(AppDatabase appDatabase) =>
+      DatabaseRepositoryImpl(appDatabase);
 }
 
 dynamic _parseAndDecode(String response) => jsonDecode(response);

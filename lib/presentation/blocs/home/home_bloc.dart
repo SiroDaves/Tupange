@@ -5,7 +5,7 @@ import '../../../core/di/injectable.dart';
 import '../../../core/utils/constants/pref_constants.dart';
 import '../../../data/models/category.dart';
 import '../../../data/models/game.dart';
-import '../../../data/sources/remote/home_repository.dart';
+import '../../../data/sources/raw_data.dart';
 import '../../../domain/repository/database_repository.dart';
 import '../../../domain/repository/prefs_repository.dart';
 
@@ -20,7 +20,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<SaveData>(_onSaveData);
   }
 
-  final _homeRepo = HomeRepository();
   final _dbRepo = getIt<DatabaseRepository>();
   final _prefsRepo = getIt<PrefsRepository>();
 
@@ -28,30 +27,22 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     FetchData event,
     Emitter<HomeState> emit,
   ) async {
-    List<Category> categories = [];
-    List<Game> games = [];
-    bool isDataLoaded = _prefsRepo.getPrefBool(PrefConstants.isDataLoadedKey);
-    if (isDataLoaded) {
-    } else {
-      categories = [
-        Category(title: 'Safari', isAsset: true, image: 'planets'),
-        Category(title: 'Nchi', isAsset: true, image: 'countries'),
-        Category(title: 'Wanyama', isAsset: true, image: 'animals'),
-      ];
-      games = [
-        Game(title: 'Safari', isAsset: true, image: 'planets'),
-      ];
-    }
     emit(const HomeLoadingState());
+    bool isDataLoaded = _prefsRepo.getPrefBool(PrefConstants.isDataLoadedKey);
+    if (!isDataLoaded) {
+      for (final category in RawData.categories) {
+        await _dbRepo.saveCategory(category: category);
+      }
 
-    categories = await _homeRepo.fetchCategories();
-    games = await _homeRepo.fetchGames();
-
-    if (categories.isNotEmpty) {
-      emit(HomeFetchedState(categories, games));
-    } else {
-      emit(HomeFailureState('Could not fetch data'));
+      for (final game in RawData.games) {
+        await _dbRepo.saveGame(game: game);
+      }
     }
+
+    List<Category> categories = await _dbRepo.fetchCategories();
+    List<Game> games = await _dbRepo.fetchGames();
+
+    emit(HomeFetchedState(categories, games));
   }
 
   void _onSaveData(

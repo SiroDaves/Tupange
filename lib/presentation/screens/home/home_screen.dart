@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../core/utils/constants/app_assets.dart';
@@ -11,15 +10,10 @@ import '../../../data/models/game.dart';
 import '../../blocs/home/home_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/level_selection/level_selection_cubit.dart';
-import '../../cubits/planet_orbital/planet_orbital_animation_cubit.dart';
 import '../../cubits/game_selection/game_selection_cubit.dart';
-import '../../cubits/game_selection_helper/game_selection_helper_cubit.dart';
 import '../../widgets/controls/audio_control.dart';
 import '../../widgets/progress/custom_snackbar.dart';
 import '../../widgets/progress/general_progress.dart';
-import '../../widgets/stylized_button.dart';
-import '../../widgets/stylized_container.dart';
-import '../../widgets/stylized_icon.dart';
 import 'widgets/header_widget.dart';
 import 'widgets/info_widget.dart';
 import 'widgets/menu_carousel.dart';
@@ -42,11 +36,6 @@ class HomeScreen extends StatelessWidget {
           create: (ctx) => GameSelectionCubit(
             ctx.read<LevelSelectionCubit>(),
             context,
-          ),
-        ),
-        BlocProvider(
-          create: (ctx) => GameSelectionHelperCubit(
-            animationCubit: ctx.read<PlanetOrbitalAnimationCubit>(),
           ),
         ),
       ],

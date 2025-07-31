@@ -63,31 +63,3 @@ class HomeDetails extends StatelessWidget {
     );
   }
 }
-
-class AnimationToggleButton extends StatelessWidget {
-  const AnimationToggleButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final state =
-        context.select((GameSelectionHelperCubit cubit) => cubit.state);
-
-    final bool isPaused = state.isPaused;
-
-    return StylizedButton(
-      onPressed: () {
-        context.read<GameSelectionHelperCubit>().onPlanetMovementToggle();
-      },
-      child: StylizedContainer(
-        color: isPaused ? Colors.grey : Colors.blueAccent,
-        padding: const EdgeInsets.all(12.0),
-        child: StylizedIcon(
-          icon: isPaused ? FontAwesomeIcons.pause : FontAwesomeIcons.play,
-          size: 15.0,
-          offset: 1.0,
-          strokeWidth: 5.0,
-        ),
-      ),
-    );
-  }
-}

@@ -1,7 +1,12 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
-import '../../../data/models/planet.dart';
+import 'package:flutter/material.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+
+// import '../../../data/models/planet.dart';
 import '../../../data/models/puzzle.dart';
+import '../app_utils.dart';
 
 class AppConstants {
   static const appTitle = 'Tupange';
@@ -12,6 +17,17 @@ class AppConstants {
   static const kProjectDomain = 'fph-planets.web.app';
   static const kUrl = 'https://$kProjectDomain/#/';
   static const kGithubUrl = 'https://github.com/SiroDaves/Tupange';
+
+  static Future<String> get databaseFile async {
+    Directory dbFolder = await getApplicationDocumentsDirectory();
+    if (isDesktop) {
+      dbFolder = await getApplicationSupportDirectory();
+    }
+
+    var dbPath = join(dbFolder.path, '$appTitle.db');
+    AppUtils.logger('Opening database from: $dbPath');
+    return dbPath;
+  }
 
 // puzzle solving durations expected for perfect score
   static const k3PuzzleDuration = Duration(minutes: 2);
@@ -62,72 +78,6 @@ class AppConstants {
     PuzzleLevel.medium: 4,
     PuzzleLevel.hard: 5,
   };
-
-// planet sizes
-// 0.383	0.949	1	0.532	11.21	9.45	4.01	3.88	0.187
-  static const Map<PlanetType, double> kPlanetSizeFactor = {
-    PlanetType.mercury: 0.383,
-    PlanetType.venus: 0.949, // venus
-    PlanetType.earth: 1, // earth
-    PlanetType.mars: 0.532, // mars
-    PlanetType.jupiter: 3.0, // 11.21,
-    PlanetType.saturn: 2.3, // 9.45,
-    PlanetType.uranus: 1.15, //4.01,
-    PlanetType.neptune: 1.02, // 3.88,
-    PlanetType.pluto: 0.25, // 0.187,
-  };
-
-  /// Revolution periods of all planets - to be used for animation period calculation
-// Planet	Period of Revolution
-// Mercury	88 days       0.24
-// Venus	224.7 days      0.62
-// Earth	365 days        1
-// Mars	687 days          1.88
-// Jupiter	11.9 years    11
-// Saturn	29.5 years      29
-// Uranus	84 years        84
-// Neptune	164.8 years   164
-// Pluto	247.7 years     247
-
-  static const int kBaseRevolutionSeconds = 10;
-
-  static const Map<PlanetType, double> kRevolutionFactor = {
-    PlanetType.mercury: 0.50, // 0.24,
-    PlanetType.venus: 0.80, // 0.62,
-    PlanetType.earth: 1,
-    PlanetType.mars: 1.88,
-    PlanetType.jupiter: 3.0, // 11,
-    PlanetType.saturn: 6.1, // 29,
-    PlanetType.uranus: 9.3, // 84,
-    PlanetType.neptune: 12.0, // 164,
-    PlanetType.pluto: 16.0, // 247,
-  };
-
-  static const Map<PlanetType, double> kRevolutionThresholdFactor = {
-    PlanetType.mercury: 1.0,
-    PlanetType.venus: 1.0,
-    PlanetType.earth: 1.2,
-    PlanetType.mars: 0.90,
-    PlanetType.jupiter: 1.5,
-    PlanetType.saturn: 1.2,
-    PlanetType.uranus: 0.80,
-    PlanetType.neptune: 0.85,
-    PlanetType.pluto: 0.50,
-  };
-
-  static const Map<PlanetType, double> kPausedPosition = {
-    PlanetType.mercury: 0.60,
-    PlanetType.venus: 0.35,
-    PlanetType.earth: 0.58,
-    PlanetType.mars: 0.46,
-    PlanetType.jupiter: 0.55,
-    PlanetType.saturn: 0.41,
-    PlanetType.uranus: 0.30,
-    PlanetType.neptune: 0.53,
-    PlanetType.pluto: 0.30,
-  };
-
-  static const kMinSunSize = 350.0;
 
   static const kGreyscaleColorFilter = ColorFilter.matrix(
     <double>[
