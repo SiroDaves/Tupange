@@ -14,7 +14,7 @@ import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
 import '../../theme/bloc/theme_bloc.dart';
 import '../shake_animator.dart';
-import '../../screens/puzzles/game_layout_delegate.dart';
+import '../../../core/layout/delegates/game_layout_delegate.dart';
 import 'help_widget.dart';
 
 class GamePuzzleTile extends StatefulWidget {

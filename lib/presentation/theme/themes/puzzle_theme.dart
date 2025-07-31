@@ -1,4 +1,4 @@
-import '../../../core/layout/layout.dart';
+import '../../../core/layout/delegates/puzzle_layout_delegate.dart';
 
 abstract class PuzzleTheme {
   const PuzzleTheme();

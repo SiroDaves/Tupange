@@ -1,5 +1,5 @@
 import '../../../core/layout/layout.dart';
-import '../../screens/puzzles/game_layout_delegate.dart';
+import '../../../core/layout/delegates/game_layout_delegate.dart';
 import 'puzzle_theme.dart';
 
 abstract class GamePuzzleTheme extends PuzzleTheme {
