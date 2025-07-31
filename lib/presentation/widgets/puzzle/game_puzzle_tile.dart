@@ -7,7 +7,6 @@ import 'package:rive/rive.dart' as rive;
 import '../../../core/layout/utils/app_breakpoints.dart';
 import '../../../core/utils/app_utils.dart';
 import '../../../core/utils/constants/app_constants.dart';
-import '../../../core/utils/puzzle_utils.dart';
 import '../../../data/models/tile.dart';
 import '../../blocs/puzzle/puzzle_bloc.dart';
 import '../../blocs/game/game_puzzle_bloc.dart';
@@ -15,8 +14,8 @@ import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../../cubits/puzzle_init/puzzle_init_cubit.dart';
 import '../../theme/bloc/theme_bloc.dart';
 import '../shake_animator.dart';
-import '../stylized_text.dart';
 import '../../screens/puzzles/game_layout_delegate.dart';
+import 'help_widget.dart';
 
 class GamePuzzleTile extends StatefulWidget {
   final Tile tile;
@@ -60,14 +59,14 @@ class _GamePuzzleTileState extends State<GamePuzzleTile> {
 
     if (context.read<PuzzleHelperCubit>().state.optimized) {
       // if we need to play optimized puzzle, just show images, instead of animations
-      childVn.value = _KeyWidget(
+      childVn.value = KeyWidget(
         key: puzzleInitCubit.getGlobalKey(widget.tile.value),
         child: Image.asset(theme.placeholderAssetForTile),
       );
       puzzleInitCubit.onInit(widget.tile.value);
     } else {
       // show animations if we don't wanna play optimized puzzle
-      childVn.value = _KeyWidget(
+      childVn.value = KeyWidget(
         key: puzzleInitCubit.getGlobalKey(widget.tile.value),
         child: rive.RiveAnimation.asset(
           theme.assetForTile,
@@ -153,7 +152,7 @@ class _GamePuzzleTileState extends State<GamePuzzleTile> {
             ((correctY + 1 / 2) * offset) / size,
           ),
           child: ClipPath(
-            clipper: _PuzzlePieceClipper(widget.tile),
+            clipper: PuzzlePieceClipper(widget.tile),
             child: MouseRegion(
               cursor: canPress
                   ? SystemMouseCursors.click
@@ -200,7 +199,7 @@ class _GamePuzzleTileState extends State<GamePuzzleTile> {
                                 ),
                               )
                             : const SizedBox.shrink(),
-                        _HelpWidget(
+                        HelpWidget(
                           key: ValueKey(widget.tile.value),
                           tile: widget.tile,
                           showHelp: showHelp,
@@ -216,86 +215,5 @@ class _GamePuzzleTileState extends State<GamePuzzleTile> {
         ),
       ),
     );
-  }
-}
-
-class _HelpWidget extends StatelessWidget {
-  final Tile tile;
-  final bool showHelp;
-  final double size;
-
-  const _HelpWidget({
-    super.key,
-    required this.tile,
-    required this.showHelp,
-    required this.size,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final correctX = tile.correctPosition.x;
-    final correctY = tile.correctPosition.y;
-
-    final offset = size / tile.puzzleSize;
-
-    const containerSize = 40.0;
-
-    return Transform.translate(
-      offset: Offset(
-        ((correctX + 1 / 2) * offset) - containerSize / 2,
-        ((correctY + 1 / 2) * offset) - containerSize / 2,
-      ),
-      child: AnimatedSwitcher(
-        duration: AppConstants.kMS250,
-        reverseDuration: AppConstants.kMS250,
-        switchInCurve: Curves.easeInOut,
-        switchOutCurve: Curves.easeInOut,
-        child: showHelp
-            ? Container(
-                key: Key('helper_widget_${tile.value}'),
-                width: containerSize,
-                height: containerSize,
-                alignment: Alignment.center,
-                child: StylizedText(
-                  text: '${tile.value + 1}',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: tile.puzzleSize == 3 ? 35.0 : 20.0,
-                  ),
-                ),
-              )
-            : const SizedBox.shrink(),
-      ),
-    );
-  }
-}
-
-class _PuzzlePieceClipper extends CustomClipper<Path> {
-  final Tile tile;
-
-  const _PuzzlePieceClipper(this.tile);
-
-  @override
-  Path getClip(Size size) {
-    return PuzzleUtils.getPuzzlePath(size, tile.puzzleSize, tile.correctPosition);
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return false;
-  }
-}
-
-class _KeyWidget extends StatelessWidget {
-  final Widget child;
-
-  const _KeyWidget({
-    super.key,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return child;
   }
 }
