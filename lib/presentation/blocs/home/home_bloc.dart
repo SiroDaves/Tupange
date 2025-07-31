@@ -21,6 +21,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   }
 
   final _homeRepo = HomeRepository();
+  final _dbRepo = getIt<DatabaseRepository>();
   final _prefsRepo = getIt<PrefsRepository>();
 
   void _onFetchData(
@@ -29,6 +30,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     List<Category> categories = [];
     List<Game> games = [];
+    bool isDataLoaded = _prefsRepo.getPrefBool(PrefConstants.isDataLoadedKey);
+    if (isDataLoaded) {
+    } else {
+      categories = [
+        Category(title: 'Safari', isAsset: true, image: 'planets'),
+        Category(title: 'Nchi', isAsset: true, image: 'countries'),
+        Category(title: 'Wanyama', isAsset: true, image: 'animals'),
+      ];
+      games = [
+        Game(title: 'Safari', isAsset: true, image: 'planets'),
+      ];
+    }
     emit(const HomeLoadingState());
 
     categories = await _homeRepo.fetchCategories();
@@ -47,16 +60,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   ) async {
     emit(const HomeLoadingState());
 
-    final dbRepo = getIt<DatabaseRepository>();
-    await dbRepo.removeAllCategories();
-    await dbRepo.removeAllGames();
+    await _dbRepo.removeAllCategories();
+    await _dbRepo.removeAllGames();
 
     for (final category in event.categories) {
-      await dbRepo.saveCategory(category: category);
+      await _dbRepo.saveCategory(category: category);
     }
 
     for (final game in event.games) {
-      await dbRepo.saveGame(game: game);
+      await _dbRepo.saveGame(game: game);
     }
 
     await Future<void>.delayed(const Duration(seconds: 10));

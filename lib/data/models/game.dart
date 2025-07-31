@@ -13,18 +13,16 @@ class Game {
   int? rid;
   int? category;
   String? title;
-  String? description;
   String? image;
-  String? facts;
+   bool? isAsset;
   String? createdAt;
 
   Game({
     this.rid,
     this.category,
     this.title,
-    this.description,
     this.image,
-    this.facts,
+    this.isAsset,
     this.createdAt,
   });
 

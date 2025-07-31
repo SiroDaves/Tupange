@@ -9,12 +9,13 @@ part 'category.g.dart';
 @JsonSerializable()
 class Category {
   @PrimaryKey(autoGenerate: true)
-  final int? id;
-  final int? rid;
-  final String? title;
-  final String? description;
-  final String? image;
-  final String createdAt;
+  int? id;
+  int? rid;
+  String? title;
+  String? description;
+  String? image;
+  bool? isAsset;
+  String createdAt;
 
   Category({
     this.id,
@@ -22,6 +23,7 @@ class Category {
     this.title,
     this.description,
     this.image,
+    this.isAsset,
     String? createdAt,
   })  : createdAt = createdAt ?? DateTime.now().toIso8601String();
 

@@ -12,8 +12,8 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 import 'package:tupange/core/di/injectable.dart' as _i1048;
-import 'package:tupange/domain/repository/auth_repository.dart' as _i130;
-import 'package:tupange/domain/repository/prefs_repository.dart' as _i787;
+import 'package:tupange/domain/repository/auth_repository.dart' as _i588;
+import 'package:tupange/domain/repository/prefs_repository.dart' as _i245;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -31,9 +31,9 @@ extension GetItInjectableX on _i174.GetIt {
       () => registerModule.prefsRepository(),
       preResolve: true,
     );
-    gh.lazySingleton<_i130.AuthRepository>(() => _i130.AuthRepository());
-    gh.singleton<_i787.PrefsRepository>(
-        () => _i787.PrefsRepository(gh<_i460.SharedPreferences>()));
+    gh.lazySingleton<_i588.AuthRepository>(() => _i588.AuthRepository());
+    gh.singleton<_i245.PrefsRepository>(
+        () => _i245.PrefsRepository(gh<_i460.SharedPreferences>()));
     return this;
   }
 }
