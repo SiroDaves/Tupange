@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/category.dart';
 import '../../../widgets/stylized_text.dart';
 
@@ -39,7 +40,7 @@ class MenuCarousel extends StatelessWidget {
         width: height * 1.2,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(category.image!),
+            image: PuzzleUtils.getAssetImagePath(category.image!),
             fit: BoxFit.cover,
           ),
           color: Colors.black,
@@ -49,7 +50,7 @@ class MenuCarousel extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           children: [
             Container(
-              height: height * .25,
+              height: height * .1,
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
@@ -66,7 +67,7 @@ class MenuCarousel extends StatelessWidget {
             ),
             StylizedText(
               text: category.title!.toUpperCase(),
-              fontSize: isLarge ? 68.0 : 48.0,
+              fontSize: isLarge ? 48.0 : 36.0,
               textColor: Colors.white,
             ),
           ],

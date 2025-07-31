@@ -55,10 +55,6 @@ class HomeViewState extends State<HomeView> {
                 child: AudioControl(),
               ),
             ),
-            // const Align(
-            //   alignment: AppConstants.kFOBottomRight,
-            //   child: AnimationToggleButton(),
-            // ),
             ResponsiveLayoutBuilder(
               small: (_, __) => const Align(
                 alignment: AppConstants.kFOBottomLeft,

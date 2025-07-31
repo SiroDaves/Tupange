@@ -1,0 +1,271 @@
+{
+  "language": "Kiswahili",
+  "@language": {
+    "description": "The current language"
+  },
+  "appTitle": "Sayari",
+  "@appTitle": {
+    "description": "The title of the app"
+  },
+  "loadingScreenReady": "Tayari wakati wowote, Nahodha!",
+  "@loadingScreenReady": {
+    "description": "Ready text shown in Loading screen, after important assets are cached"
+  },
+  "loadingScreenInitializing": "Tafadhali subiri, inaandaliwa...",
+  "@loadingScreenInitializing": {
+    "description": "When caching, show initializing text"
+  },
+  "loadingScreenSubTitle1": "Imetengenezwa kwa",
+  "@loadingScreenSubTitle1": {
+    "description": "Part of 'Made with <3 powered by Flutter'"
+  },
+  "loadingScreenSubTitle2": "ikiwa na nguvu ya Flutter",
+  "@loadingScreenSubTitle2": {
+    "description": "Part of 'Made with <3 powered by Flutter'"
+  },
+  "start": "Anza",
+  "@start": {
+    "description": "Start Button text"
+  },
+  "dashboardHeading": "Gusa sayari ili kuanza",
+  "@dashboardHeading": {
+    "description": "Instruction to start the game"
+  },
+  "easy": "Rahisi",
+  "@easy": {
+    "description": "Level - easy, for the game"
+  },
+  "medium": "Wastani",
+  "@medium": {
+    "description": "Level - medium, for the game"
+  },
+  "hard": "Gumu",
+  "@hard": {
+    "description": "Level - hard, for the game"
+  },
+  "appShortcuts": "Vifupisho vya Programu",
+  "@appShortcuts": {
+    "description": "Heading for app shortcuts info"
+  },
+  "appShortcutMusic": "Zima/Washa muziki",
+  "@appShortcutMusic": {
+    "description": "Music shortcut"
+  },
+  "appShortcutSoundEffect": "Zima/Washa sauti",
+  "@appShortcutSoundEffect": {
+    "description": "Sound effect shortcut"
+  },
+  "dashboardShortcuts": "Vifupisho vya Dashibodi",
+  "@dashboardShortcuts": {
+    "description": "Heading for dashboard shortcuts info"
+  },
+  "dashboardShortcutOrbitalAnimation": "Chezesha/Simamisha mzunguko wa sayari",
+  "@dashboardShortcutOrbitalAnimation": {
+    "description": "Instruction for planet orbital animation"
+  },
+  "dashboardShortcutDiffDec": "Punguza kiwango cha ugumu",
+  "@dashboardShortcutDiffDec": {
+    "description": "Decrease difficulty level"
+  },
+  "dashboardShortcutDiffInc": "Ongeza kiwango cha ugumu",
+  "@dashboardShortcutDiffInc": {
+    "description": "Increase difficulty level"
+  },
+  "dashboardShortcutInfo": "Onyesha kidirisha cha vifupisho",
+  "@dashboardShortcutInfo": {
+    "description": "Show shortcut dialog info"
+  },
+  "dashboardShortcutChooseAPlanet": "Chagua Sayari",
+  "@dashboardShortcutInfo": {
+    "description": "Choose a planet to begin the puzzle"
+  },
+  "dashboardShortcutClose": "Funga dirisha",
+  "@dashboardShortcutClose": {
+    "description": "Close dialog shortcut info"
+  },
+  "puzzleShortcuts": "Vifupisho vya Fumbo",
+  "@puzzleShortcuts": {
+    "description": "Heading for puzzle shortcuts info"
+  },
+  "puzzleShortcutControl": "Anza / Tatua Kiotomatiki / Simamisha",
+  "@puzzleShortcutControl": {
+    "description": "To control the puzzle, i.e. start/stop or to start auto solver"
+  },
+  "puzzleShortcutRestart": "Anzisha upya fumbo",
+  "@puzzleShortcutRestart": {
+    "description": "Restart puzzle"
+  },
+  "puzzleShortcutHintVisibility": "Onyesha/Ficha vidokezo vya namba",
+  "@puzzleShortcutHintVisibility": {
+    "description": "Toggling hint visibility"
+  },
+  "whitespaceUp": "Sogeza nafasi tupu juu",
+  "@whitespaceUp": {
+    "description": "Move whitespace up"
+  },
+  "whitespaceDown": "Sogeza nafasi tupu chini",
+  "@whitespaceDown": {
+    "description": "Move whitespace down"
+  },
+  "whitespaceLeft": "Sogeza nafasi tupu kushoto",
+  "@whitespaceLeft": {
+    "description": "Move whitespace left"
+  },
+  "whitespaceRight": "Sogeza nafasi tupu kulia",
+  "@whitespaceRight": {
+    "description": "Move whitespace right"
+  },
+  "backToSolarSystem": "Rudi kwenye mfumo wa jua",
+  "@backToSolarSystem": {
+    "description": "Quit puzzle screen and go back to dashboard"
+  },
+  "solarSystem": "Mfumo wa Jua",
+  "@solarSystem": {
+    "description": "Solar System"
+  },
+  "stop": "Simamisha",
+  "@stop": {
+    "description": "Stop puzzle"
+  },
+  "restart": "Anzisha upya",
+  "@restart": {
+    "description": "Restart puzzle"
+  },
+  "autoSolve": "Tatua Kiotomatiki",
+  "@autoSolve": {
+    "description": "Auto solve puzzle"
+  },
+  "getReady": "Jiandae",
+  "@getReady": {
+    "description": "Get Ready puzzle"
+  },
+  "pleaseWait": "Tafadhali subiri",
+  "@pleaseWait": {
+    "description": "Please wait puzzle"
+  },
+  "go": "Nenda!",
+  "@go": {
+    "description": "Go - stats"
+  },
+  "notStarted": "Haijaanza",
+  "@notStarted": {
+    "description": "Not Started - puzzle stats"
+  },
+  "puzzleStats": "{timeText} | Hatua {numberOfMoves}",
+  "@puzzleStats": {
+    "description": "Puzzle Stats",
+    "placeholders": {
+      "timeText": {
+        "type": "String",
+        "example": "00:14:09"
+      },
+      "numberOfMoves": {
+        "type": "int",
+        "example": "178"
+      }
+    }
+  },
+  "sharableText": "Nimekamilisha kuunganisha {planetName}, ni changamoto ya kufurahisha, jiunge na #FlutterPuzzleHack! Angalia hapa ↓",
+  "@sharableText": {
+    "description": "Text that can be shared on social media",
+    "placeholders": {
+      "planetName": {
+        "type": "String",
+        "example": "Earth"
+      }
+    }
+  },
+  "mercury": "Merkuri",
+  "@mercury": {
+    "description": "Planet name - mercury"
+  },
+  "mercuryFact1": "Merkuri ni sayari ndogo kabisa katika Mfumo wa Jua, kwa sababu Pluto haitambuliki tena kama sayari.",
+  "mercuryFact2": "Fikiria kulala mara moja kila baada ya miezi miwili, hiyo ni siku moja ya Merkuri – karibu sawa na siku 59 za Dunia.",
+  "mercuryFact3": "Ingawa iko karibu zaidi na Jua, joto la Merkuri linaweza kushuka hadi -180°C / -290°F.",
+  "congrats": "Hongera!",
+  "@congrats": {
+    "description": "Puzzle completion congrats text"
+  },
+  "congratsSubTitle": "Wewe ni bingwa wa kiulimwengu!",
+  "@congratsSubTitle": {
+    "description": "Puzzle completion sub title"
+  },
+  "successMessage": "Umefanikiwa kuunganisha {title} {extraText}",
+  "@successMessage": {
+    "description": "Puzzle completion success message",
+    "placeholders": {
+      "title": {
+        "type": "String",
+        "example": "Game Title"
+      },
+      "extraText": {
+        "type": "String",
+        "example": "bila msaada wowote"
+      }
+    }
+  },
+  "scoreBoard": "Bodi ya Alama",
+  "@scoreBoard": {
+    "description": "Score board title"
+  },
+  "totalMoves": "Hatua {totalMoves}",
+  "@totalMoves": {
+    "description": "total moves",
+    "placeholders": {
+      "totalMoves": {
+        "type": "int",
+        "example": "157"
+      }
+    }
+  },
+  "usedAutosolve": "Umetumia utatuzi wa kiotomatiki",
+  "@usedAutosolve": {
+    "description": "If user had used auto solve during gameplay"
+  },
+  "noAutosolve": "Hukutumia utatuzi wa kiotomatiki",
+  "@noAutosolve": {
+    "description": "If user had NOT used auto solve during gameplay"
+  },
+  "share": "Shiriki!",
+  "@share": {
+    "description": "Share text"
+  },
+  "optimizedLabel": "Fumbo Lililoboreshwa",
+  "@optimizedLabel": {
+    "description": "The label to show, if a puzzle is running an optimized version"
+  },
+  "optimizedDescription": "Unatumia toleo lililoboreshwa la fumbo ili kuepuka kushuka kwa utendaji",
+  "@optimizedDescription": {
+    "description": "The description of why the optimized label is shown"
+  },
+  "levelSelectionLabel": "Chagua kiwango cha fumbo kutoka rahisi, wastani au kigumu",
+  "@levelSelectionLabel": {
+    "description": "Semantic label for level selection widget"
+  },
+  "puzzleDurationLabelText": "Saa {hours} Dakika {minutes} Sekunde {seconds}",
+  "@puzzleDurationLabelText": {
+    "description": "Semantic label for the puzzle timer",
+    "placeholders": {
+      "hours": {
+        "type": "String",
+        "example": "2"
+      },
+      "minutes": {
+        "type": "String",
+        "example": "6"
+      },
+      "seconds": {
+        "type": "String",
+        "example": "24"
+      }
+    }
+  },
+  "visibilityButtonSemanticLabel": "Onyesha/Ficha msaada wa fumbo - namba za vigae",
+  "@visibilityButtonSemanticLabel": {
+    "description": "Semantic label for the visibility helper button"
+  },
+  "viewOnGithub": "Tazama kwenye Github",
+  "@viewOnGithub": {
+    "description": "View on github button text"
+  }
+}

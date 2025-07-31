@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          padding: EdgeInsets.only(top: 10),
+          padding: EdgeInsets.only(top: 30),
           child: HomeView(),
         ),
       ),

@@ -78,7 +78,7 @@ class AppViewState extends State<AppView> {
           debugShowCheckedModeBanner: false,
           navigatorKey: navigatorKey,
           theme: ThemeData(fontFamily: AppConstants.kFontFamily),
-          supportedLocales: const [Locale('en'), Locale('sw')],
+          supportedLocales: const [Locale('sw')],
           initialRoute: MainNavigatorState.initialRoute,
           onGenerateRoute: MainNavigatorState.onGenerateRoute,
           localizationsDelegates: const [
