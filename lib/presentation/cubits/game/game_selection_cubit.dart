@@ -6,7 +6,7 @@ import '../../../data/models/game.dart';
 import '../../../core/utils/constants/app_constants.dart';
 import '../../../core/utils/app_utils.dart';
 import '../../screens/puzzle/puzzle_page.dart';
-import '../level_selection/level_selection_cubit.dart';
+import '../level/level_selection_cubit.dart';
 
 part 'game_selection_state.dart';
 

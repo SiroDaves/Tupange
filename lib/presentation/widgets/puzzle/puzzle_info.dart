@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:tupange/core/l10n/l10n.dart';
 
 import '../../../core/layout/utils/responsive_layout_builder.dart';
-import '../../cubits/game_selection/game_selection_cubit.dart';
+import '../../cubits/game/game_selection_cubit.dart';
 import '../../cubits/puzzle_fact/puzzle_fact_cubit.dart';
 import '../../cubits/puzzle_helper/puzzle_helper_cubit.dart';
 import '../general/animated_text.dart';

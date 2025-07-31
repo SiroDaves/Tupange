@@ -3,8 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/models/game.dart';
-import '../../cubits/level_selection/level_selection_cubit.dart';
-import '../../cubits/game_selection/game_selection_cubit.dart';
+import '../../cubits/level/level_selection_cubit.dart';
+import '../../cubits/game/game_selection_cubit.dart';
 import '../info_card/info_card.dart';
 
 class HomeKeyboardHandler extends StatefulWidget {
