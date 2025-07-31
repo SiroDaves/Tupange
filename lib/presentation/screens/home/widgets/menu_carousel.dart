@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utils/puzzle_utils.dart';
 import '../../../../data/models/category.dart';
 import '../../../widgets/general/stylized_text.dart';
 
@@ -40,7 +39,7 @@ class MenuCarousel extends StatelessWidget {
         width: height * 1.2,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: PuzzleUtils.getAssetImagePath(category.image!),
+            image: AssetImage(category.image!),
             fit: BoxFit.cover,
           ),
           color: Colors.black,
