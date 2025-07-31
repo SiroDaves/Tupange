@@ -26,7 +26,7 @@ class HomeKeyboardHandlerState extends State<HomeKeyboardHandler> {
   }
 
   void openGameAt(Game game) =>
-      context.read<GameSelectionCubit>().onPlanetSelected(game);
+      context.read<GameSelectionCubit>().onSelected(game);
 
   /// For the dashboard, the following keyboard events are important
   /// [Space] key -> play/pause planet orbital animation

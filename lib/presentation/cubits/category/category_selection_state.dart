@@ -7,12 +7,12 @@ abstract class CategorySelectionState extends Equatable {
   List<Object> get props => [];
 }
 
-class NoGameSelected extends CategorySelectionState {}
+class NoCategorySelected extends CategorySelectionState {}
 
-class GameSelected extends CategorySelectionState {
+class CategorySelected extends CategorySelectionState {
   final Category category;
 
-  const GameSelected({required this.category});
+  const CategorySelected({required this.category});
 
   @override
   List<Object> get props => [category];

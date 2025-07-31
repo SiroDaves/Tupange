@@ -9,6 +9,7 @@ import '../../../data/models/category.dart';
 import '../../../data/models/game.dart';
 import '../../blocs/home/home_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
+import '../../cubits/category/category_selection_cubit.dart';
 import '../../cubits/level/level_selection_cubit.dart';
 import '../../cubits/game/game_selection_cubit.dart';
 import '../../widgets/controls/audio_control.dart';
@@ -33,8 +34,14 @@ class HomeScreen extends StatelessWidget {
         ),
         BlocProvider(create: (_) => LevelSelectionCubit()),
         BlocProvider(
+          create: (ctx) => CategorySelectionCubit(
+            ctx.read<LevelSelectionCubit>(),
+          ),
+        ),
+        BlocProvider(
           create: (ctx) => GameSelectionCubit(
             ctx.read<LevelSelectionCubit>(),
+            ctx.read<CategorySelectionCubit>(),
             context,
           ),
         ),
