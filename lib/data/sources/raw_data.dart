@@ -3,10 +3,11 @@ import '../models/game.dart';
 
 abstract class RawData {
   static  String images = 'assets/images/';
+  
   static List<Category> categories = [
-    Category(id: 1, title: 'Sayari',image: '${images}planets.jpg.jpg'),
-    Category(id: 2, title: 'Nchi',image: '${images}countries.jpg.jpg'),
-    Category(id: 3, title: 'Wanyama',image: '${images}animals.jpg.jpg'),
+    Category(id: 1, title: 'Sayari',image: '${images}planets.jpg'),
+    Category(id: 2, title: 'Nchi',image: '${images}countries.jpg'),
+    Category(id: 3, title: 'Wanyama',image: '${images}animals.jpg'),
   ];
 
   static List<Game> games = [
