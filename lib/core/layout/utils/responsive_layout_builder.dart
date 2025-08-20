@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'app_breakpoints.dart';
 
 /// Represents the layout size passed to [ResponsiveLayoutBuilder.child].
-enum ResponsiveLayoutSize { small, medium, large }
+enum ResponsiveLayoutSize { small, medium, large, xlarge }
 
-/// Signature for the individual builders (`small`, `medium`, `large`).
+/// Signature for the individual builders (`small`, `medium`, `large`, `xlarge`).
 typedef ResponsiveLayoutWidgetBuilder = Widget Function(BuildContext, Widget?);
 
 class ResponsiveLayoutBuilder extends StatelessWidget {

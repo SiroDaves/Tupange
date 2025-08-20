@@ -3,8 +3,11 @@ abstract class AppBreakpoints {
   static const double small = 576;
 
   /// Max width for a medium layout.
-  static const double medium = 1400;
+  static const double medium = 1000;
 
-  /// Max width for a large layout.
-  static const double large = 1700;
+  /// Max width for a medium layout.
+  static const double large = 1400;
+
+  /// Max width for a extra large layout.
+  static const double xlarge = 1700;
 }

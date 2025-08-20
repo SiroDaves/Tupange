@@ -35,8 +35,9 @@ class HomeViewState extends State<HomeView> {
         }
       },
       builder: (context, state) {
-        var mainStack = Stack(
+        var mainContainer = Column(
           children: [
+            const HeaderWidget(),
             ResponsiveLayoutBuilder(
               small: (_, Widget? child) => HomeSmall(child: child!),
               medium: (_, Widget? child) => HomeMedium(child: child!),
@@ -46,28 +47,19 @@ class HomeViewState extends State<HomeView> {
                 games: games,
               ),
             ),
-            const HeaderWidget(),
-            ResponsiveLayoutBuilder(
-              small: (_, __) => const SizedBox.shrink(),
-              medium: (_, __) => const SizedBox.shrink(),
-              large: (_, __) => const Align(
-                alignment: AppConstants.kFOTopRight,
-                child: AudioControl(),
-              ),
-            ),
           ],
         );
         return SizedBox.fromSize(
           size: size,
           child: state.maybeWhen(
-            orElse: () => mainStack,
+            orElse: () => mainContainer,
             failure: (feedback) => EmptyState(
               //title: l10n.habitChooserFailure,
               showRetry: true,
               //onRetry: () => bloc.add(const FetchData()),
             ),
             loading: () => LoadingProgress(),
-            fetched: (categories, games) => mainStack,
+            fetched: (categories, games) => mainContainer,
           ),
         );
       },

@@ -19,6 +19,47 @@ class MenuCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bgContainer = Container(
+      height: isLarge ? 75.0 : 120.0,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+          colors: [
+            Colors.black,
+            Colors.black,
+            Colors.transparent,
+          ],
+        ),
+        borderRadius: BorderRadius.circular(10),
+      ),
+    );
+    var categoryTitle = StylizedText(
+      text: category.title!.toUpperCase(),
+      fontSize: isLarge ? 48.0 : 36.0,
+      textColor: Colors.white,
+    );
+    var mainContainer = Container(
+      height: height * .7,
+      width: height * 1.2,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(category.image!),
+          fit: BoxFit.cover,
+        ),
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          bgContainer,
+          categoryTitle,
+        ],
+      ),
+    );
+
     return RawMaterialButton(
       highlightColor: Colors.white.withValues(alpha: .1),
       focusElevation: 0,
@@ -34,44 +75,7 @@ class MenuCarousel extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: Container(
-        height: height * .7,
-        width: height * 1.2,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(category.image!),
-            fit: BoxFit.cover,
-          ),
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            Container(
-              height: height * .1,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                  colors: [
-                    Colors.black,
-                    Colors.black,
-                    Colors.transparent,
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            StylizedText(
-              text: category.title!.toUpperCase(),
-              fontSize: isLarge ? 48.0 : 36.0,
-              textColor: Colors.white,
-            ),
-          ],
-        ),
-      ),
+      child: mainContainer,
     );
   }
 }

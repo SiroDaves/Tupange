@@ -4,7 +4,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 
 import '../../blocs/audio/audio_control_bloc.dart';
-import '../info_card/info_card.dart';
 import '../general/stylized_button.dart';
 import '../general/stylized_container.dart';
 import '../general/stylized_icon.dart';
@@ -75,27 +74,27 @@ class AudioControl extends StatelessWidget {
             ),
           ),
         ),
-        // gap
-        isSmall ? const Gap(4.0) : const Gap(18.0),
 
-        StylizedButton(
-          onPressed: () => InfoCard.show(context: context),
-          child: StylizedContainer(
-            padding: isSmall
-                ? const EdgeInsets.all(8.0)
-                : const EdgeInsets.symmetric(
-                    horizontal: 18.0,
-                    vertical: 12.0,
-                  ),
-            color: Colors.greenAccent,
-            child: StylizedIcon(
-              icon: FontAwesomeIcons.info,
-              size: 18.0,
-              strokeWidth: 4.0,
-              offset: 1.0,
-            ),
-          ),
-        ),
+        // isSmall ? const Gap(4.0) : const Gap(18.0),
+
+        // StylizedButton(
+        //   onPressed: () => InfoCard.show(context: context),
+        //   child: StylizedContainer(
+        //     padding: isSmall
+        //         ? const EdgeInsets.all(8.0)
+        //         : const EdgeInsets.symmetric(
+        //             horizontal: 18.0,
+        //             vertical: 12.0,
+        //           ),
+        //     color:  Colors.greenAccent,
+        //     child: StylizedIcon(
+        //       icon: FontAwesomeIcons.info,
+        //       size: 18.0,
+        //       strokeWidth: 4.0,
+        //       offset: 1.0,
+        //     ),
+        //   ),
+        // ),
 
       ],
     );

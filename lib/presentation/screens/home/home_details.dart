@@ -33,44 +33,42 @@ class HomeDetails extends StatelessWidget {
     return SizedBox(
       child: LayoutBuilder(
         builder: (ctx, dimens) {
-          return Center(
-            child: CarouselSlider(
-              options: CarouselOptions(
-                aspectRatio: 2.0,
-                enlargeCenterPage: true,
-                enableInfiniteScroll: false,
-                initialPage: 0,
-                autoPlay: true,
-              ),
-              items: categories.map((category) {
-                return Builder(
-                  builder: (BuildContext ctx) {
-                    return MenuCarousel(
-                      category: category,
-                      height: dimens.maxHeight,
-                      onPressed: () {
-                        context.read<AudioPlayerCubit>().buttonClickAudio();
-                        context
-                            .read<CategorySelectionCubit>()
-                            .onSelected(category);
-                        var selectedGames = games
-                            .where(
-                              (game) => game.category == category.id,
-                            )
-                            .toList();
-                        if (selectedGames.isNotEmpty) {
-                          SelectionCard.show(
-                            context: context,
-                            category: category,
-                            games: selectedGames,
-                          );
-                        }
-                      },
-                    );
-                  },
-                );
-              }).toList(),
+          return CarouselSlider(
+            options: CarouselOptions(
+              aspectRatio: 2.7,
+              enlargeCenterPage: true,
+              enableInfiniteScroll: false,
+              initialPage: 0,
+              autoPlay: true,
             ),
+            items: categories.map((category) {
+              return Builder(
+                builder: (BuildContext ctx) {
+                  return MenuCarousel(
+                    category: category,
+                    height: dimens.maxHeight,
+                    onPressed: () {
+                      context.read<AudioPlayerCubit>().buttonClickAudio();
+                      context
+                          .read<CategorySelectionCubit>()
+                          .onSelected(category);
+                      var selectedGames = games
+                          .where(
+                            (game) => game.category == category.id,
+                          )
+                          .toList();
+                      if (selectedGames.isNotEmpty) {
+                        CartCard.show(
+                          context: context,
+                          category: category,
+                          games: selectedGames,
+                        );
+                      }
+                    },
+                  );
+                },
+              );
+            }).toList(),
           );
         },
       ),

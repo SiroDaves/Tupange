@@ -4,18 +4,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/layout/utils/responsive_layout_builder.dart';
 import '../../../core/utils/constants/app_assets.dart';
-import '../../../core/utils/constants/app_constants.dart';
 import '../../../data/models/category.dart';
 import '../../../data/models/game.dart';
 import '../../blocs/home/home_bloc.dart';
 import '../../cubits/audio/audio_player_cubit.dart';
 import '../../cubits/category/category_selection_cubit.dart';
-import '../../cubits/level/level_selection_cubit.dart';
 import '../../cubits/game/game_selection_cubit.dart';
-import '../../widgets/controls/audio_control.dart';
+import '../../cubits/level/level_selection_cubit.dart';
+import '../../widgets/cart_card/cart_card.dart';
 import '../../widgets/progress/custom_snackbar.dart';
 import '../../widgets/progress/general_progress.dart';
-import '../../widgets/selection/selection_card.dart';
 import 'widgets/header_widget.dart';
 import 'widgets/menu_carousel.dart';
 
