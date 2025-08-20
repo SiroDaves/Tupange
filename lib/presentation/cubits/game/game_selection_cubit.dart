@@ -1,0 +1,59 @@
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../data/models/game.dart';
+import '../../../core/utils/constants/app_constants.dart';
+import '../../../core/utils/app_utils.dart';
+import '../../screens/puzzle/puzzle_page.dart';
+import '../category/category_selection_cubit.dart';
+import '../level/level_selection_cubit.dart';
+
+part 'game_selection_state.dart';
+
+class GameSelectionCubit extends Cubit<GameSelectionState> {
+  final LevelSelectionCubit _levelSelectionCubit;
+  final CategorySelectionCubit _categorySelectionCubit;
+  final BuildContext _context;
+
+  GameSelectionCubit(
+    this._levelSelectionCubit,
+    this._categorySelectionCubit,
+    this._context,
+  ) : super(NoGameSelected());
+
+  late Game _game;
+
+  Game get game => _game;
+
+  void onSelected(Game game) async {
+    _game = game;
+
+    AppUtils.logger(
+      'GameSelectionCubit tapped: $game: category: ${_levelSelectionCubit.state.level}: level: ${_levelSelectionCubit.state.level}',
+    );
+
+    final page = await AppUtils.buildPageAsync(
+      MultiBlocProvider(
+        providers: [
+          BlocProvider.value(value: _levelSelectionCubit),
+          BlocProvider.value(value: _categorySelectionCubit),
+          BlocProvider.value(value: this),
+        ],
+        child: const PuzzlePage(key: Key('puzzle-page')),
+      ),
+    );
+
+    await Navigator.push(
+      _context,
+      PageRouteBuilder(
+        pageBuilder: (_, __, ___) => page,
+        transitionsBuilder: (_, anim, __, child) => FadeTransition(
+          opacity: anim,
+          child: child,
+        ),
+        transitionDuration: AppConstants.kMS800,
+      ),
+    );
+  }
+}
